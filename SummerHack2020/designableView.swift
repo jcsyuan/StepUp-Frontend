@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+// creates shadow for the text bars
 class DesignableView: UIView {
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
