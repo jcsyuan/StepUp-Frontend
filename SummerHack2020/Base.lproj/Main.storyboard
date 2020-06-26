@@ -533,7 +533,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-dP-SgF">
-                                <rect key="frame" x="0.0" y="98" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="55.5"/>
                                 <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
