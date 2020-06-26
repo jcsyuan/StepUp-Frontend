@@ -16,6 +16,7 @@
 		33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE4BD824986B5C007B684A /* LaunchScreen.storyboard */; };
 		33EE4BE224988061007B684A /* designableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE124988061007B684A /* designableView.swift */; };
 		33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE324989791007B684A /* UIViewController+Extensions.swift */; };
+		7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		33EE4BDB24986B5C007B684A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33EE4BE124988061007B684A /* designableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designableView.swift; sourceTree = "<group>"; };
 		33EE4BE324989791007B684A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				33EE4BCF24986B58007B684A /* SceneDelegate.swift */,
 				33EE4BD124986B58007B684A /* ViewController.swift */,
 				33EE4BD324986B58007B684A /* Main.storyboard */,
+				7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */,
 				33EE4BE324989791007B684A /* UIViewController+Extensions.swift */,
 				33EE4BE124988061007B684A /* designableView.swift */,
 				33EE4BD624986B5C007B684A /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
+				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
 			);
