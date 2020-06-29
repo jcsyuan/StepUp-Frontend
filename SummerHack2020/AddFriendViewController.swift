@@ -11,6 +11,7 @@ import UIKit
 class AddFriendViewController: UIViewController {
 
     @IBOutlet weak var addFriendLabel: UILabel!
+    
     @IBOutlet weak var addSummary: UILabel!
     
     @IBOutlet weak var panelBg: UIImageView!
@@ -30,9 +31,11 @@ class AddFriendViewController: UIViewController {
         
         panelBg.layer.masksToBounds = true
         panelBg.layer.cornerRadius = 10
-        
-
-
     }
+    
+    @IBAction func closeFriendRequest(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }

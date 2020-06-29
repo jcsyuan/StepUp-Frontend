@@ -668,13 +668,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufl-sJ-89W">
+                                <rect key="frame" x="377" y="13" width="20" height="15.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="UYR-yM-5Rw"/>
+                                    <constraint firstAttribute="width" constant="20" id="rdE-6t-1Ok"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeFriendRequest:" destination="iIk-rr-YDw" eventType="touchUpInside" id="GLd-73-6tm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0hx-il-Zxh" firstAttribute="centerY" secondItem="GJN-i6-dkh" secondAttribute="centerY" constant="-140" id="3nH-2G-Jez"/>
                             <constraint firstItem="jf2-QP-pGN" firstAttribute="top" secondItem="GJN-i6-dkh" secondAttribute="topMargin" constant="170" id="79s-c5-3Vr"/>
                             <constraint firstItem="iHU-hi-2sg" firstAttribute="top" secondItem="GJN-i6-dkh" secondAttribute="top" id="7wi-Gm-f9N"/>
+                            <constraint firstItem="ufl-sJ-89W" firstAttribute="centerY" secondItem="GJN-i6-dkh" secondAttribute="centerY" constant="-400" id="84w-h0-Hyw"/>
                             <constraint firstAttribute="bottomMargin" secondItem="jf2-QP-pGN" secondAttribute="bottom" constant="420" id="Bmm-aE-jW0"/>
+                            <constraint firstItem="ufl-sJ-89W" firstAttribute="centerX" secondItem="GJN-i6-dkh" secondAttribute="centerX" constant="180" id="Hi6-vn-meA"/>
                             <constraint firstItem="CZH-xZ-6iR" firstAttribute="centerY" secondItem="GJN-i6-dkh" secondAttribute="centerY" constant="-80" id="Liq-KD-Qjs"/>
                             <constraint firstItem="Ami-QL-KW3" firstAttribute="top" secondItem="zem-qs-sgP" secondAttribute="top" constant="20" id="Ndz-iE-Xod"/>
                             <constraint firstItem="iHU-hi-2sg" firstAttribute="leading" secondItem="GJN-i6-dkh" secondAttribute="leading" id="TaM-CY-90l"/>
@@ -781,6 +795,9 @@
                                                 <state key="normal" title="LOG OUT">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="pWB-Cx-TBe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK0-gF-P6A">
                                                 <rect key="frame" x="117" y="80" width="180" height="50"/>
@@ -816,6 +833,7 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wk-fx-cDs" userLabel="music">
                                                         <rect key="frame" x="0.0" y="13" width="62" height="31"/>
+                                                        <color key="onTintColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v18-Tt-FOJ">
                                                         <rect key="frame" x="75" y="16" width="60" height="25"/>
@@ -834,6 +852,7 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZM-Bi-ha6" userLabel="sfx">
                                                         <rect key="frame" x="0.0" y="13" width="62" height="31"/>
+                                                        <color key="onTintColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sfx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eex-Ic-sBX">
                                                         <rect key="frame" x="75" y="16" width="60" height="25"/>
@@ -944,5 +963,6 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="s.square" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
