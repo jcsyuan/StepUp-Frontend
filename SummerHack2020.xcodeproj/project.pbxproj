@@ -18,6 +18,7 @@
 		33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE324989791007B684A /* UIViewController+Extensions.swift */; };
 		7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */; };
 		7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */; };
+		7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE824A956B40020F73D /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		33EE4BE324989791007B684A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		7DD9FBE824A956B40020F73D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				33EE4BCF24986B58007B684A /* SceneDelegate.swift */,
 				33EE4BD124986B58007B684A /* ViewController.swift */,
 				33EE4BD324986B58007B684A /* Main.storyboard */,
+				7DD9FBE824A956B40020F73D /* SettingsViewController.swift */,
 				7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */,
 				7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */,
 				33EE4BE324989791007B684A /* UIViewController+Extensions.swift */,
@@ -161,6 +164,7 @@
 				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
+				7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
