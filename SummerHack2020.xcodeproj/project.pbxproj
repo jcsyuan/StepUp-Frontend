@@ -19,6 +19,10 @@
 		7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */; };
 		7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */; };
 		7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE824A956B40020F73D /* SettingsViewController.swift */; };
+		7DD9FBEB24A998440020F73D /* HelpAndSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBEA24A998440020F73D /* HelpAndSupportViewController.swift */; };
+		7DD9FBED24A9993E0020F73D /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBEC24A9993E0020F73D /* PrivacyViewController.swift */; };
+		7DD9FBEF24A9999E0020F73D /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBEE24A9999E0020F73D /* TermsViewController.swift */; };
+		7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE824A956B40020F73D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7DD9FBEA24A998440020F73D /* HelpAndSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndSupportViewController.swift; sourceTree = "<group>"; };
+		7DD9FBEC24A9993E0020F73D /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		7DD9FBEE24A9999E0020F73D /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,10 @@
 		33EE4BCC24986B58007B684A /* SummerHack2020 */ = {
 			isa = PBXGroup;
 			children = (
+				7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */,
+				7DD9FBEA24A998440020F73D /* HelpAndSupportViewController.swift */,
+				7DD9FBEC24A9993E0020F73D /* PrivacyViewController.swift */,
+				7DD9FBEE24A9999E0020F73D /* TermsViewController.swift */,
 				33ED39BD2499AB6A008C6166 /* CanvasView.swift */,
 				33EE4BCD24986B58007B684A /* AppDelegate.swift */,
 				33EE4BCF24986B58007B684A /* SceneDelegate.swift */,
@@ -156,14 +168,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD9FBED24A9993E0020F73D /* PrivacyViewController.swift in Sources */,
 				7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */,
+				7DD9FBEB24A998440020F73D /* HelpAndSupportViewController.swift in Sources */,
 				33EE4BE224988061007B684A /* designableView.swift in Sources */,
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
+				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
 				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
+				7DD9FBEF24A9999E0020F73D /* TermsViewController.swift in Sources */,
 				7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
