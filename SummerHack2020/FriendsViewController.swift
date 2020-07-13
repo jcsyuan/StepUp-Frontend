@@ -14,7 +14,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
     
-    let nameArray = ["notlay", "kelai", "jojo"]
+    let nameArray = ["notlay", "kelai", "jojo", "bicky", "shon", "catherine", "mike", "maxwell", "varshinee", "nina", "lomeli", "calctaguy"]
     
     var searchingNames = [String()]
     
