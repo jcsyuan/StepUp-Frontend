@@ -15,7 +15,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
+        table.register(RequestTableViewCell.nib(), forCellReuseIdentifier: RequestTableViewCell.identifier)
         table.dataSource = self
         
     }
@@ -25,7 +25,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as! MyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RequestTableViewCell.identifier, for: indexPath) as! RequestTableViewCell
         // text in each cell
         cell.configure(with: data[indexPath.row])
         cell.delegate = self
@@ -33,7 +33,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     }
 }
 
-extension RequestsViewController: MyTableViewCellDelegate {
+extension RequestsViewController: RequestTableViewCellDelegate {
     func didAccept(with username: String) {
         print("\(username)")
         if let index = data.firstIndex(of: "\(username)") {

@@ -24,8 +24,8 @@
 		7DD9FBEF24A9999E0020F73D /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBEE24A9999E0020F73D /* TermsViewController.swift */; };
 		7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */; };
 		7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */; };
-		7DD9FC0424BA396C0020F73D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0224BA396C0020F73D /* MyTableViewCell.swift */; };
-		7DD9FC0524BA396C0020F73D /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0324BA396C0020F73D /* MyTableViewCell.xib */; };
+		7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */; };
+		7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,8 @@
 		7DD9FBEE24A9999E0020F73D /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
-		7DD9FC0224BA396C0020F73D /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
-		7DD9FC0324BA396C0020F73D /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +92,8 @@
 				33EE4BD124986B58007B684A /* ViewController.swift */,
 				33EE4BD324986B58007B684A /* Main.storyboard */,
 				7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */,
-				7DD9FC0224BA396C0020F73D /* MyTableViewCell.swift */,
-				7DD9FC0324BA396C0020F73D /* MyTableViewCell.xib */,
+				7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */,
+				7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */,
 				7DD9FBE824A956B40020F73D /* SettingsViewController.swift */,
 				7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */,
 				7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */,
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */,
-				7DD9FC0524BA396C0020F73D /* MyTableViewCell.xib in Resources */,
+				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
 			);
@@ -186,7 +186,7 @@
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
 				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
-				7DD9FC0424BA396C0020F73D /* MyTableViewCell.swift in Sources */,
+				7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
 				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,

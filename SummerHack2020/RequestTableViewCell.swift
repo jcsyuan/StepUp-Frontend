@@ -8,18 +8,18 @@
 
 import UIKit
 
-protocol MyTableViewCellDelegate: AnyObject {
+protocol RequestTableViewCellDelegate: AnyObject {
     func didAccept(with username: String)
     func didDecline(with username: String)
 }
 
-class MyTableViewCell: UITableViewCell {
+class RequestTableViewCell: UITableViewCell {
 
-    weak var delegate: MyTableViewCellDelegate?
-    static let identifier = "MyTableViewCell"
+    weak var delegate: RequestTableViewCellDelegate?
+    static let identifier = "RequestTableViewCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "MyTableViewCell", bundle: nil)
+        return UINib(nibName: "RequestTableViewCell", bundle: nil)
     }
     
     private var username: String = ""
