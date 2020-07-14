@@ -26,6 +26,9 @@
 		7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */; };
 		7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */; };
 		7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */; };
+		7DDBBFE524BE63A8008221E6 /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBBFE424BE63A8008221E6 /* LeaderBoardViewController.swift */; };
+		7DDBBFE824BE63EE008221E6 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDBBFE624BE63EE008221E6 /* MyTableViewCell.swift */; };
+		7DDBBFE924BE63EE008221E6 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DDBBFE724BE63EE008221E6 /* MyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
+		7DDBBFE424BE63A8008221E6 /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
+		7DDBBFE624BE63EE008221E6 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		7DDBBFE724BE63EE008221E6 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,9 @@
 				33EE4BCF24986B58007B684A /* SceneDelegate.swift */,
 				33EE4BD124986B58007B684A /* ViewController.swift */,
 				33EE4BD324986B58007B684A /* Main.storyboard */,
+				7DDBBFE624BE63EE008221E6 /* MyTableViewCell.swift */,
+				7DDBBFE724BE63EE008221E6 /* MyTableViewCell.xib */,
+				7DDBBFE424BE63A8008221E6 /* LeaderBoardViewController.swift */,
 				7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */,
 				7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */,
 				7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */,
@@ -164,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DDBBFE924BE63EE008221E6 /* MyTableViewCell.xib in Resources */,
 				33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */,
 				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
@@ -185,6 +195,7 @@
 				33EE4BE224988061007B684A /* designableView.swift in Sources */,
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
+				7DDBBFE824BE63EE008221E6 /* MyTableViewCell.swift in Sources */,
 				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
 				7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
@@ -192,6 +203,7 @@
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
 				7DD9FBEF24A9999E0020F73D /* TermsViewController.swift in Sources */,
+				7DDBBFE524BE63A8008221E6 /* LeaderBoardViewController.swift in Sources */,
 				7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
