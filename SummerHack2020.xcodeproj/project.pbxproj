@@ -10,8 +10,8 @@
 		33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9724BF8FDF00B6D94F /* ShopViewController.swift */; };
 		33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */; };
 		33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */; };
-		33173BA524BF927D00B6D94F /* KelCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA324BF927D00B6D94F /* KelCollectionTableViewCell.swift */; };
-		33173BA624BF927D00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173BA424BF927D00B6D94F /* KelCollectionTableViewCell.xib */; };
+		33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */; };
+		33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */; };
 		33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED39BD2499AB6A008C6166 /* CanvasView.swift */; };
 		33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCD24986B58007B684A /* AppDelegate.swift */; };
 		33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCF24986B58007B684A /* SceneDelegate.swift */; };
@@ -40,8 +40,8 @@
 		33173B9724BF8FDF00B6D94F /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		33173BA324BF927D00B6D94F /* KelCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		33173BA424BF927D00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionViewCell.swift; sourceTree = "<group>"; };
+		33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionViewCell.xib; sourceTree = "<group>"; };
 		33ED39BD2499AB6A008C6166 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		33EE4BCA24986B58007B684A /* SummerHack2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerHack2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE4BCD24986B58007B684A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 		33173B9924BF900300B6D94F /* Kel's Collection Cell */ = {
 			isa = PBXGroup;
 			children = (
-				33173BA324BF927D00B6D94F /* KelCollectionTableViewCell.swift */,
-				33173BA424BF927D00B6D94F /* KelCollectionTableViewCell.xib */,
+				33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */,
+				33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */,
 			);
 			path = "Kel's Collection Cell";
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
 				33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
-				33173BA624BF927D00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
+				33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +237,7 @@
 				7DD9FBEB24A998440020F73D /* HelpAndSupportViewController.swift in Sources */,
 				33EE4BE224988061007B684A /* designableView.swift in Sources */,
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
-				33173BA524BF927D00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
+				33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
 				7DDBBFE824BE63EE008221E6 /* MyTableViewCell.swift in Sources */,
 				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
