@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9724BF8FDF00B6D94F /* ShopViewController.swift */; };
+		33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */; };
+		33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */; };
+		33173BA124BF909D00B6D94F /* KelCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9F24BF909D00B6D94F /* KelCollectionViewController.swift */; };
+		33173BA224BF909D00B6D94F /* KelCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173BA024BF909D00B6D94F /* KelCollectionViewController.xib */; };
 		33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED39BD2499AB6A008C6166 /* CanvasView.swift */; };
 		33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCD24986B58007B684A /* AppDelegate.swift */; };
 		33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCF24986B58007B684A /* SceneDelegate.swift */; };
@@ -32,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33173B9724BF8FDF00B6D94F /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		33173B9F24BF909D00B6D94F /* KelCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionViewController.swift; sourceTree = "<group>"; };
+		33173BA024BF909D00B6D94F /* KelCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionViewController.xib; sourceTree = "<group>"; };
 		33ED39BD2499AB6A008C6166 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		33EE4BCA24986B58007B684A /* SummerHack2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerHack2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE4BCD24986B58007B684A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +79,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33173B9624BF8FA700B6D94F /* Kelly */ = {
+			isa = PBXGroup;
+			children = (
+				33173B9A24BF901200B6D94F /* Kel's Table Cell */,
+				33173B9924BF900300B6D94F /* Kel's Collection Cell */,
+				33173B9724BF8FDF00B6D94F /* ShopViewController.swift */,
+			);
+			path = Kelly;
+			sourceTree = "<group>";
+		};
+		33173B9924BF900300B6D94F /* Kel's Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				33173B9F24BF909D00B6D94F /* KelCollectionViewController.swift */,
+				33173BA024BF909D00B6D94F /* KelCollectionViewController.xib */,
+			);
+			path = "Kel's Collection Cell";
+			sourceTree = "<group>";
+		};
+		33173B9A24BF901200B6D94F /* Kel's Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */,
+				33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */,
+			);
+			path = "Kel's Table Cell";
+			sourceTree = "<group>";
+		};
 		33EE4BC124986B58007B684A = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +126,7 @@
 		33EE4BCC24986B58007B684A /* SummerHack2020 */ = {
 			isa = PBXGroup;
 			children = (
+				33173B9624BF8FA700B6D94F /* Kelly */,
 				7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */,
 				7DD9FBEA24A998440020F73D /* HelpAndSupportViewController.swift */,
 				7DD9FBEC24A9993E0020F73D /* PrivacyViewController.swift */,
@@ -175,8 +214,10 @@
 			files = (
 				7DDBBFE924BE63EE008221E6 /* MyTableViewCell.xib in Resources */,
 				33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */,
+				33173BA224BF909D00B6D94F /* KelCollectionViewController.xib in Resources */,
 				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
+				33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
 				7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */,
 				7DD9FBED24A9993E0020F73D /* PrivacyViewController.swift in Sources */,
+				33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */,
 				7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */,
 				7DD9FBEB24A998440020F73D /* HelpAndSupportViewController.swift in Sources */,
 				33EE4BE224988061007B684A /* designableView.swift in Sources */,
@@ -199,6 +242,7 @@
 				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
 				7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
+				33173BA124BF909D00B6D94F /* KelCollectionViewController.swift in Sources */,
 				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
