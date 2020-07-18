@@ -12,6 +12,7 @@
 		33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */; };
 		33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */; };
 		33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */; };
+		33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA724C3ADB100B6D94F /* createAccountViewController.swift */; };
 		33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED39BD2499AB6A008C6166 /* CanvasView.swift */; };
 		33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCD24986B58007B684A /* AppDelegate.swift */; };
 		33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BCF24986B58007B684A /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionViewCell.swift; sourceTree = "<group>"; };
 		33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionViewCell.xib; sourceTree = "<group>"; };
+		33173BA724C3ADB100B6D94F /* createAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
 		33ED39BD2499AB6A008C6166 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		33EE4BCA24986B58007B684A /* SummerHack2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerHack2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE4BCD24986B58007B684A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				33EE4BD624986B5C007B684A /* Assets.xcassets */,
 				33EE4BD824986B5C007B684A /* LaunchScreen.storyboard */,
 				33EE4BDB24986B5C007B684A /* Info.plist */,
+				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,
 			);
 			path = SummerHack2020;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */,
 				33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
 				7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */,
 				7DD9FBED24A9993E0020F73D /* PrivacyViewController.swift in Sources */,
