@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1050,7 +1050,7 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="heart.fill" catalog="system"/>
                                         <connections>
-                                            <segue destination="6t4-wL-xou" kind="presentation" modalPresentationStyle="fullScreen" id="f54-cw-VDz"/>
+                                            <segue destination="6t4-wL-xou" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="f54-cw-VDz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVC-rd-xMv" userLabel="leaderboard">
@@ -1568,11 +1568,8 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-VF-w3E">
-                                <rect key="frame" x="0.0" y="224" width="414" height="533"/>
+                                <rect key="frame" x="0.0" y="224" width="414" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="533" id="nje-Oi-f5a"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ryn-0m-Yep">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -1618,6 +1615,7 @@
                             <constraint firstItem="N4S-VF-w3E" firstAttribute="top" secondItem="sht-sf-euN" secondAttribute="bottom" constant="15" id="RqP-Sn-HSS"/>
                             <constraint firstItem="YSE-HY-0S7" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="29" id="Tyq-d5-4jw"/>
                             <constraint firstItem="N4S-VF-w3E" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="180" id="VSH-VT-J2E"/>
+                            <constraint firstItem="2As-fG-lva" firstAttribute="top" secondItem="N4S-VF-w3E" secondAttribute="bottom" id="VeF-6J-mW5"/>
                             <constraint firstItem="uUB-fI-qn1" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="84" id="VhV-ye-CgR"/>
                             <constraint firstItem="2q8-yo-vL9" firstAttribute="bottom" secondItem="2As-fG-lva" secondAttribute="bottom" constant="10" id="aeC-Dw-whD"/>
                             <constraint firstItem="2As-fG-lva" firstAttribute="centerX" secondItem="R4j-65-U3B" secondAttribute="centerX" id="l5X-zp-86o"/>
@@ -1840,11 +1838,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g83-gE-aj2"/>
-        <segue reference="eYS-7b-asp"/>
-        <segue reference="g1J-vv-cHm"/>
-        <segue reference="WV1-us-eXc"/>
-        <segue reference="QVa-Bs-6Io"/>
+        <segue reference="uby-we-dlV"/>
+        <segue reference="wH8-FX-fUM"/>
+        <segue reference="5TU-dG-Rf3"/>
+        <segue reference="rx9-4S-26m"/>
+        <segue reference="pA1-6b-bdF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
