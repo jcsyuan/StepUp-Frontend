@@ -19,16 +19,16 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        models.append(Model(text: "Lime $10", imageName: "shirt-1"))
-        models.append(Model(text: "Blueberry $8", imageName: "shirt-2"))
-        models.append(Model(text: "Snow $15", imageName: "shirt-3"))
-        
-        models.append(Model(text: "Jeans $35", imageName: "pant-1"))
+//        models.append(Model(text: "Lime $10", imageName: "shirt-1"))
+//        models.append(Model(text: "Blueberry $8", imageName: "shirt-2"))
+//        models.append(Model(text: "Snow $15", imageName: "shirt-3"))
+//
+//        models.append(Model(text: "Jeans $35", imageName: "pant-1"))
 //        models.append(Model(text: "second", imageName: "Image-1"))
 //        models.append(Model(text: "third", imageName: "Image-2"))
 //        models.append(Model(text: "fourth", imageName: "Image-3"))
-        
-        models.append(Model(text: "Converse $30", imageName: "shoe-1"))
+//
+//        models.append(Model(text: "Converse $30", imageName: "shoe-1"))
 //        models.append(Model(text: "second", imageName: "Image-1"))
 //        models.append(Model(text: "third", imageName: "Image-2"))
 //        models.append(Model(text: "fourth", imageName: "Image-3"))
