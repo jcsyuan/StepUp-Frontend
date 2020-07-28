@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -639,7 +639,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEE-iC-N4h">
-                                <rect key="frame" x="124" y="29.5" width="166" height="33.5"/>
+                                <rect key="frame" x="124" y="29.5" width="166" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -666,7 +666,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJi-Yk-mfq">
-                                <rect key="frame" x="107.5" y="29.5" width="199" height="33.5"/>
+                                <rect key="frame" x="107.5" y="29.5" width="199" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1838,11 +1838,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uby-we-dlV"/>
-        <segue reference="wH8-FX-fUM"/>
+        <segue reference="g83-gE-aj2"/>
+        <segue reference="eYS-7b-asp"/>
         <segue reference="5TU-dG-Rf3"/>
-        <segue reference="rx9-4S-26m"/>
-        <segue reference="pA1-6b-bdF"/>
+        <segue reference="f54-cw-VDz"/>
+        <segue reference="QVa-Bs-6Io"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
