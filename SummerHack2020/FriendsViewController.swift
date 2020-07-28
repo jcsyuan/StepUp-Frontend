@@ -35,7 +35,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // json stuff
         // prepare URL endpoint
-        let url = URL(string: "http://127.0.0.1:5000/get-daily-steps")!
+        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
         // instantiate request object
         var request = URLRequest(url: url)
         // declare type of method
