@@ -14,14 +14,17 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
     
-    var nameArray: [String] = []
-//    let nameArray = ["notlay", "kelai", "jojo", "bicky", "shon", "catherine", "mike", "maxwell", "varshinee", "nina", "lomeli", "calctaguy"]
+    var nameArray2: [Int] = []
+    let nameArray = ["notlay", "kelai", "jojo", "bicky", "shon", "catherine", "mike", "maxwell", "varshinee", "nina", "lomeli", "calctaguy"]
     
     var searchingNames = [String()]
     
     var searching = false
     
-    let tempIdDictionary: [String: String] = ["user_id": "17"]
+    // object to hold friends list
+    struct FriendList: Codable {
+        let result: [Int]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +35,14 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // json stuff
         // prepare URL endpoint
-        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
+        let url = URL(string: "http://127.0.0.1:5000/get-daily-steps")!
         // instantiate request object
         var request = URLRequest(url: url)
         // declare type of method
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         // set JSON body
-        let jsonBody = try! JSONSerialization.data(withJSONObject: tempIdDictionary, options: .prettyPrinted)
+        let tempIdDictionary: [String: String] = ["user_id": "17"]
+        let jsonBody = try? JSONSerialization.data(withJSONObject: tempIdDictionary)
         request.httpBody = jsonBody
         // call endpoint
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -46,19 +50,14 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
             guard let data = data else { return }
             // decode returned json object
             do {
+                print(data)
                 let friendList = try JSONDecoder().decode(FriendList.self, from: data)
-                print(friendList.friends)
-                self.nameArray = friendList.friends
+                print(friendList.result)
             } catch let jsonErr { // error check
                 print(jsonErr)
             }
         }
         task.resume()
-    }
-    
-    // object to hold friends list
-    struct FriendList: Codable {
-        var friends: [String]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
