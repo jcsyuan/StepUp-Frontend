@@ -35,19 +35,28 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // json stuff
         // prepare URL endpoint
-        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
-        // instantiate request object
-        var request = URLRequest(url: url)
-        // declare type of method
+//        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
+//        // instantiate request object
+//        var request = URLRequest(url: url)
+//        // declare type of method
+//        request.httpMethod = "POST"
+//        // set JSON body
+//        let tempIdDictionary: [String: String] = ["user_id": "17"]
+//        let jsonBody = try? JSONSerialization.data(withJSONObject: tempIdDictionary)
+//        request.httpBody = jsonBody
+        let baseURL = URL(string: "http://127.0.0.1:5000/get-friends")!
+        let fullURL = baseURL.appendingPathComponent("/post")
+          
+        var request = URLRequest(url: fullURL)
         request.httpMethod = "POST"
-        // set JSON body
-        let tempIdDictionary: [String: String] = ["user_id": "17"]
-        let jsonBody = try? JSONSerialization.data(withJSONObject: tempIdDictionary)
-        request.httpBody = jsonBody
+        request.allHTTPHeaderFields = ["Content-Type": "application/json", "Accept": "application/json"]
+        let jsonDictionary: [String: String] = ["user_id": "17"]
+        let data = try! JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted)
         // call endpoint
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.uploadTask(with: request, from: data) {(responseData, response, error) in
+        //let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             // error check
-            guard let data = data else { return }
+            guard let data = responseData else { return }
             // decode returned json object
             do {
                 print(data)
