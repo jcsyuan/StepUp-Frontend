@@ -14,7 +14,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
     
-    var nameArray: [String] = ["HI"]
+    var nameArray: [String] = []
     
     var searchingNames = [String()]
     
@@ -40,8 +40,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
             guard let data = data else { return }
             do {
                 let friendList = try JSONDecoder().decode(FriendList.self, from: data)
-                print(friendList.result)
-                self.nameArray = friendList.result
+                self.nameArray = friendList.result.sorted()
                 DispatchQueue.main.async {
                     self.tblView.reloadData()
                 }

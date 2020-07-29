@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -849,7 +849,7 @@
                                 <viewLayoutGuide key="safeArea" id="jlZ-8p-dIB"/>
                             </stackView>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-kT-eNZ">
-                                <rect key="frame" x="0.0" y="97.5" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="55.5"/>
                                 <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -871,7 +871,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcR-N9-ReG">
-                                <rect key="frame" x="10" y="54" width="110" height="33"/>
+                                <rect key="frame" x="10" y="54" width="110" height="33.5"/>
                                 <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="a7p-mW-h0Y"/>
@@ -881,7 +881,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axN-nm-B3M">
-                                <rect key="frame" x="0.0" y="153" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="153.5" width="414" height="589.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="zRn-ec-6Z1" style="IBUITableViewCellStyleDefault" id="4xn-1R-sL3" customClass="MyTableViewCell" customModule="SummerHack2020" customModuleProvider="target">
@@ -937,7 +937,6 @@
                             <constraint firstItem="axN-nm-B3M" firstAttribute="top" secondItem="vpR-kT-eNZ" secondAttribute="bottom" id="j4S-xs-qhC"/>
                             <constraint firstItem="zqS-fB-EtM" firstAttribute="trailing" secondItem="Jjj-ME-cBh" secondAttribute="trailing" constant="10" id="jK1-Og-oyr"/>
                             <constraint firstItem="7MB-qv-Dqc" firstAttribute="top" secondItem="zqS-fB-EtM" secondAttribute="top" constant="10" id="rbI-6Q-j1n"/>
-                            <constraint firstItem="axN-nm-B3M" firstAttribute="centerY" secondItem="cZh-2g-OlD" secondAttribute="centerY" id="rty-CZ-aV2"/>
                             <constraint firstItem="Jjj-ME-cBh" firstAttribute="leading" secondItem="7MB-qv-Dqc" secondAttribute="trailing" constant="20" id="v6b-mJ-1iI"/>
                             <constraint firstItem="vpR-kT-eNZ" firstAttribute="trailing" secondItem="zqS-fB-EtM" secondAttribute="trailing" id="whJ-nj-9Yq"/>
                         </constraints>
@@ -1838,11 +1837,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g83-gE-aj2"/>
-        <segue reference="eYS-7b-asp"/>
-        <segue reference="5TU-dG-Rf3"/>
+        <segue reference="8RZ-QG-YpC"/>
+        <segue reference="wH8-FX-fUM"/>
+        <segue reference="Grf-kN-J8x"/>
         <segue reference="f54-cw-VDz"/>
-        <segue reference="QVa-Bs-6Io"/>
+        <segue reference="A2B-ki-lNi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
