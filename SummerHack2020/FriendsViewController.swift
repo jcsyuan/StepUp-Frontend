@@ -42,6 +42,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 let friendList = try JSONDecoder().decode(FriendList.self, from: data)
                 print(friendList.result)
                 self.nameArray = friendList.result
+                DispatchQueue.main.async {
+                    self.tblView.reloadData()
+                }
             } catch let jsonErr {
                 print(jsonErr)
             }
