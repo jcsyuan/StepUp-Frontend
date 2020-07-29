@@ -14,8 +14,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
     
-    var nameArray2: [Int] = []
-    let nameArray = ["notlay", "kelai", "jojo", "bicky", "shon", "catherine", "mike", "maxwell", "varshinee", "nina", "lomeli", "calctaguy"]
+    var nameArray: [String] = ["HI"]
     
     var searchingNames = [String()]
     
@@ -23,7 +22,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // object to hold friends list
     struct FriendList: Codable {
-        let result: [Int]
+        let result: [String]
     }
     
     override func viewDidLoad() {
@@ -33,36 +32,17 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         friendsLabel.layer.masksToBounds = true
         friendsLabel.layer.cornerRadius = 10
         
-        // json stuff
-        // prepare URL endpoint
-//        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
-//        // instantiate request object
-//        var request = URLRequest(url: url)
-//        // declare type of method
-//        request.httpMethod = "POST"
-//        // set JSON body
-//        let tempIdDictionary: [String: String] = ["user_id": "17"]
-//        let jsonBody = try? JSONSerialization.data(withJSONObject: tempIdDictionary)
-//        request.httpBody = jsonBody
-        let baseURL = URL(string: "http://127.0.0.1:5000/get-friends")!
-        let fullURL = baseURL.appendingPathComponent("/post")
-          
-        var request = URLRequest(url: fullURL)
+        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.allHTTPHeaderFields = ["Content-Type": "application/json", "Accept": "application/json"]
-        let jsonDictionary: [String: String] = ["user_id": "17"]
-        let data = try! JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted)
-        // call endpoint
-        let task = URLSession.shared.uploadTask(with: request, from: data) {(responseData, response, error) in
-        //let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            // error check
-            guard let data = responseData else { return }
-            // decode returned json object
+        request.multipartFormData(parameters: ["user_id": "17"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
             do {
-                print(data)
                 let friendList = try JSONDecoder().decode(FriendList.self, from: data)
                 print(friendList.result)
-            } catch let jsonErr { // error check
+                self.nameArray = friendList.result
+            } catch let jsonErr {
                 print(jsonErr)
             }
         }
@@ -100,5 +80,49 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         tblView.reloadData()
     }
     
+    
+}
 
+extension URLRequest {
+    
+    struct MultipartFile {
+        var data: Data
+        var mimeType, filename: String
+    }
+    
+    mutating func multipartFormData(
+        parameters: [String: String] = [:],
+        files: [MultipartFile] = []) {
+        
+        var body = Data()
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let boundaryPrefix = "--\(boundary)\r\n"
+        
+        for (key, value) in parameters {
+            body + boundaryPrefix
+            body + "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n"
+            body + "\(value)\r\n"
+        }
+        
+        for file in files {
+            body + boundaryPrefix
+            body + "Content-Disposition: form-data; name=\"file\"; filename=\"\(file.filename)\"\r\n"
+            body + "Content-Type: \(file.mimeType)\r\n\r\n"
+            body.append(file.data)
+            body + "\r\n"
+        }
+        
+        body + "--".appending(boundary.appending("--"))
+        
+        httpBody = body
+        httpMethod = httpMethod == "GET" ? "POST" : httpMethod
+        setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+    }
+}
+
+extension Data {
+    
+    static func + (data: inout Data, string: String) {
+        data.append(Data(string.utf8))
+    }
 }
