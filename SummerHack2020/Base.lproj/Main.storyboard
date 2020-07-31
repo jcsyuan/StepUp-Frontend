@@ -1299,7 +1299,7 @@
         <!--sign up-->
         <scene sceneID="Wz3-jJ-bI4">
             <objects>
-                <viewController id="Fj6-Ra-Wzj" userLabel="sign up" sceneMemberID="viewController">
+                <viewController id="Fj6-Ra-Wzj" userLabel="sign up" customClass="createAccountViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dqj-b9-4tK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1839,8 +1839,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="8RZ-QG-YpC"/>
         <segue reference="wH8-FX-fUM"/>
-        <segue reference="Grf-kN-J8x"/>
-        <segue reference="f54-cw-VDz"/>
+        <segue reference="G52-te-75Y"/>
+        <segue reference="WW3-zc-B3k"/>
         <segue reference="A2B-ki-lNi"/>
     </inferredMetricsTieBreakers>
     <resources>
