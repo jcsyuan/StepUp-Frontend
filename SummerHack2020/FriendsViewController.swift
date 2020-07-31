@@ -84,7 +84,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         tblView.reloadData()
     }
     
-    
+
 }
 
 extension URLRequest {
