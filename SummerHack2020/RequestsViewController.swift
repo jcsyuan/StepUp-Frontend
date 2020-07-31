@@ -12,7 +12,6 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var table: UITableView!
     var data = ["j0nathing", "chickenwang", "pikachiu"]
-    var friend_id: Int = -1
     
     struct RequestList: Codable {
         let results: [String]
@@ -72,39 +71,15 @@ extension RequestsViewController: RequestTableViewCellDelegate {
             data.remove(at: index)
         }
         
-        let serialQueue = DispatchQueue(label: "acceptQueue")
-        
-        serialQueue.async {
-            // json stuff - getting id of friend
-            let url = URL(string: "http://127.0.0.1:5000/get-user-id")!
-            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-            request.httpMethod = "POST"
-            request.multipartFormData(parameters: ["username": username])
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
-                do {
-                    let requestList = try JSONDecoder().decode(TempId.self, from: data)
-                    self.friend_id = requestList.friend_id
-                    print("first: \(self.friend_id)")
-                } catch let jsonErr {
-                    print(jsonErr)
-                }
-            }
-            task.resume()
+        //json stuff - dealing with request
+        let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "17", "friend_username": username, "response": "accept"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
         }
-        
-        serialQueue.async {
-            //json stuff - dealing with request
-            let url2 = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
-            var request2 = URLRequest(url: url2, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-            request2.httpMethod = "POST"
-            request2.multipartFormData(parameters: ["user_id": "17", "friend_id": "\(self.friend_id)", "response": "accept"])
-            print("second: \(self.friend_id)")
-            let task2 = URLSession.shared.dataTask(with: request2) { (data, response, error) in
-                guard let data = data else { return }
-            }
-            task2.resume()
-        }
+        task.resume()
         
         table.reloadData()
     }
@@ -114,6 +89,17 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         if let index = data.firstIndex(of: "\(username)") {
             data.remove(at: index)
         }
+        
+        //json stuff - dealing with request
+        let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "17", "friend_username": username, "response": "decline"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+        }
+        task.resume()
+        
         table.reloadData()
     }
 }
