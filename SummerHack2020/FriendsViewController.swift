@@ -32,6 +32,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         friendsLabel.layer.masksToBounds = true
         friendsLabel.layer.cornerRadius = 10
         
+        // json stuff
         let url = URL(string: "http://127.0.0.1:5000/get-friends")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
@@ -48,7 +49,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 print(jsonErr)
             }
         }
-        print(nameArray)
+//        print(nameArray)
         task.resume()
     }
     
@@ -124,7 +125,6 @@ extension URLRequest {
 }
 
 extension Data {
-    
     static func + (data: inout Data, string: String) {
         data.append(Data(string.utf8))
     }
