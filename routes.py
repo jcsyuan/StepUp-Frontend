@@ -175,7 +175,7 @@ def get_owned_items():
     return result
 
 # get id associated with username
-@app.route('/get-user-id', methods = ['GET'])
+@app.route('/get-user-id', methods = ['POST'])
 def get_user_id():
     mydb = connect(local_database=local_db)
     # get body data
@@ -185,7 +185,9 @@ def get_user_id():
     mycursor = mydb.cursor()
     mycursor.execute(f"SELECT user_id FROM accounts WHERE username = '{username}'")
     myresult = mycursor.fetchall()
-    return str(myresult[0][0])
+    result = {}
+    result["friend_id"] = myresult[0][0]
+    return result
 
 # get account data
 @app.route('/get-account-data', methods = ['GET'])
@@ -204,16 +206,16 @@ def get_account_data():
     result['coins'] = myresult[0][2]
     return result
 
-# get leaderboard data
-@app.route('/get-leaderboard-data', methods = ['GET'])
-def get_leaderboard_data():
+# get all friends
+@app.route('/get-friends', methods = ['POST'])
+def get_friends():
     mydb = connect(local_database=local_db)
     # get body data
     data= request.form
     user_id = data['user_id']
     # get friend ids from 'friendship' database
     mycursor = mydb.cursor()
-    mycursor.execute(f"SELECT friend_id FROM friendships WHERE user_id = '{user_id}'")
+    mycursor.execute(f"SELECT a.display_name FROM friendships as f JOIN accounts as a ON f.user_id = '{user_id}' AND a.user_id = f.friend_id")
     friend_id_result = []
     for x in mycursor:
         friend_id_result.append(x[0])
@@ -222,7 +224,7 @@ def get_leaderboard_data():
     return result
 
 # get daily steps
-@app.route('/get-daily-steps', methods=['GET'])
+@app.route('/get-daily-steps', methods=['POST'])
 def get_daily_steps():
     mydb = connect(local_database=local_db)
     # get body data
@@ -387,7 +389,7 @@ def send_friend_request():
     return "request sent"
 
 # return your friend requests
-@app.route('/get-friend-requests', methods=['GET'])
+@app.route('/get-friend-requests', methods=['POST'])
 def get_friend_requests():
     mydb = connect(local_database=local_db)
     # get body data
@@ -396,7 +398,7 @@ def get_friend_requests():
     # send in data to friendship requests
     mycursor = mydb.cursor()
     # check to see if friendship exists
-    mycursor.execute(f"SELECT user_id FROM friendship_requests WHERE friend_id = '{user_id}'")
+    mycursor.execute(f"SELECT a.username FROM friendship_requests as f JOIN accounts as a ON f.friend_id = '{user_id}' AND a.user_id = f.user_id")
     ids = []
     for friend_id in mycursor:
         print(friend_id[0])
@@ -412,10 +414,14 @@ def accept_decline_request():
     # get body data
     data = request.form
     user_id = data['user_id']
-    friend_id = data['friend_id']
+    friend_username = data['friend_username']
     response = data['response']
     # send in data to friendship requests
     mycursor = mydb.cursor()
+    # get friend id from friend username
+    mycursor.execute(f"SELECT user_id FROM accounts WHERE username = '{friend_username}'")
+    myresult = mycursor.fetchall()
+    friend_id = myresult[0][0]
     # check to see if friendship exists
     mycursor.execute(f"SELECT COUNT(1) FROM friendships WHERE user_id = '{user_id}' AND friend_id = '{friend_id}'")
     myresult = mycursor.fetchall()
