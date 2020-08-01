@@ -954,10 +954,10 @@
             </objects>
             <point key="canvasLocation" x="1029" y="338"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="MN9-5C-uVe">
             <objects>
-                <viewController id="AqC-Ez-EQX" sceneMemberID="viewController">
+                <viewController id="AqC-Ez-EQX" customClass="HomeViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJl-iZ-lA0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1155,7 +1155,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0Q-Hx-PW5" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8c7-e4-Hxk">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8c7-e4-Hxk" userLabel="username">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ayk-VW-K29"/>
@@ -1237,7 +1237,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="AqC-Ez-EQX" kind="presentation" modalPresentationStyle="fullScreen" id="epF-A3-H03"/>
+                                                    <action selector="getVal" destination="exz-Ke-NCg" eventType="touchUpInside" id="jMN-a6-2Ry"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1291,6 +1291,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r8g-PK-jxM"/>
                     </view>
+                    <connections>
+                        <outlet property="Continue" destination="d7g-cB-Qca" id="MMb-2s-ZqW"/>
+                        <outlet property="continue" destination="d7g-cB-Qca" id="lmM-GM-Pkz"/>
+                        <outlet property="password" destination="OAH-2I-tsa" id="LVb-mW-v1y"/>
+                        <outlet property="username" destination="8c7-e4-Hxk" id="8de-9P-ZDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JY2-Ov-mkG" sceneMemberID="firstResponder"/>
             </objects>
@@ -1837,11 +1843,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8RZ-QG-YpC"/>
-        <segue reference="wH8-FX-fUM"/>
-        <segue reference="epF-A3-H03"/>
-        <segue reference="WW3-zc-B3k"/>
-        <segue reference="A2B-ki-lNi"/>
+        <segue reference="g83-gE-aj2"/>
+        <segue reference="eYS-7b-asp"/>
+        <segue reference="G52-te-75Y"/>
+        <segue reference="f54-cw-VDz"/>
+        <segue reference="QVa-Bs-6Io"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
