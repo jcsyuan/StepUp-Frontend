@@ -23,27 +23,29 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func getVal () {
-        usernameText = username.text!
-        passwordText = password.text!
-        
-        let url = URL(string: "http://127.0.0.1:5000/login")!
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["username": usernameText, "password": passwordText])
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let tempCredentials = try JSONDecoder().decode(loginCredentials.self, from: data)
-                DispatchQueue.main.async {
-                    self.user_id = tempCredentials.user_id
-                    self.token = tempCredentials.token
+         DispatchQueue.main.async {
+            self.usernameText = self.username.text!
+            self.passwordText = self.password.text!
+            
+            let url = URL(string: "http://127.0.0.1:5000/login")!
+            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+            request.httpMethod = "POST"
+            request.multipartFormData(parameters: ["username": self.usernameText, "password": self.passwordText])
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+                do {
+                    let tempCredentials = try JSONDecoder().decode(loginCredentials.self, from: data)
+                    DispatchQueue.main.async {
+                        self.user_id = tempCredentials.user_id
+                        self.token = tempCredentials.token
+                    }
+                } catch let jsonErr {
+                    print(jsonErr)
                 }
-            } catch let jsonErr {
-                print(jsonErr)
             }
+            //
+            task.resume()
         }
-        //
-        task.resume()
         
         print(self.user_id)
         //alert message
@@ -54,7 +56,7 @@ class SignInViewController: UIViewController {
             let defaults = UserDefaults.standard
             defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
             defaults.set(self.token, forKey: defaultsKeys.tokenKey)
-            self.performSegue(withIdentifier: "successfulLogin", sender: self)
+            //self.performSegue(withIdentifier: "successfulLogin", sender: self)
         }
     }
     
