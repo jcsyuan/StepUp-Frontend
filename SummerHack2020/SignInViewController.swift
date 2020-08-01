@@ -49,7 +49,7 @@ class SignInViewController: UIViewController {
                   alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
               } else {
                 
-                
+                  self.performSegue(withIdentifier: "successfulLogin", sender: self)
                   // set defaults with web endpoint data
                   let defaults = UserDefaults.standard
                   defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)

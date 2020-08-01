@@ -1238,6 +1238,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="getVal" destination="exz-Ke-NCg" eventType="touchUpInside" id="jMN-a6-2Ry"/>
+                                                    <segue destination="AqC-Ez-EQX" kind="presentation" identifier="successfulLogin" modalPresentationStyle="fullScreen" id="zhV-Lc-2Q1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1845,7 +1846,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="g83-gE-aj2"/>
         <segue reference="eYS-7b-asp"/>
-        <segue reference="G52-te-75Y"/>
+        <segue reference="zhV-Lc-2Q1"/>
         <segue reference="f54-cw-VDz"/>
         <segue reference="QVa-Bs-6Io"/>
     </inferredMetricsTieBreakers>
