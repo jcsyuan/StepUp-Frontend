@@ -8,9 +8,6 @@
 
 import UIKit
 
-var token: String?
-var user_id: Int?
-
 struct defaultsKeys {
     static let userIdKey = "userIdKeyString"
     static let tokenKey = "tokenKeyString"
