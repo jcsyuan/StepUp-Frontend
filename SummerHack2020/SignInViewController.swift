@@ -23,6 +23,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func getVal () {
+        
         let operation1 = BlockOperation {
             let group = DispatchGroup()
             
@@ -53,9 +54,10 @@ class SignInViewController: UIViewController {
             group.wait()
         }
         
-        print(self.user_id)
+        
         //alert message
         let operation2 = BlockOperation {
+            print(self.user_id)
             if(self.user_id == 0) {
                 self.alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
             } else {
@@ -67,6 +69,11 @@ class SignInViewController: UIViewController {
             }
         }
         operation2.addDependency(operation1)
+        
+        let radQueue = OperationQueue()
+        radQueue.addOperation(operation1)
+        radQueue.addOperation(operation2)
+        
     }
     
     struct loginCredentials: Codable{
