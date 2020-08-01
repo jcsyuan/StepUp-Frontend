@@ -16,17 +16,18 @@ struct defaultsKeys {
 class SignInViewController: UIViewController {
     struct loginCredentials: Codable{
         let user_id: Int
-        let token: String
+        let token: Int
     }
     
     var user_id: Int = 0
-    var token: String = ""
+    var token: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = URL(string: "http://127.0.0.1:5000/login")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["username": "pikchiu", "password": "secret"])
+        request.multipartFormData(parameters: ["username": "pikchiu", "password": "secre"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             do {
@@ -39,14 +40,7 @@ class SignInViewController: UIViewController {
             }
         //
         task.resume()
-        if(self.user_id == 0) {
-            alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
-        } else {
-            // set defaults with web endpoint data
-            let defaults = UserDefaults.standard
-            defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
-            defaults.set(self.token, forKey: defaultsKeys.tokenKey)
-        }
+        
         
         // set defaults with web endpoint data
         
@@ -56,14 +50,24 @@ class SignInViewController: UIViewController {
 //        if let token = defaults.string(forKey: defaultsKeys.tokenKey)
     }
     
-    
-
+    override func viewDidAppear(_ animated: Bool) {
+        if(self.user_id == 0) {
+            print("HI")
+            alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
+        } else {
+            // set defaults with web endpoint data
+            let defaults = UserDefaults.standard
+            defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
+            defaults.set(self.token, forKey: defaultsKeys.tokenKey)
+        }
+        
+    }
 }
 
 extension SignInViewController {
-  func alert(message: String, title: String = "") {
+  func alert(message: String, title: String) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: title, style: .default, handler: nil)
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
     alertController.addAction(OKAction)
     self.present(alertController, animated: true, completion: nil)
   }
