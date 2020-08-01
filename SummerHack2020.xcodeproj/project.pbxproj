@@ -23,6 +23,7 @@
 		33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE4BD824986B5C007B684A /* LaunchScreen.storyboard */; };
 		33EE4BE224988061007B684A /* designableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE124988061007B684A /* designableView.swift */; };
 		33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE324989791007B684A /* UIViewController+Extensions.swift */; };
+		7D89699424D51BE50091450F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D89699324D51BE50091450F /* SignInViewController.swift */; };
 		7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */; };
 		7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */; };
 		7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE824A956B40020F73D /* SettingsViewController.swift */; };
@@ -58,6 +59,7 @@
 		33EE4BDB24986B5C007B684A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33EE4BE124988061007B684A /* designableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designableView.swift; sourceTree = "<group>"; };
 		33EE4BE324989791007B684A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7D89699324D51BE50091450F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE824A956B40020F73D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				33EE4BD824986B5C007B684A /* LaunchScreen.storyboard */,
 				33EE4BDB24986B5C007B684A /* Info.plist */,
 				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,
+				7D89699324D51BE50091450F /* SignInViewController.swift */,
 			);
 			path = SummerHack2020;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D89699424D51BE50091450F /* SignInViewController.swift in Sources */,
 				33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */,
 				33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
 				7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */,

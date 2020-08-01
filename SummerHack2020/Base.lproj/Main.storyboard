@@ -1118,7 +1118,7 @@
         <!--login-->
         <scene sceneID="BVd-lS-Df5">
             <objects>
-                <viewController id="exz-Ke-NCg" userLabel="login" customClass="ViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="exz-Ke-NCg" userLabel="login" customClass="SignInViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8jh-jJ-LZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1839,7 +1839,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="8RZ-QG-YpC"/>
         <segue reference="wH8-FX-fUM"/>
-        <segue reference="G52-te-75Y"/>
+        <segue reference="epF-A3-H03"/>
         <segue reference="WW3-zc-B3k"/>
         <segue reference="A2B-ki-lNi"/>
     </inferredMetricsTieBreakers>
