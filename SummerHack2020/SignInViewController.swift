@@ -23,7 +23,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func getVal () {
-         DispatchQueue.main.async {
+        let operation1 = BlockOperation {
+            let group = DispatchGroup()
+            
+            group.enter()
+        
             self.usernameText = self.username.text!
             self.passwordText = self.password.text!
             
@@ -45,19 +49,24 @@ class SignInViewController: UIViewController {
             }
             //
             task.resume()
+            group.leave()
+            group.wait()
         }
         
         print(self.user_id)
         //alert message
-        if(self.user_id == 0) {
-            alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
-        } else {
-            // set defaults with web endpoint data
-            let defaults = UserDefaults.standard
-            defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
-            defaults.set(self.token, forKey: defaultsKeys.tokenKey)
-            //self.performSegue(withIdentifier: "successfulLogin", sender: self)
+        let operation2 = BlockOperation {
+            if(self.user_id == 0) {
+                self.alert(message: "The username or password you entered is not valid", title: "LOGIN FAILED")
+            } else {
+                // set defaults with web endpoint data
+                let defaults = UserDefaults.standard
+                defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
+                defaults.set(self.token, forKey: defaultsKeys.tokenKey)
+                self.performSegue(withIdentifier: "successfulLogin", sender: self)
+            }
         }
+        operation2.addDependency(operation1)
     }
     
     struct loginCredentials: Codable{
