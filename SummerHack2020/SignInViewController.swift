@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct defaultsKeys {
-    static let userIdKey = "userIdKeyString"
-    static let tokenKey = "tokenKeyString"
-}
 
 class SignInViewController: UIViewController {
     
@@ -19,9 +15,6 @@ class SignInViewController: UIViewController {
         let user_id: Int
         let token: String
     }
-    
-    var user_id: Int = 0
-    var token: String = ""
     
     var usernameText: String = ""
     var passwordText: String = ""
@@ -44,10 +37,8 @@ class SignInViewController: UIViewController {
             do {
                 let tempCredentials = try JSONDecoder().decode(loginCredentials.self, from: data)
                 DispatchQueue.main.async {
-                    self.user_id = tempCredentials.user_id
-                    self.token = tempCredentials.token
                     print(self.user_id)
-                    if(self.user_id == 0) {
+                    if(tempCredentials.user_id == 0) {
                         print("wrong")
                         // present alert
                         let message: String = "The username or password you entered is not valid"
@@ -60,8 +51,8 @@ class SignInViewController: UIViewController {
                         print("right")
                         // segue to next viewcontroller
                         let defaults = UserDefaults.standard
-                        defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
-                        defaults.set(self.token, forKey: defaultsKeys.tokenKey)
+                        defaults.set(tempCredentials.user_id, forKey: defaultsKeys.userIdKey)
+                        defaults.set(tempCredentials.token, forKey: defaultsKeys.tokenKey)
                         self.performSegue(withIdentifier: "presentHome", sender: self)
                     }
                 }

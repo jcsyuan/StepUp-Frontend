@@ -8,11 +8,18 @@
 
 import UIKit
 
+struct defaultsKeys {
+    static let userIdKey = "userIdKeyString"
+    static let tokenKey = "tokenKeyString"
+}
+
 class createAccountViewController: UIViewController {
     
     struct createValid: Codable {
         let created: String
-       }
+        let user_id: Int
+        let token: String
+    }
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var fullName: UITextField!
@@ -21,6 +28,7 @@ class createAccountViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func continueAction(_ sender: Any) {
+        
         let url = URL(string: "http://127.0.0.1:5000/initialize-account")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
@@ -43,8 +51,8 @@ class createAccountViewController: UIViewController {
                         print("right")
                         // segue to next viewcontroller
                         let defaults = UserDefaults.standard
-                        defaults.set(self.user_id, forKey: defaultsKeys.userIdKey)
-                        defaults.set(self.token, forKey: defaultsKeys.tokenKey)
+                        defaults.set(tempCreateValid.user_id, forKey: defaultsKeys.userIdKey)
+                        defaults.set(tempCreateValid.token, forKey: defaultsKeys.tokenKey)
                         self.performSegue(withIdentifier: "createTOhome", sender: self)
                     }
                 }
