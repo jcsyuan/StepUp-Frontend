@@ -30,7 +30,7 @@ class createAccountViewController: UIViewController {
             do {
                 let tempCreateValid = try JSONDecoder().decode(createValid.self, from: data)
                 DispatchQueue.main.async {
-                    if(tempCreateValid == "false") {
+                    if(tempCreateValid.created == "false") {
                         print("wrong")
                         // present alert
                         let message: String = "The username or email you entered is already associated with an account"
