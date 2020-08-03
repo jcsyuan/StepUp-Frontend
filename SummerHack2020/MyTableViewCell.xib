@@ -12,7 +12,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTableViewCell" rowHeight="91" id="Xlj-GA-1yF" customClass="MyTableViewCell" customModule="SummerHack2020" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="341" height="91"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="Xlj-GA-1yF" id="Ayp-cU-02v">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xlj-GA-1yF" id="Ayp-cU-02v">
                 <rect key="frame" x="0.0" y="0.0" width="341" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -26,16 +26,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgI-76-QeX" userLabel="My DisplayName">
-                        <rect key="frame" x="50" y="-9" width="100" height="109"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="bA5-C4-IuY"/>
-                        </constraints>
+                        <rect key="frame" x="50" y="-9" width="71" height="109"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-Qx-Wyg">
-                        <rect key="frame" x="280" y="35" width="50" height="21"/>
+                        <rect key="frame" x="251" y="35" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="Wu0-ly-5Pu"/>
                         </constraints>
