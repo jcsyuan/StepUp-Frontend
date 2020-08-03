@@ -16,14 +16,14 @@ class MyTableViewCell: UITableViewCell {
         return UINib(nibName: "MyTableViewCell", bundle: nil)
     }
     
-    public func configure(with rank: String, userName: String, steps: String) {
-        myRank.text = rank
-        myUserName.text = userName
-        mySteps.text = steps
+    public func configure(with rank: Int, displayName: String, steps: Int) {
+        myRank.text = "\(rank)"
+        myDisplayName.text = displayName
+        mySteps.text = "\(steps)"
     }
     
     @IBOutlet var myRank : UILabel!
-    @IBOutlet var myUserName: UILabel!
+    @IBOutlet var myDisplayName: UILabel!
     @IBOutlet var mySteps: UILabel!
     
     override func awakeFromNib() {

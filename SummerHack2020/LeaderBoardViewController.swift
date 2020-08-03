@@ -10,6 +10,17 @@ import UIKit
 
 class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var leaderBoardUsersList: [LeaderboardUser] = []
+    
+    struct LeaderboardUser: Codable {
+        let displayName: String
+        let steps: Int
+    }
+    
+    struct LeaderboardList: Codable {
+           let result: [LeaderboardUser]
+    }
+    
     @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
@@ -18,15 +29,20 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         table.delegate = self
         table.dataSource = self
         
-        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
+        let user_id = UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey)
+        let url = URL(string: "http://127.0.0.1:5000/leaderboard-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "17"])
+        request.multipartFormData(parameters: ["user_id": "\(user_id)"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             do {
-                let friendList = try JSONDecoder().decode(FriendList.self, from: data)
-                self.nameArray = friendList.result.sorted()
+                let tempLeaderboardList = try JSONDecoder().decode(LeaderboardList.self, from: data)
+                self.leaderBoardUsersList = tempLeaderboardList.result
+                self.leaderBoardUsersList.sort { (lhs: LeaderboardUser, rhs: LeaderboardUser) in
+                    // you can have additional code here
+                    return lhs.steps < rhs.steps
+                }
                 DispatchQueue.main.async {
                     self.table.reloadData()
                 }
@@ -41,12 +57,12 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        14
+        leaderBoardUsersList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as! MyTableViewCell
-        customCell.configure(with: "1", userName: "Username", steps: "Steps")
+        customCell.configure(with: indexPath.row, displayName: leaderBoardUsersList[indexPath.row].displayName, steps: leaderBoardUsersList[indexPath.row].steps)
         return customCell
         //        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         //        cell.textLabel?.text = "Hello World"
