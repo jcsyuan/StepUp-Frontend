@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -959,11 +959,11 @@
             <objects>
                 <viewController id="AqC-Ez-EQX" customClass="HomeViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJl-iZ-lA0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="o8Y-I4-UOH">
-                                <rect key="frame" x="132" y="283" width="150" height="147.5"/>
+                                <rect key="frame" x="132" y="327" width="150" height="147.5"/>
                                 <color key="tintColor" red="1" green="0.42652992579999999" blue="0.38854014250000002" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="01t-MH-a7J"/>
@@ -971,7 +971,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AfQ-fy-tY1">
-                                <rect key="frame" x="49.5" y="536.5" width="315" height="215"/>
+                                <rect key="frame" x="49.5" y="580.5" width="315" height="215"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Steps Today:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVQ-b3-txF">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="71.5"/>
@@ -998,7 +998,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR STATS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-Du-v1D">
-                                <rect key="frame" x="132" y="466" width="150" height="35"/>
+                                <rect key="frame" x="132" y="510" width="150" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="aa7-EI-fHq"/>
                                     <constraint firstAttribute="height" constant="35" id="dvN-5D-o3F"/>
@@ -1008,7 +1008,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="syv-q1-0lW">
-                                <rect key="frame" x="294" y="27.5" width="40" height="39"/>
+                                <rect key="frame" x="294" y="71.5" width="40" height="39"/>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9fn-6A-2Vf"/>
@@ -1016,7 +1016,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APz-SQ-IaC">
-                                <rect key="frame" x="344" y="34.5" width="50" height="25"/>
+                                <rect key="frame" x="344" y="78.5" width="50" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="qyy-Ml-yqX"/>
                                 </constraints>
@@ -1025,7 +1025,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pikachiu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-hF-qUi">
-                                <rect key="frame" x="132" y="181" width="150" height="40"/>
+                                <rect key="frame" x="132" y="225" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Tbq-x5-0iA"/>
                                     <constraint firstAttribute="height" constant="40" id="lXN-Ma-nZM"/>
@@ -1041,7 +1041,7 @@
                                 <state key="normal" backgroundImage="bag" catalog="system"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="snU-DW-TIi">
-                                <rect key="frame" x="32" y="758" width="350" height="60"/>
+                                <rect key="frame" x="32" y="812" width="350" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBU-z8-ZyV" userLabel="friends">
                                         <rect key="frame" x="0.0" y="0.0" width="20.5" height="60"/>
@@ -1489,6 +1489,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="continueAction:" destination="Fj6-Ra-Wzj" eventType="touchUpInside" id="qsA-FC-hh4"/>
                                             <segue destination="AqC-Ez-EQX" kind="presentation" modalPresentationStyle="fullScreen" id="G52-te-75Y"/>
                                         </connections>
                                     </button>
@@ -1509,6 +1510,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iH1-nN-WCG"/>
                     </view>
+                    <connections>
+                        <outlet property="continue" destination="hNu-2l-N4i" id="TXe-Qg-0zQ"/>
+                        <outlet property="email" destination="dEz-YE-ZkM" id="BcQ-rb-mI6"/>
+                        <outlet property="fullName" destination="R7h-hn-axQ" id="u8F-C4-KW4"/>
+                        <outlet property="password" destination="zNh-1Y-U37" id="70r-lf-hpE"/>
+                        <outlet property="username" destination="Wdc-xu-8nG" id="5pc-T9-95I"/>
+                        <segue destination="AqC-Ez-EQX" kind="presentation" identifier="createTOhome" modalPresentationStyle="fullScreen" id="MXw-ke-w9j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdN-Zl-Ew8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gaj-EM-irZ" userLabel="Exit" sceneMemberID="exit"/>
@@ -1844,10 +1853,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="g83-gE-aj2"/>
-        <segue reference="eYS-7b-asp"/>
-        <segue reference="VsH-vD-Fkd"/>
-        <segue reference="f54-cw-VDz"/>
-        <segue reference="QVa-Bs-6Io"/>
+        <segue reference="FGA-wI-5c7"/>
+        <segue reference="MXw-ke-w9j"/>
+        <segue reference="NyC-ZF-hkb"/>
+        <segue reference="heR-VQ-n3K"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
