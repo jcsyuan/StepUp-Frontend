@@ -12,6 +12,10 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     var leaderBoardUsersList: [LeaderboardUser] = []
     
+    @IBOutlet weak var userSteps: UILabel!
+    @IBOutlet weak var displayUser: UILabel!
+    
+    
     struct LeaderboardUser: Codable {
         let displayName: String
         let steps: Int
@@ -52,6 +56,25 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         }
         //        print(nameArray)
         task.resume()
+        
+        let urlTwo = URL(string: "http://127.0.0.1:5000/get-user-data")!
+        var requestTwo = URLRequest(url: urlTwo, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        requestTwo.httpMethod = "POST"
+        requestTwo.multipartFormData(parameters: ["user_id": "\(user_id)"])
+        let taskTwo = URLSession.shared.dataTask(with: requestTwo) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempLeaderboardUser = try JSONDecoder().decode(LeaderboardUser.self, from: data)
+                DispatchQueue.main.async {
+                    self.userSteps.text = "\(tempLeaderboardUser.steps)"
+                    self.displayUser.text = tempLeaderboardUser.displayName
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        //        print(nameArray)
+        taskTwo.resume()
         
         // Do any additional setup after loading the view.
     }

@@ -1641,7 +1641,9 @@
                         <viewLayoutGuide key="safeArea" id="2q8-yo-vL9"/>
                     </view>
                     <connections>
+                        <outlet property="displayUser" destination="uUB-fI-qn1" id="9aF-kn-tzW"/>
                         <outlet property="table" destination="N4S-VF-w3E" id="z7E-mA-vcM"/>
+                        <outlet property="userSteps" destination="sht-sf-euN" id="QJK-85-V0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51U-6L-1BB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
