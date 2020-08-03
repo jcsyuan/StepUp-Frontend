@@ -6,6 +6,7 @@
 
 
 import mysql.connector
+import jwt
 from flask import request
 from app import app
 
@@ -43,11 +44,11 @@ def create_database():
     return {}
         
 # create tables: accounts, steps, friendships, friendship_requests, worn_items, bag, historical_rankings, shop
-@app.route('/create-tables')
+@app.route('/create-tables', methods=['POST'])
 def create_tables():
     mydb = connect(local_database=local_db)
     mycursor = mydb.cursor()
-    mycursor.execute("CREATE TABLE accounts (user_id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255), display_name VARCHAR(255), email VARCHAR(255), coins INT)")
+    mycursor.execute("CREATE TABLE accounts (user_id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255), display_name VARCHAR(255), email VARCHAR(255), coins INT, token VARCHAR(255))")
     mycursor.execute("CREATE TABLE steps (user_id INT PRIMARY KEY, daily_steps INT,weekly_steps INT, aggregate_steps INT, highest_daily_steps INT, highest_weekly_steps INT)")
     mycursor.execute("CREATE TABLE friendships (user_id INT, friend_id INT, PRIMARY KEY(user_id, friend_id))")
     mycursor.execute("CREATE TABLE friendship_requests (user_id INT, friend_id INT, accepted BOOLEAN, PRIMARY KEY(user_id, friend_id))")
@@ -69,10 +70,22 @@ def initialize_account():
     display_name = data['display_name']
     email = data['email']
     coins = data['coins']
+    # check if username exists in database
+    result = {}
+    mycursor = mydb.cursor()
+    mycursor.execute(f"SELECT COUNT(1) FROM accounts WHERE username = '{username}' OR email = '{email}'")
+    myresult = mycursor.fetchall()
+    request_exists = myresult[0][0]
+    if request_exists == 1:
+        result["created"] = "false"
+        return result
+    result["created"] = "true"
+    # authentication token
+    token = jwt.encode({"username": username}, password)
     # put data into db
     mycursor = mydb.cursor()
-    sql = "INSERT INTO accounts (username, password, display_name, email, coins) VALUES (%s, %s, %s, %s, %s)"
-    val = (username, password, display_name, email, coins)
+    sql = "INSERT INTO accounts (username, password, display_name, email, coins, token) VALUES (%s, %s, %s, %s, %s, %s)"
+    val = (username, password, display_name, email, coins, token)
     mycursor.execute(sql, val)
     mydb.commit()
     # get user_id
@@ -94,8 +107,34 @@ def initialize_account():
     val = [(user_id, 1, 1), (user_id, 2, 2), (user_id, 3, 3), (user_id, 4, 4)]
     mycursor.executemany(sql, val)
     mydb.commit()
-    return str(user_id)
+    return result
     
+# get all steps data
+@app.route('/login', methods=['POST'])
+def login():
+    mydb = connect(local_database=local_db)
+    # get body data
+    data = request.form
+    username= data['username']
+    password = data['password']
+    # check if username exists in database
+    mycursor = mydb.cursor()
+    mycursor.execute(f"SELECT COUNT(1) FROM accounts WHERE username = '{username}' AND password = '{password}'")
+    myresult = mycursor.fetchall()
+    request_exists = myresult[0][0]
+    # return token if username and password match
+    result = {}
+    if request_exists == 1:
+        sql = f"SELECT user_id, token FROM accounts WHERE username = '{username}'"
+        mycursor.execute(sql)
+        myresult = mycursor.fetchall()
+        result["user_id"] = myresult[0][0]
+        result["token"] = myresult[0][1]
+        return result
+    result["user_id"] = 0
+    result["token"] = "0"
+    return result
+
 # update steps
 @app.route('/update-steps', methods=['POST'])
 def update_steps():
@@ -452,4 +491,20 @@ def accept_decline_request():
     mydb.commit()
     return "request handled"
 
+# get all friends
+@app.route('/get-friends-steps', methods = ['POST'])
+def get_friends_steps():
+    mydb = connect(local_database=local_db)
+    # get body data
+    data= request.form
+    user_id = data['user_id']
+    # get friend ids from 'friendship' database
+    mycursor = mydb.cursor()
+    mycursor.execute(f"SELECT a.display_name FROM friendships as f JOIN accounts as a ON f.user_id = '{user_id}' AND a.user_id = f.friend_id")
+    friend_id_result = []
+    for x in mycursor:
+        friend_id_result.append(x[0])
+    result = {}
+    result["result"] = friend_id_result
+    return result
 
