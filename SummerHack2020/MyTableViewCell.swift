@@ -23,9 +23,8 @@ class MyTableViewCell: UITableViewCell {
     }
     
     @IBOutlet var myRank : UILabel!
-    @IBOutlet var myDisplayName: UILabel!
     @IBOutlet var mySteps: UILabel!
-    
+    @IBOutlet weak var myDisplayName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

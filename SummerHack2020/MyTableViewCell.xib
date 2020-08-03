@@ -59,11 +59,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="8tV-hc-8sX"/>
             <connections>
+                <outlet property="myDisplayName" destination="EgI-76-QeX" id="dVC-M5-fR2"/>
                 <outlet property="myRank" destination="SUP-N3-wAT" id="BNx-51-z7x"/>
                 <outlet property="mySteps" destination="0Fc-Qx-Wyg" id="gvv-J9-x7E"/>
-                <outlet property="myUserName" destination="EgI-76-QeX" id="g68-o7-qkw"/>
             </connections>
-            <point key="canvasLocation" x="122.46376811594205" y="140.29017857142856"/>
+            <point key="canvasLocation" x="-363" y="132"/>
         </tableViewCell>
     </objects>
 </document>

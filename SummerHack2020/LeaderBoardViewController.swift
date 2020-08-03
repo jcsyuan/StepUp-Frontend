@@ -41,7 +41,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
                 self.leaderBoardUsersList = tempLeaderboardList.result
                 self.leaderBoardUsersList.sort { (lhs: LeaderboardUser, rhs: LeaderboardUser) in
                     // you can have additional code here
-                    return lhs.steps < rhs.steps
+                    return lhs.steps > rhs.steps
                 }
                 DispatchQueue.main.async {
                     self.table.reloadData()
@@ -62,7 +62,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as! MyTableViewCell
-        customCell.configure(with: indexPath.row, displayName: leaderBoardUsersList[indexPath.row].displayName, steps: leaderBoardUsersList[indexPath.row].steps)
+        customCell.configure(with: indexPath.row+1, displayName: leaderBoardUsersList[indexPath.row].displayName, steps: leaderBoardUsersList[indexPath.row].steps)
         return customCell
         //        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         //        cell.textLabel?.text = "Hello World"
