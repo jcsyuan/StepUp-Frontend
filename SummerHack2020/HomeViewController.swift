@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var Name: UILabel!
     
+    var username: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -1854,11 +1854,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g83-gE-aj2"/>
+        <segue reference="uby-we-dlV"/>
         <segue reference="eYS-7b-asp"/>
-        <segue reference="MXw-ke-w9j"/>
-        <segue reference="f54-cw-VDz"/>
-        <segue reference="QVa-Bs-6Io"/>
+        <segue reference="5TU-dG-Rf3"/>
+        <segue reference="rx9-4S-26m"/>
+        <segue reference="pA1-6b-bdF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
