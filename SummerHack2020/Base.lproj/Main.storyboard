@@ -1584,7 +1584,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-VF-w3E">
-                                <rect key="frame" x="0.0" y="224" width="414" height="568"/>
+                                <rect key="frame" x="0.0" y="207.5" width="414" height="584.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ryn-0m-Yep">
@@ -1598,7 +1598,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sht-sf-euN">
-                                <rect key="frame" x="105.5" y="175.5" width="203" height="33.5"/>
+                                <rect key="frame" x="105.5" y="154" width="203" height="33.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Pii-78-JyT"/>
                                 </constraints>
@@ -1607,7 +1607,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName of User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUB-fI-qn1">
-                                <rect key="frame" x="57" y="128" width="300" height="30"/>
+                                <rect key="frame" x="57" y="114" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fGj-h3-h97"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="u2E-Ca-xiw"/>
@@ -1616,23 +1616,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-HY-0S7">
-                                <rect key="frame" x="32" y="73" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-HY-0S7">
+                                <rect key="frame" x="10" y="54" width="170" height="33.5"/>
+                                <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33.5" id="Hsp-fC-cAC"/>
+                                    <constraint firstAttribute="width" constant="170" id="Rri-12-UoP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YSE-HY-0S7" firstAttribute="leading" secondItem="2As-fG-lva" secondAttribute="leading" id="007-22-8NS"/>
                             <constraint firstItem="uUB-fI-qn1" firstAttribute="centerX" secondItem="R4j-65-U3B" secondAttribute="centerX" id="EG3-7r-bFl"/>
+                            <constraint firstItem="YSE-HY-0S7" firstAttribute="leading" secondItem="2q8-yo-vL9" secondAttribute="leading" constant="10" id="L1k-ZP-j9c"/>
+                            <constraint firstItem="YSE-HY-0S7" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="10" id="RBi-eD-zBa"/>
                             <constraint firstItem="sht-sf-euN" firstAttribute="centerX" secondItem="R4j-65-U3B" secondAttribute="centerX" id="RI1-I7-KIg"/>
-                            <constraint firstItem="N4S-VF-w3E" firstAttribute="top" secondItem="sht-sf-euN" secondAttribute="bottom" constant="15" id="RqP-Sn-HSS"/>
-                            <constraint firstItem="YSE-HY-0S7" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="29" id="Tyq-d5-4jw"/>
-                            <constraint firstItem="N4S-VF-w3E" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="180" id="VSH-VT-J2E"/>
+                            <constraint firstItem="sht-sf-euN" firstAttribute="top" secondItem="uUB-fI-qn1" secondAttribute="bottom" constant="10" id="Utc-hZ-WXi"/>
                             <constraint firstItem="2As-fG-lva" firstAttribute="top" secondItem="N4S-VF-w3E" secondAttribute="bottom" id="VeF-6J-mW5"/>
-                            <constraint firstItem="uUB-fI-qn1" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="84" id="VhV-ye-CgR"/>
+                            <constraint firstItem="uUB-fI-qn1" firstAttribute="top" secondItem="2q8-yo-vL9" secondAttribute="top" constant="70" id="VhV-ye-CgR"/>
+                            <constraint firstItem="N4S-VF-w3E" firstAttribute="top" secondItem="sht-sf-euN" secondAttribute="bottom" constant="20" id="WYa-Oo-DOq"/>
                             <constraint firstItem="2q8-yo-vL9" firstAttribute="bottom" secondItem="2As-fG-lva" secondAttribute="bottom" constant="10" id="aeC-Dw-whD"/>
                             <constraint firstItem="2As-fG-lva" firstAttribute="centerX" secondItem="R4j-65-U3B" secondAttribute="centerX" id="l5X-zp-86o"/>
                             <constraint firstItem="2q8-yo-vL9" firstAttribute="trailing" secondItem="N4S-VF-w3E" secondAttribute="trailing" id="tM8-BP-aDP"/>
@@ -1642,6 +1647,7 @@
                     </view>
                     <connections>
                         <outlet property="displayUser" destination="uUB-fI-qn1" id="9aF-kn-tzW"/>
+                        <outlet property="leaderboardTitle" destination="YSE-HY-0S7" id="osu-1W-eaL"/>
                         <outlet property="table" destination="N4S-VF-w3E" id="z7E-mA-vcM"/>
                         <outlet property="userSteps" destination="sht-sf-euN" id="QJK-85-V0e"/>
                     </connections>
@@ -1856,11 +1862,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8RZ-QG-YpC"/>
+        <segue reference="uby-we-dlV"/>
         <segue reference="wH8-FX-fUM"/>
-        <segue reference="Grf-kN-J8x"/>
+        <segue reference="5TU-dG-Rf3"/>
         <segue reference="rx9-4S-26m"/>
-        <segue reference="A2B-ki-lNi"/>
+        <segue reference="pA1-6b-bdF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>

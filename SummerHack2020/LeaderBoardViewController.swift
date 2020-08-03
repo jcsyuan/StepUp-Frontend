@@ -12,6 +12,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     var leaderBoardUsersList: [LeaderboardUser] = []
     
+    @IBOutlet weak var leaderboardTitle: UILabel!
     @IBOutlet weak var userSteps: UILabel!
     @IBOutlet weak var displayUser: UILabel!
     
@@ -32,6 +33,9 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         table.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
+        
+        leaderboardTitle.layer.masksToBounds = true
+        leaderboardTitle.layer.cornerRadius = 10
         
         let user_id = UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey)
         let url = URL(string: "http://127.0.0.1:5000/leaderboard-data")!

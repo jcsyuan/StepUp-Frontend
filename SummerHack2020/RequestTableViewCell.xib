@@ -43,7 +43,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="XeQ-zQ-AVr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Cm-39-tpN"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="CY1-sU-Wif" secondAttribute="trailing" id="2b5-i3-AuH"/>
                     <constraint firstItem="CY1-sU-Wif" firstAttribute="leading" secondItem="5gY-rL-fjf" secondAttribute="trailing" constant="10" id="7jY-3k-1rD"/>
                     <constraint firstItem="XeQ-zQ-AVr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="S7F-kx-d7P"/>
                     <constraint firstItem="CY1-sU-Wif" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dqq-xO-IYv"/>
