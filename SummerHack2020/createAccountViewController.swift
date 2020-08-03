@@ -53,7 +53,7 @@ class createAccountViewController: UIViewController {
                         let defaults = UserDefaults.standard
                         defaults.set(tempCreateValid.user_id, forKey: defaultsKeys.userIdKey)
                         defaults.set(tempCreateValid.token, forKey: defaultsKeys.tokenKey)
-                        self.performSegue(withIdentifier: "createTOhome", sender: self)
+                        self.performSegue(withIdentifier: "createToHome", sender: self)
                     }
                 }
                 print()
@@ -63,10 +63,9 @@ class createAccountViewController: UIViewController {
         }
         task.resume()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // json stuff
         
     }
 }

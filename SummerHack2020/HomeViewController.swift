@@ -10,21 +10,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var Name: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let defaults = UserDefaults.standard
+        let user_id = defaults.integer(forKey: defaultsKeys.userIdKey)
+        let token = defaults.string(forKey: defaultsKeys.tokenKey)
+        
+        Name.text = "\(user_id)"
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

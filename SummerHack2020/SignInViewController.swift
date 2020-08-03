@@ -37,7 +37,6 @@ class SignInViewController: UIViewController {
             do {
                 let tempCredentials = try JSONDecoder().decode(loginCredentials.self, from: data)
                 DispatchQueue.main.async {
-                    print(self.user_id)
                     if(tempCredentials.user_id == 0) {
                         print("wrong")
                         // present alert
@@ -66,10 +65,5 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // get defaults data
-        // let defaults = UserDefaults.standard
-        // if let user_id = defaults.string(forKey: defaultsKeys.userIdKey)
-        // if let token = defaults.string(forKey: defaultsKeys.tokenKey)
     }
 }

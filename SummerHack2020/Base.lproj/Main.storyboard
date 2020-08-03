@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1110,6 +1110,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="grh-Ba-V5r"/>
                     </view>
+                    <connections>
+                        <outlet property="Name" destination="Scy-hF-qUi" id="4wo-KU-B3Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Im-Ai-Lzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1490,7 +1493,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continueAction:" destination="Fj6-Ra-Wzj" eventType="touchUpInside" id="qsA-FC-hh4"/>
-                                            <segue destination="AqC-Ez-EQX" kind="presentation" modalPresentationStyle="fullScreen" id="G52-te-75Y"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="uq1-Zx-qsF">
@@ -1516,13 +1518,13 @@
                         <outlet property="fullName" destination="R7h-hn-axQ" id="u8F-C4-KW4"/>
                         <outlet property="password" destination="zNh-1Y-U37" id="70r-lf-hpE"/>
                         <outlet property="username" destination="Wdc-xu-8nG" id="5pc-T9-95I"/>
-                        <segue destination="AqC-Ez-EQX" kind="presentation" identifier="createTOhome" modalPresentationStyle="fullScreen" id="MXw-ke-w9j"/>
+                        <segue destination="AqC-Ez-EQX" kind="presentation" identifier="createToHome" modalPresentationStyle="fullScreen" id="MXw-ke-w9j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdN-Zl-Ew8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gaj-EM-irZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="-451"/>
+            <point key="canvasLocation" x="1809" y="-451"/>
         </scene>
         <!--Leaderboard find Group Scene-->
         <scene sceneID="dHu-pG-Mdl">
@@ -1853,10 +1855,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="g83-gE-aj2"/>
-        <segue reference="FGA-wI-5c7"/>
+        <segue reference="eYS-7b-asp"/>
         <segue reference="MXw-ke-w9j"/>
-        <segue reference="NyC-ZF-hkb"/>
-        <segue reference="heR-VQ-n3K"/>
+        <segue reference="f54-cw-VDz"/>
+        <segue reference="QVa-Bs-6Io"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
