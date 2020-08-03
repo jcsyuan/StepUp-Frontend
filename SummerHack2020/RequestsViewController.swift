@@ -59,6 +59,11 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
+    
+    @IBAction func closeRequests(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
