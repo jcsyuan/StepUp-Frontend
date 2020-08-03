@@ -30,7 +30,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
         let url = URL(string: "http://127.0.0.1:5000/get-friend-requests")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "17"])
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             do {
@@ -75,7 +75,7 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "17", "friend_username": username, "response": "accept"])
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "accept"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
         }
@@ -94,7 +94,7 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "17", "friend_username": username, "response": "decline"])
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "decline"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
         }
