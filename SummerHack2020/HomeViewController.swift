@@ -10,12 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var weeklySteps: UILabel!
     @IBOutlet weak var totalSteps: UILabel!
     @IBOutlet weak var todaySteps: UILabel!
     @IBOutlet weak var coins: UILabel!
+    @IBOutlet weak var statsLabel: UILabel!
     
    struct HomeData: Codable {
         let username: String
@@ -29,6 +29,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weeklySteps.layer.masksToBounds = true
+        weeklySteps.layer.cornerRadius = 20
+        totalSteps.layer.masksToBounds = true
+        totalSteps.layer.cornerRadius = 20
+        todaySteps.layer.masksToBounds = true
+        todaySteps.layer.cornerRadius = 20
+        
         let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
@@ -38,12 +45,12 @@ class HomeViewController: UIViewController {
             do {
                 let tempHomeData = try JSONDecoder().decode(HomeData.self, from: data)
                 DispatchQueue.main.async {
-                    self.Username.text = tempHomeData.username
                     self.Name.text = tempHomeData.name
                     self.weeklySteps.text = "\(tempHomeData.weekSteps)"
                     self.totalSteps.text = "\(tempHomeData.totSteps)"
                     self.todaySteps.text = "\(tempHomeData.todayStep)"
                     self.coins.text = "\(tempHomeData.totCoins)"
+                    self.statsLabel.text = "\(tempHomeData.username)'s STATS".uppercased()
                 }
             } catch let jsonErr {
                 print(jsonErr)
