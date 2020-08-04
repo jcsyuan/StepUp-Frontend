@@ -784,6 +784,8 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="xUt-4V-2la" id="yN4-fk-bXi"/>
+                        <outlet property="newPassword" destination="m76-fF-OdV" id="okA-13-6Ya"/>
+                        <outlet property="oldPassword" destination="Q10-V0-cRa" id="J52-YS-HSj"/>
                         <outlet property="submitPassword" destination="p38-OA-Kz7" id="Qhj-MA-QBc"/>
                     </connections>
                 </viewController>
