@@ -15,19 +15,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     
-    struct PasswordChange: Codable {
-        let changed: String
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        background.layer.masksToBounds = true
-        background.layer.cornerRadius = 10
-        
-        submitPassword.layer.masksToBounds = true
-        submitPassword.layer.cornerRadius = 10
-        
+    @IBAction func submitPassword(_ sender: Any) {
         let url = URL(string: "http://127.0.0.1:5000/change-password")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
@@ -57,6 +45,20 @@ class PasswordViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    struct PasswordChange: Codable {
+        let changed: String
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        background.layer.masksToBounds = true
+        background.layer.cornerRadius = 10
+        
+        submitPassword.layer.masksToBounds = true
+        submitPassword.layer.cornerRadius = 10
     }
     
     @IBAction func closePassword(_ sender: Any) {
