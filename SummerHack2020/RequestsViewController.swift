@@ -60,7 +60,12 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     @IBAction func closeRequests(_ sender: Any) {
+        
         dismiss(animated: true, completion: nil)
     }
     

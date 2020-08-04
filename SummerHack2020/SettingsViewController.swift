@@ -13,11 +13,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var changePwButton: UIButton!
     
-    
     @IBOutlet weak var helpSupportButton: UIButton!
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var termsButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,6 @@ class SettingsViewController: UIViewController {
         termsButton.layer.cornerRadius = 25
         termsButton.layer.borderWidth = 1.5
         termsButton.layer.borderColor = UIColor(red: 255/255.0, green: 131/255.0, blue: 123/255.0, alpha: 0.75).cgColor
-        
         
     }
     

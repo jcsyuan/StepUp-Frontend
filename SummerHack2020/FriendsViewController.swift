@@ -49,7 +49,6 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 print(jsonErr)
             }
         }
-//        print(nameArray)
         task.resume()
     }
     

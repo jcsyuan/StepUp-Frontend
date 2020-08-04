@@ -10,18 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var Name: UILabel!
-    
-    var username: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        let user_id = defaults.integer(forKey: defaultsKeys.userIdKey)
-        let token = defaults.string(forKey: defaultsKeys.tokenKey)
-        
-        Name.text = "\(user_id)"
+        Name.text = "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"
         
     }
 

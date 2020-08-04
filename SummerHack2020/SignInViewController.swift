@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SignInViewController: UIViewController {
     
     struct loginCredentials: Codable {
