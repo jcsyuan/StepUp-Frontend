@@ -11,7 +11,7 @@ import UIKit
 class RequestsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var table: UITableView!
-    var data = ["j0nathing", "chickenwang", "pikachiu"]
+    var data: [String] = []
     
     struct RequestList: Codable {
         let results: [String]

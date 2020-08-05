@@ -28,7 +28,6 @@ class createAccountViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func continueAction(_ sender: Any) {
-        
         let url = URL(string: "http://127.0.0.1:5000/initialize-account")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
@@ -43,7 +42,7 @@ class createAccountViewController: UIViewController {
                         // present alert
                         let message: String = "The username or email you entered is already associated with an account"
                         let titleText: String = "CREATE ACCOUNT FAILED"
-                        let alertController:UIAlertController = UIAlertController(title: titleText, message: message, preferredStyle: UIAlertController.Style.alert)
+                        let alertController: UIAlertController = UIAlertController(title: titleText, message: message, preferredStyle: UIAlertController.Style.alert)
                         let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: nil)
