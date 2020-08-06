@@ -30,6 +30,10 @@ class HomeViewController: UIViewController {
         let previous_aggregate_steps: Int
     }
     
+    struct jsonDate: Codable {
+        let startDate: String
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +47,11 @@ class HomeViewController: UIViewController {
         
         // retrieve and update health data
         authorizeHealthKit()
-        updateStpes()
+        // update previous week's steps
+        updatePreviousAggregate {
+            // update this week's steps
+            self.updateSteps()
+        }
         
         // load user data
         let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
@@ -78,7 +86,7 @@ class HomeViewController: UIViewController {
     }
     
     // OberservableQuery to track updates in step count
-    private func updateStpes() {
+    private func updateSteps() {
         let steps: HKObjectType = HKObjectType.quantityType(forIdentifier: .stepCount)!
         if healthStore.authorizationStatus(for: steps) != HKAuthorizationStatus.notDetermined {
             healthStore.enableBackgroundDelivery(for: steps, frequency: .immediate, withCompletion: { (worked, error) in
@@ -199,6 +207,40 @@ class HomeViewController: UIViewController {
         }
         task.resume()
     }
+
+    // update previous aggregate steps
+    private func updatePreviousAggregate(completion: @escaping () -> ()) {
+        let url = URL(string: "http://127.0.0.1:5000/get-start-date")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                // retrieve previous sunday
+                let tempDate = try JSONDecoder().decode(jsonDate.self, from: data)
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss ZZZZZ"
+                let previousSunday = dateFormatter.date(from: tempDate.startDate)!
+                // calculate current sunday
+                let date = Calendar.current.startOfDay(for: Date())
+                let endDate = Calendar.current.date(byAdding: .day, value: -(Date().dayNumberOfWeek()! - 1), to:date)!
+                let currentSundayString = dateFormatter.string(from: endDate)
+                let currentSunday = dateFormatter.date(from: currentSundayString)!
+                // check if this sunday is the same as previous sunday
+                if currentSunday > previousSunday {
+                    // update aggregate steps
+                    
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
+    }
+    
+
 }
 
 // get numerical equivalent to the day of the week

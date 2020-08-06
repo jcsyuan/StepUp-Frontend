@@ -28,10 +28,18 @@ class createAccountViewController: UIViewController {
     @IBOutlet weak var `continue`: UIButton!
     
     @IBAction func continueAction(_ sender: Any) {
+        let date = Calendar.current.startOfDay(for: Date())
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: -(Date().dayNumberOfWeek()! - 1), to:date)!
+        let dateFormatter = DateFormatter()
+        let enUSPosixLocale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = enUSPosixLocale
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT") as TimeZone?
+        let createdDate = dateFormatter.string(from: modifiedDate)
         let url = URL(string: "http://127.0.0.1:5000/initialize-account")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["username": self.username.text!, "password": self.password.text!, "display_name": self.fullName.text!, "email": self.email.text!, "coins": "0"])
+        request.multipartFormData(parameters: ["username": self.username.text!, "password": self.password.text!, "display_name": self.fullName.text!, "email": self.email.text!, "coins": "0", "start_date": "\(createdDate)"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             do {
