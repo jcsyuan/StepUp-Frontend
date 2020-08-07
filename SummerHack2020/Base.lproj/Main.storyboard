@@ -220,6 +220,63 @@
             </objects>
             <point key="canvasLocation" x="2714" y="338"/>
         </scene>
+        <!--Bag View Controller-->
+        <scene sceneID="VAM-Vw-5mU">
+            <objects>
+                <viewController id="MKM-jT-bo8" customClass="BagViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QFh-CC-0yK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-jO-dFT">
+                                <rect key="frame" x="0.0" y="462" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="u4j-LQ-3Fr"/>
+                                </constraints>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JjI-Yu-Rym">
+                                <rect key="frame" x="132" y="133.5" width="150" height="147.5"/>
+                                <color key="tintColor" red="1" green="0.42652992579999999" blue="0.38854014250000002" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="UOp-Ig-Yi7"/>
+                                    <constraint firstAttribute="height" constant="150" id="eLc-ZM-84d"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-sZ-ZlR" userLabel="exit to home">
+                                <rect key="frame" x="350" y="59" width="20" height="15.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="arK-am-K3f"/>
+                                    <constraint firstAttribute="width" constant="20" id="gwi-Dz-hYd"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeFriendRequest:" destination="iIk-rr-YDw" eventType="touchUpInside" id="gvd-hI-NIA"/>
+                                    <action selector="closeRequests:" destination="fql-x8-rPV" eventType="touchUpInside" id="qZd-5v-1ja"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7aT-sZ-ZlR" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="13" id="7SS-eq-QrQ"/>
+                            <constraint firstItem="7aT-sZ-ZlR" firstAttribute="leading" secondItem="Ua1-ZQ-klJ" secondAttribute="leading" constant="350" id="BHh-N8-NMq"/>
+                            <constraint firstItem="JjI-Yu-Rym" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="Lzu-qZ-Mec"/>
+                            <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="bottom" secondItem="kmh-jO-dFT" secondAttribute="bottom" id="Mw8-l2-jNt"/>
+                            <constraint firstItem="JjI-Yu-Rym" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="88" id="TXg-Nq-RcJ"/>
+                            <constraint firstItem="kmh-jO-dFT" firstAttribute="leading" secondItem="Ua1-ZQ-klJ" secondAttribute="leading" id="jjs-P0-OtK"/>
+                            <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="kmh-jO-dFT" secondAttribute="trailing" id="qRC-vY-Uhu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ua1-ZQ-klJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="kmh-jO-dFT" id="g9a-UW-LBx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qhi-8x-eOB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3868" y="-81"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="mEF-CZ-q95">
             <objects>
@@ -1927,10 +1984,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
-        <segue reference="JYl-qS-IqO"/>
-        <segue reference="VsH-vD-Fkd"/>
-        <segue reference="zCM-dI-PIc"/>
-        <segue reference="fs8-JF-a4D"/>
+        <segue reference="FGA-wI-5c7"/>
+        <segue reference="qqA-J2-DcA"/>
+        <segue reference="NyC-ZF-hkb"/>
+        <segue reference="heR-VQ-n3K"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>

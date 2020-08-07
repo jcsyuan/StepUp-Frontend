@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F14736524DCF3E50083B566 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F14736424DCF3E50083B566 /* BagViewController.swift */; };
+		2F14736A24DCF9170083B566 /* BagCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F14736824DCF9170083B566 /* BagCollectionTableViewCell.swift */; };
+		2F14736B24DCF9170083B566 /* BagCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F14736924DCF9170083B566 /* BagCollectionTableViewCell.xib */; };
+		2F14736E24DCF94B0083B566 /* BagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F14736C24DCF94B0083B566 /* BagCollectionViewCell.swift */; };
+		2F14736F24DCF94B0083B566 /* BagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F14736D24DCF94B0083B566 /* BagCollectionViewCell.xib */; };
 		33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9724BF8FDF00B6D94F /* ShopViewController.swift */; };
 		33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */; };
 		33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */; };
@@ -41,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F14736424DCF3E50083B566 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
+		2F14736824DCF9170083B566 /* BagCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		2F14736924DCF9170083B566 /* BagCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		2F14736C24DCF94B0083B566 /* BagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F14736D24DCF94B0083B566 /* BagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagCollectionViewCell.xib; sourceTree = "<group>"; };
 		33173B9724BF8FDF00B6D94F /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -89,6 +99,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F14736624DCF8BA0083B566 /* BagTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				2F14736824DCF9170083B566 /* BagCollectionTableViewCell.swift */,
+				2F14736924DCF9170083B566 /* BagCollectionTableViewCell.xib */,
+			);
+			path = BagTableCell;
+			sourceTree = "<group>";
+		};
+		2F14736724DCF8DF0083B566 /* BagCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2F14736C24DCF94B0083B566 /* BagCollectionViewCell.swift */,
+				2F14736D24DCF94B0083B566 /* BagCollectionViewCell.xib */,
+			);
+			path = BagCollectionCell;
+			sourceTree = "<group>";
+		};
 		33173B9624BF8FA700B6D94F /* Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,9 @@
 		33D6B34624DCC7AF00DAE992 /* Account and Home */ = {
 			isa = PBXGroup;
 			children = (
+				2F14736724DCF8DF0083B566 /* BagCollectionCell */,
+				2F14736624DCF8BA0083B566 /* BagTableCell */,
+				2F14736424DCF3E50083B566 /* BagViewController.swift */,
 				33EE4BE324989791007B684A /* UIViewController+Extensions.swift */,
 				33EE4BE124988061007B684A /* designableView.swift */,
 				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,
@@ -267,10 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F14736B24DCF9170083B566 /* BagCollectionTableViewCell.xib in Resources */,
 				7DDBBFE924BE63EE008221E6 /* MyTableViewCell.xib in Resources */,
 				33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */,
 				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
+				2F14736F24DCF94B0083B566 /* BagCollectionViewCell.xib in Resources */,
 				33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
 				33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */,
@@ -285,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D89699424D51BE50091450F /* SignInViewController.swift in Sources */,
+				2F14736E24DCF94B0083B566 /* BagCollectionViewCell.swift in Sources */,
 				33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */,
 				33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
 				7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */,
@@ -303,10 +337,12 @@
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
 				7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */,
 				33EE4BCE24986B58007B684A /* AppDelegate.swift in Sources */,
+				2F14736524DCF3E50083B566 /* BagViewController.swift in Sources */,
 				33EE4BD024986B58007B684A /* SceneDelegate.swift in Sources */,
 				7DD9FBEF24A9999E0020F73D /* TermsViewController.swift in Sources */,
 				7DDBBFE524BE63A8008221E6 /* LeaderBoardViewController.swift in Sources */,
 				7DD9FBE924A956B40020F73D /* SettingsViewController.swift in Sources */,
+				2F14736A24DCF9170083B566 /* BagCollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
