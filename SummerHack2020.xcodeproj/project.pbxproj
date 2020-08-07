@@ -92,9 +92,9 @@
 		33173B9624BF8FA700B6D94F /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				33173B9724BF8FDF00B6D94F /* ShopViewController.swift */,
 				33173B9A24BF901200B6D94F /* Kel's Table Cell */,
 				33173B9924BF900300B6D94F /* Kel's Collection Cell */,
-				33173B9724BF8FDF00B6D94F /* ShopViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -142,10 +142,10 @@
 		33D6B34724DCC7C500DAE992 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */,
 				7DD9FC0024BA37F30020F73D /* RequestsViewController.swift */,
 				7DD9FC0224BA396C0020F73D /* RequestTableViewCell.swift */,
 				7DD9FC0324BA396C0020F73D /* RequestTableViewCell.xib */,
-				7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */,
 				7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */,
 			);
 			path = Friends;
@@ -154,9 +154,9 @@
 		33D6B34824DCC80A00DAE992 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				7DDBBFE424BE63A8008221E6 /* LeaderBoardViewController.swift */,
 				7DDBBFE624BE63EE008221E6 /* MyTableViewCell.swift */,
 				7DDBBFE724BE63EE008221E6 /* MyTableViewCell.xib */,
-				7DDBBFE424BE63A8008221E6 /* LeaderBoardViewController.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
