@@ -22,20 +22,17 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
         shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
         shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         
         pant_models.append(Model(text: "First", imageName: "blue-pants"))
         pant_models.append(Model(text: "Second", imageName: "tan-pants"))
         pant_models.append(Model(text: "Third", imageName: "gray-pants"))
-//
-//        models.append(Model(text: "First", imageName: "blue-shirt"))
-//        models.append(Model(text: "Second", imageName: "orange-shirt"))
-//        models.append(Model(text: "Third", imageName: "green-shirt"))
-//        models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-//
-//        models.append(Model(text: "First", imageName: "blue-shirt"))
-//        models.append(Model(text: "Second", imageName: "orange-shirt"))
-//        models.append(Model(text: "Third", imageName: "green-shirt"))
-//        models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+        pant_models.append(Model(text: "First", imageName: "blue-pants"))
+        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
+        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
         
         // Do any additional setup after loading the view.
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
@@ -53,6 +50,11 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = table.dequeueReusableCell(withIdentifier: BagCollectionTableViewCell.identifier, for: indexPath) as! BagCollectionTableViewCell
         if indexPath.row == 0 {
             cell.configure(with: shirt_models)
+            cell.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.7471372003)
+        } else if indexPath.row == 1 {
+            cell.configure(with: pant_models)
+        } else if indexPath.row == 2 {
+            cell.configure(with: shirt_models)
         } else {
             cell.configure(with: pant_models)
         }
@@ -64,6 +66,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 100.0
     }
 }
+
 struct Model {
     let text: String
     let imageName: String
@@ -72,15 +75,4 @@ struct Model {
         self.text = text
         self.imageName = imageName
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

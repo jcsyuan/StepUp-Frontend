@@ -26,7 +26,11 @@ class BagCollectionViewCell: UICollectionViewCell {
     
     public func configure(with model: Model) {
         self.myLabel.text = model.text
+        self.myLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.myImageView.image = UIImage(named: model.imageName)
-        self.myImageView.contentMode = .scaleAspectFit    }
+        self.myImageView.contentMode = .scaleAspectFit
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
+    }
 
 }
