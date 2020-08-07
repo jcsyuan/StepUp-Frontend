@@ -254,6 +254,7 @@
                                 <connections>
                                     <action selector="closeFriendRequest:" destination="iIk-rr-YDw" eventType="touchUpInside" id="gvd-hI-NIA"/>
                                     <action selector="closeRequests:" destination="fql-x8-rPV" eventType="touchUpInside" id="qZd-5v-1ja"/>
+                                    <segue destination="AqC-Ez-EQX" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="LjT-bT-lNM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1134,7 +1135,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-JV-3gg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-JV-3gg" userLabel="Bag button">
                                 <rect key="frame" x="30" y="68.5" width="35" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Inh-9o-dog"/>
@@ -1142,6 +1143,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.83877104920000001" green="0.37591510649999998" blue="0.37809337900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="bag" catalog="system"/>
+                                <connections>
+                                    <segue destination="MKM-jT-bo8" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="TR6-4e-lE9"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="LQx-3Y-H05">
                                 <rect key="frame" x="32" y="792" width="350" height="60"/>
@@ -1984,10 +1988,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
-        <segue reference="FGA-wI-5c7"/>
-        <segue reference="qqA-J2-DcA"/>
-        <segue reference="NyC-ZF-hkb"/>
-        <segue reference="heR-VQ-n3K"/>
+        <segue reference="JYl-qS-IqO"/>
+        <segue reference="LjT-bT-lNM"/>
+        <segue reference="zCM-dI-PIc"/>
+        <segue reference="fs8-JF-a4D"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
