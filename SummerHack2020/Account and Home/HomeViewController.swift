@@ -50,9 +50,15 @@ class HomeViewController: UIViewController {
         // update previous week's steps
         updatePreviousAggregate {
             // update this week's steps
-            self.updateSteps()
+            self.getSteps()
         }
         
+        // load user data on UI
+        getUserData()
+    }
+    
+    // get user data
+    private func getUserData() {
         // load user data
         let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
@@ -86,7 +92,7 @@ class HomeViewController: UIViewController {
     }
     
     // OberservableQuery to track updates in step count
-    private func updateSteps() {
+    private func getSteps() {
         let steps: HKObjectType = HKObjectType.quantityType(forIdentifier: .stepCount)!
         if healthStore.authorizationStatus(for: steps) != HKAuthorizationStatus.notDetermined {
             healthStore.enableBackgroundDelivery(for: steps, frequency: .immediate, withCompletion: { (worked, error) in
@@ -100,16 +106,16 @@ class HomeViewController: UIViewController {
                 }
                 // get and update all steps
                 self.getDailySteps(completion: { (dailyStepCount) in
-                    print("Daily step count was updated to \(dailyStepCount)")
+                    print("Daily step display to \(dailyStepCount)")
                     // get newest weekly steps
                     self.getWeeklySteps(completion: { (weeklyStepCount) in
-                        print("Weekly step count was updated to \(weeklyStepCount)")
+                        print("Weekly step display to \(weeklyStepCount)")
                         // get total steps
                         self.getTotalSteps(weeklySteps: weeklyStepCount) { (totalStepCount) in
-                            print("Total step count was updated to \(totalStepCount)")
+                            print("Total step display to \(totalStepCount)")
                             // update steps table
                             self.updateSteps(dailySteps: dailyStepCount, weeklySteps: weeklyStepCount, totalSteps: totalStepCount) {
-                                print("Updated steps data")
+                                print("Steps display data set")
                             }
                         }
                     })
@@ -229,18 +235,64 @@ class HomeViewController: UIViewController {
                 let currentSundayString = dateFormatter.string(from: endDate)
                 let currentSunday = dateFormatter.date(from: currentSundayString)!
                 // check if this sunday is the same as previous sunday
+                print("current \(currentSunday)")
+                print("previous \(previousSunday)")
                 if currentSunday > previousSunday {
                     // update aggregate steps
-                    
+                    self.getAggregateSteps(startDate: previousSunday, endDate: currentSunday) { (newAggregate) in
+                        print("new aggregate \(newAggregate)")
+                        print(currentSunday)
+                        self.updateAggregateSteps(newAggregate: newAggregate, newDate: currentSunday)
+                    }
                 }
             } catch let jsonErr {
                 print(jsonErr)
             }
+            completion()
         }
         task.resume()
     }
     
-
+    // get aggregate steps from healthkit
+    private func getAggregateSteps(startDate: Date, endDate: Date, completion: @escaping (Int) -> ()) {
+        var val: Int = 0
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .stepCount) else { return }
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictEndDate)
+        let diffComponents = Calendar.current.dateComponents([.day], from: startDate, to: endDate)
+        var interval = DateComponents()
+        interval.day = diffComponents.day
+        let query = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
+        query.initialResultsHandler = {
+            query,result,error in
+            if let myresult = result {
+                myresult.enumerateStatistics(from: startDate, to: endDate) { (statistic, value) in
+                    if let count = statistic.sumQuantity() {
+                        val = Int(count.doubleValue(for: HKUnit.count()))
+                    }
+                }
+            }
+            completion(val)
+        }
+        healthStore.execute(query)
+    }
+    
+    // update aggregate steps in db
+    private func updateAggregateSteps(newAggregate: Int, newDate: Date) {
+        // convert date to GMT and string
+        let dateFormatter = DateFormatter()
+        let enUSPosixLocale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = enUSPosixLocale
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT") as TimeZone?
+        let createdDate = dateFormatter.string(from: newDate)
+        // web request to update
+        let url = URL(string: "http://127.0.0.1:5000/update-aggregate")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "previous_aggregate_steps": "\(newAggregate)", "aggregate_update": createdDate])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in }
+        task.resume()
+    }
 }
 
 // get numerical equivalent to the day of the week
