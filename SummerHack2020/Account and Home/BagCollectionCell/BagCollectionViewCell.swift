@@ -27,7 +27,6 @@ class BagCollectionViewCell: UICollectionViewCell {
     public func configure(with model: Model) {
         self.myLabel.text = model.text
         self.myImageView.image = UIImage(named: model.imageName)
-        self.myImageView.contentMode = .scaleAspectFill
-    }
+        self.myImageView.contentMode = .scaleAspectFit    }
 
 }

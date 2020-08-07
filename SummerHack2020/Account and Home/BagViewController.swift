@@ -12,30 +12,30 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var table: UITableView!
     
-    var models = [Model]()
+    var shirt_models = [Model]()
+    var pant_models = [Model]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        models.append(Model(text: "First", imageName: "Image-1"))
-        models.append(Model(text: "Second", imageName: "Image-2"))
-        models.append(Model(text: "Third", imageName: "Image-3"))
-        models.append(Model(text: "Fourth", imageName: "Image-4"))
+        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         
-        models.append(Model(text: "First", imageName: "Image-1"))
-        models.append(Model(text: "Second", imageName: "Image-2"))
-        models.append(Model(text: "Third", imageName: "Image-3"))
-        models.append(Model(text: "Fourth", imageName: "Image-4"))
-        
-        models.append(Model(text: "First", imageName: "Image-1"))
-        models.append(Model(text: "Second", imageName: "Image-2"))
-        models.append(Model(text: "Third", imageName: "Image-3"))
-        models.append(Model(text: "Fourth", imageName: "Image-4"))
-        
-        models.append(Model(text: "First", imageName: "Image-1"))
-        models.append(Model(text: "Second", imageName: "Image-2"))
-        models.append(Model(text: "Third", imageName: "Image-3"))
-        models.append(Model(text: "Fourth", imageName: "Image-4"))
+        pant_models.append(Model(text: "First", imageName: "blue-pants"))
+        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
+        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
+//
+//        models.append(Model(text: "First", imageName: "blue-shirt"))
+//        models.append(Model(text: "Second", imageName: "orange-shirt"))
+//        models.append(Model(text: "Third", imageName: "green-shirt"))
+//        models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+//
+//        models.append(Model(text: "First", imageName: "blue-shirt"))
+//        models.append(Model(text: "Second", imageName: "orange-shirt"))
+//        models.append(Model(text: "Third", imageName: "green-shirt"))
+//        models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         
         // Do any additional setup after loading the view.
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
@@ -43,15 +43,19 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         table.dataSource = self
         
     }
-    // Table
+    
+    // set number of rows in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: BagCollectionTableViewCell.identifier, for: indexPath) as! BagCollectionTableViewCell
-        
-        cell.configure(with: models)
+        if indexPath.row == 0 {
+            cell.configure(with: shirt_models)
+        } else {
+            cell.configure(with: pant_models)
+        }
         
         return cell
     }

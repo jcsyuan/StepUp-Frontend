@@ -32,6 +32,7 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         bagCollectionView.register(BagCollectionViewCell.nib(), forCellWithReuseIdentifier: BagCollectionViewCell.identifier)
         bagCollectionView.delegate = self
         bagCollectionView.dataSource = self
+        bagCollectionView.showsHorizontalScrollIndicator = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,4 +53,5 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
     }
+    
 }
