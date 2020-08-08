@@ -16,14 +16,14 @@ class KelCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return UINib(nibName: "KelCollectionTableViewCell", bundle: nil)
     }
 
-    func configure(with models: [ShopViewController.Model]) {
+    func configure(with models: [Model]) {
         self.models = models
         collectionView.reloadData()
     }
 
     @IBOutlet var collectionView: UICollectionView!
 
-    var models = [ShopViewController.Model]()
+    var models = [Model]()
 
     override func awakeFromNib() {
         super.awakeFromNib()

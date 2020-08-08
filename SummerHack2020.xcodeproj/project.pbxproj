@@ -156,9 +156,9 @@
 		33D6B34624DCC7AF00DAE992 /* Account and Home */ = {
 			isa = PBXGroup;
 			children = (
-				2F14736724DCF8DF0083B566 /* BagCollectionCell */,
-				2F14736624DCF8BA0083B566 /* BagTableCell */,
 				2F14736424DCF3E50083B566 /* BagViewController.swift */,
+				2F14736624DCF8BA0083B566 /* BagTableCell */,
+				2F14736724DCF8DF0083B566 /* BagCollectionCell */,
 				33EE4BE324989791007B684A /* UIViewController+Extensions.swift */,
 				33EE4BE124988061007B684A /* designableView.swift */,
 				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,

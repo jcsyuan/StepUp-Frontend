@@ -24,7 +24,7 @@ class KelCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    public func configure(with model: ShopViewController.Model) {
+    public func configure(with model: Model) {
         self.myLabel.text = model.text
         self.myImageView.image = UIImage(named: model.imageName)
         self.myImageView.contentMode = .scaleAspectFill

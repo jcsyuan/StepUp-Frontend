@@ -14,10 +14,24 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
    
     @IBOutlet var table: UITableView!
     
-    var models = [Model]()
+    var shirt_models = [Model]()
+    var pant_models = [Model]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+        
+        pant_models.append(Model(text: "First", imageName: "blue-pants"))
+        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
+        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
         
 //        models.append(Model(text: "Lime $10", imageName: "shirt-1"))
 //        models.append(Model(text: "Blueberry $8", imageName: "shirt-2"))
@@ -48,7 +62,15 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: KelCollectionTableViewCell.identifier, for: indexPath) as! KelCollectionTableViewCell
        
-        cell.configure(with: models)
+        if indexPath.row == 0 {
+            cell.configure(with: shirt_models)
+        } else if indexPath.row == 1 {
+            cell.configure(with: pant_models)
+        } else if indexPath.row == 2 {
+            cell.configure(with: shirt_models)
+        } else {
+            cell.configure(with: pant_models)
+        }
         return cell
     }
     
@@ -56,16 +78,13 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 250.0
     }
     
-    struct Model {
-        let text: String
-        let imageName: String
-        
-        init(text: String, imageName: String) {
-            self.text = text
-            self.imageName = imageName
-        }
-    }
-    
-    
-
+//    struct Model {
+//        let text: String
+//        let imageName: String
+//
+//        init(text: String, imageName: String) {
+//            self.text = text
+//            self.imageName = imageName
+//        }
+//    }
 }
