@@ -30,15 +30,11 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         pant_models.append(Model(text: "First", imageName: "blue-pants"))
         pant_models.append(Model(text: "Second", imageName: "tan-pants"))
         pant_models.append(Model(text: "Third", imageName: "gray-pants"))
-        pant_models.append(Model(text: "First", imageName: "blue-pants"))
-        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
-        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
         
         // Do any additional setup after loading the view.
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
-        
     }
     
     // set number of rows in table
@@ -50,7 +46,6 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = table.dequeueReusableCell(withIdentifier: BagCollectionTableViewCell.identifier, for: indexPath) as! BagCollectionTableViewCell
         if indexPath.row == 0 {
             cell.configure(with: shirt_models)
-            cell.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.7471372003)
         } else if indexPath.row == 1 {
             cell.configure(with: pant_models)
         } else if indexPath.row == 2 {
@@ -58,7 +53,6 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             cell.configure(with: pant_models)
         }
-        
         return cell
     }
     

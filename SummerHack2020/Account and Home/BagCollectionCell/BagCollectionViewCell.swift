@@ -29,6 +29,12 @@ class BagCollectionViewCell: UICollectionViewCell {
         self.myLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.myImageView.image = UIImage(named: model.imageName)
         self.myImageView.contentMode = .scaleAspectFit
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 0.0)
+        self.layer.shadowRadius = 6.0
+        self.layer.shadowOpacity = 0.6
+        
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
     }

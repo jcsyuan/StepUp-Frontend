@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var todaySteps: UILabel!
     @IBOutlet weak var coins: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
+    @IBOutlet weak var icons: UIStackView!
     
     struct HomeData: Codable {
         let username: String
@@ -39,11 +40,23 @@ class HomeViewController: UIViewController {
         
         // aesthetics
         weeklySteps.layer.masksToBounds = true
-        weeklySteps.layer.cornerRadius = 20
+        weeklySteps.layer.cornerRadius = 15
         totalSteps.layer.masksToBounds = true
-        totalSteps.layer.cornerRadius = 20
+        totalSteps.layer.cornerRadius = 15
         todaySteps.layer.masksToBounds = true
-        todaySteps.layer.cornerRadius = 20
+        todaySteps.layer.cornerRadius = 15
+        
+//        let backgroundView = UIView()
+//        backgroundView.backgroundColor = UIColor.gray
+//        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+//        backgroundView.layer.cornerRadius = 20
+//        icons.insertSubview(backgroundView, at: 0)
+//        NSLayoutConstraint.activate([
+//            backgroundView.leadingAnchor.constraint(equalTo: icons.leadingAnchor),
+//            backgroundView.trailingAnchor.constraint(equalTo: icons.trailingAnchor),
+//            backgroundView.topAnchor.constraint(equalTo: icons.topAnchor),
+//            backgroundView.bottomAnchor.constraint(equalTo: icons.bottomAnchor)
+//        ])
         
         // retrieve and update health data
         authorizeHealthKit()
