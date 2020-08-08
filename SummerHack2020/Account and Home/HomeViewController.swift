@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var coins: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
     @IBOutlet weak var icons: UIStackView!
+    @IBOutlet weak var statsStack: UIStackView!
     
     struct HomeData: Codable {
         let username: String
@@ -39,24 +40,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // aesthetics
-        weeklySteps.layer.masksToBounds = true
-        weeklySteps.layer.cornerRadius = 15
-        totalSteps.layer.masksToBounds = true
-        totalSteps.layer.cornerRadius = 15
-        todaySteps.layer.masksToBounds = true
-        todaySteps.layer.cornerRadius = 15
-        
-//        let backgroundView = UIView()
-//        backgroundView.backgroundColor = UIColor.gray
-//        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-//        backgroundView.layer.cornerRadius = 20
-//        icons.insertSubview(backgroundView, at: 0)
-//        NSLayoutConstraint.activate([
-//            backgroundView.leadingAnchor.constraint(equalTo: icons.leadingAnchor),
-//            backgroundView.trailingAnchor.constraint(equalTo: icons.trailingAnchor),
-//            backgroundView.topAnchor.constraint(equalTo: icons.topAnchor),
-//            backgroundView.bottomAnchor.constraint(equalTo: icons.bottomAnchor)
-//        ])
+        homeAesthetics()
         
         // retrieve and update health data
         authorizeHealthKit()
@@ -68,6 +52,34 @@ class HomeViewController: UIViewController {
         
         // load user data on UI
         getUserData()
+    }
+    
+    // design edits of home
+    private func homeAesthetics() {
+        // round stats buttons
+        weeklySteps.layer.masksToBounds = true
+        weeklySteps.layer.cornerRadius = 10
+        totalSteps.layer.masksToBounds = true
+        totalSteps.layer.cornerRadius = 10
+        todaySteps.layer.masksToBounds = true
+        todaySteps.layer.cornerRadius = 10
+        
+        // padding of stats background
+        statsStack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        statsStack.isLayoutMarginsRelativeArrangement = true
+        
+        // adding background of stats data
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 0.2499732449)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.layer.cornerRadius = 15
+        statsStack.insertSubview(backgroundView, at: 0)
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: statsStack.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: statsStack.trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: statsStack.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: statsStack.bottomAnchor)
+        ])
     }
     
     // get user data
