@@ -19,11 +19,11 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         
         shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
         shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
         shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
         shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
         shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         

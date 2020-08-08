@@ -13,19 +13,24 @@ import UIKit
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet var table: UITableView!
+    @IBOutlet weak var coins: UILabel!
     
     var shirt_models = [Model]()
     var pant_models = [Model]()
     
+    struct CoinData: Codable {
+        let totCoins: Int
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
         shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
         shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
         shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "orange-shirt"))
+        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
         shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
         shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
         
@@ -36,6 +41,27 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.register(ShopTableViewCell.nib(), forCellReuseIdentifier: ShopTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
+    }
+  
+    // get user data
+    private func getUserData() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempHomeData = try JSONDecoder().decode(CoinData.self, from: data)
+                DispatchQueue.main.async {
+                    self.coins.text = "\(tempHomeData.totCoins)"
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
     }
     
     // table functions

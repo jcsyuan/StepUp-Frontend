@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exz-Ke-NCg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -1842,39 +1842,41 @@
                                     <constraint firstAttribute="height" constant="60" id="zFM-nC-p4H"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="79g-8a-Zov" userLabel="Coin view">
-                                <rect key="frame" x="307.5" y="54" width="76.5" height="30"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rsd-KS-ssB">
-                                        <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
-                                        <color key="tintColor" red="1" green="0.42652992579999999" blue="0.38854014250000002" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Bw4-aI-RRb"/>
-                                            <constraint firstAttribute="width" constant="30" id="E0y-ec-Wiv"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFd-Zk-UsA">
-                                        <rect key="frame" x="38" y="0.0" width="38.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-3R-YeF">
+                                <rect key="frame" x="366.5" y="60" width="17.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="25K-MU-v2g"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="dul-ZC-hbS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QKV-5i-4y2">
+                                <rect key="frame" x="316.5" y="52.5" width="40" height="39"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q3b-fL-jMo"/>
+                                    <constraint firstAttribute="width" constant="40" id="ym4-GF-C1L"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3AA-6w-hGf" firstAttribute="trailing" secondItem="79g-8a-Zov" secondAttribute="trailing" constant="30" id="5uv-SD-FYK"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="bottom" secondItem="PBW-4t-9RZ" secondAttribute="bottom" constant="10" id="Dxv-NY-BSt"/>
+                            <constraint firstItem="5S3-3R-YeF" firstAttribute="leading" secondItem="QKV-5i-4y2" secondAttribute="trailing" constant="10" id="Ehz-Mt-Opx"/>
+                            <constraint firstItem="5S3-3R-YeF" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="16" id="HVo-Tk-nUV"/>
+                            <constraint firstItem="QKV-5i-4y2" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="8" id="Odh-h2-ZNE"/>
+                            <constraint firstItem="3AA-6w-hGf" firstAttribute="trailing" secondItem="5S3-3R-YeF" secondAttribute="trailing" constant="30" id="Q1c-4R-8JR"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="bottom" secondItem="QTD-Pf-SdJ" secondAttribute="bottom" constant="70" id="UB7-pb-0ea"/>
                             <constraint firstItem="PBW-4t-9RZ" firstAttribute="centerX" secondItem="d7e-xe-NlX" secondAttribute="centerX" id="Vof-Gw-vmU"/>
                             <constraint firstItem="QTD-Pf-SdJ" firstAttribute="leading" secondItem="3AA-6w-hGf" secondAttribute="leading" id="gT4-T2-8KV"/>
-                            <constraint firstItem="79g-8a-Zov" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="10" id="pLw-E2-RMT"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="trailing" secondItem="QTD-Pf-SdJ" secondAttribute="trailing" id="xbk-p9-Rca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3AA-6w-hGf"/>
                     </view>
                     <connections>
+                        <outlet property="coins" destination="5S3-3R-YeF" id="9Rb-ER-5iq"/>
                         <outlet property="table" destination="QTD-Pf-SdJ" id="pC9-m8-Sgs"/>
                     </connections>
                 </viewController>
@@ -1993,7 +1995,6 @@
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
-        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="folder.fill" catalog="system" width="128" height="95"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="gift.fill" catalog="system" width="128" height="128"/>
