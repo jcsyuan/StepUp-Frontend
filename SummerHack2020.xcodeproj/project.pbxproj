@@ -29,6 +29,10 @@
 		33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE4BD824986B5C007B684A /* LaunchScreen.storyboard */; };
 		33EE4BE224988061007B684A /* designableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE124988061007B684A /* designableView.swift */; };
 		33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE4BE324989791007B684A /* UIViewController+Extensions.swift */; };
+		7D5139DD24DF03F500BB42C9 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5139DB24DF03F500BB42C9 /* ShopTableViewCell.swift */; };
+		7D5139DE24DF03F500BB42C9 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5139DC24DF03F500BB42C9 /* ShopTableViewCell.xib */; };
+		7D5139E124DF041900BB42C9 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5139DF24DF041900BB42C9 /* ShopCollectionViewCell.swift */; };
+		7D5139E224DF041900BB42C9 /* ShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5139E024DF041900BB42C9 /* ShopCollectionViewCell.xib */; };
 		7D89699424D51BE50091450F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D89699324D51BE50091450F /* SignInViewController.swift */; };
 		7DD9FBE524A5A1110020F73D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */; };
 		7DD9FBE724A69AE20020F73D /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */; };
@@ -71,6 +75,10 @@
 		33EE4BDB24986B5C007B684A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33EE4BE124988061007B684A /* designableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designableView.swift; sourceTree = "<group>"; };
 		33EE4BE324989791007B684A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7D5139DB24DF03F500BB42C9 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		7D5139DC24DF03F500BB42C9 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		7D5139DF24DF041900BB42C9 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D5139E024DF041900BB42C9 /* ShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D89699324D51BE50091450F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE424A5A1110020F73D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7DD9FBE624A69AE20020F73D /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				33173B9724BF8FDF00B6D94F /* ShopViewController.swift */,
+				7D5139DA24DF038800BB42C9 /* ShopTableCell */,
+				7D5139D924DF038100BB42C9 /* ShopCollectionCell */,
 				33173B9A24BF901200B6D94F /* Kel's Table Cell */,
 				33173B9924BF900300B6D94F /* Kel's Collection Cell */,
 			);
@@ -240,6 +250,24 @@
 			path = SummerHack2020;
 			sourceTree = "<group>";
 		};
+		7D5139D924DF038100BB42C9 /* ShopCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				7D5139DF24DF041900BB42C9 /* ShopCollectionViewCell.swift */,
+				7D5139E024DF041900BB42C9 /* ShopCollectionViewCell.xib */,
+			);
+			path = ShopCollectionCell;
+			sourceTree = "<group>";
+		};
+		7D5139DA24DF038800BB42C9 /* ShopTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				7D5139DB24DF03F500BB42C9 /* ShopTableViewCell.swift */,
+				7D5139DC24DF03F500BB42C9 /* ShopTableViewCell.xib */,
+			);
+			path = ShopTableCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,12 +329,14 @@
 				2F14736B24DCF9170083B566 /* BagCollectionTableViewCell.xib in Resources */,
 				7DDBBFE924BE63EE008221E6 /* MyTableViewCell.xib in Resources */,
 				33EE4BDA24986B5C007B684A /* LaunchScreen.storyboard in Resources */,
+				7D5139DE24DF03F500BB42C9 /* ShopTableViewCell.xib in Resources */,
 				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
 				2F14736F24DCF94B0083B566 /* BagCollectionViewCell.xib in Resources */,
 				33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
 				33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */,
+				7D5139E224DF041900BB42C9 /* ShopCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +362,8 @@
 				33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
 				7DDBBFE824BE63EE008221E6 /* MyTableViewCell.swift in Sources */,
+				7D5139DD24DF03F500BB42C9 /* ShopTableViewCell.swift in Sources */,
+				7D5139E124DF041900BB42C9 /* ShopCollectionViewCell.swift in Sources */,
 				7DD9FBF124AABFDC0020F73D /* PasswordViewController.swift in Sources */,
 				7DD9FC0424BA396C0020F73D /* RequestTableViewCell.swift in Sources */,
 				33EE4BE424989791007B684A /* UIViewController+Extensions.swift in Sources */,
