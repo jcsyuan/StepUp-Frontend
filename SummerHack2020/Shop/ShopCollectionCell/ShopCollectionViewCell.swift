@@ -27,6 +27,11 @@ class ShopCollectionViewCell: UICollectionViewCell {
     public func configure(with model: Model) {
         self.myLabel.text = model.text
         self.myImageView.image = UIImage(named: model.imageName)
-        self.myImageView.contentMode = .scaleAspectFill
+        self.myImageView.contentMode = .scaleAspectFit
+        
+        self.layer.borderWidth = 5
+        self.layer.borderColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 1)
+        self.layer.cornerRadius = 15
+        self.layer.masksToBounds = true
     }
 }

@@ -28,10 +28,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="BV1-po-IOQ" secondAttribute="trailing" constant="20" symbolic="YES" id="KtB-gQ-Att"/>
-                    <constraint firstItem="BV1-po-IOQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Oml-EB-F92"/>
-                    <constraint firstItem="BV1-po-IOQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="TBh-TY-lA8"/>
-                    <constraint firstAttribute="bottom" secondItem="BV1-po-IOQ" secondAttribute="bottom" constant="20" symbolic="YES" id="kKW-Tt-yX4"/>
+                    <constraint firstAttribute="bottom" secondItem="BV1-po-IOQ" secondAttribute="bottom" constant="20" id="P6B-tu-w5m"/>
+                    <constraint firstItem="BV1-po-IOQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="flF-Wg-M9d"/>
+                    <constraint firstItem="BV1-po-IOQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="sK8-Ao-QZM"/>
+                    <constraint firstAttribute="trailing" secondItem="BV1-po-IOQ" secondAttribute="trailing" constant="20" id="zCP-Wc-x1W"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

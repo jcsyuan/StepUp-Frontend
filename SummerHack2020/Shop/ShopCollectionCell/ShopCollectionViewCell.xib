@@ -23,18 +23,18 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-PD-sbK">
-                        <rect key="frame" x="105" y="220" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="93" y="212.5" width="66.5" height="33.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <color key="textColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="0.2481271404109589" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="12N-Se-odK"/>
                 <constraint firstAttribute="trailing" secondItem="jle-oh-gm4" secondAttribute="trailing" constant="10" id="4s3-J0-jzA"/>
-                <constraint firstAttribute="bottom" secondItem="5h1-PD-sbK" secondAttribute="bottom" constant="10" id="O7R-Wq-nYp"/>
+                <constraint firstAttribute="bottom" secondItem="5h1-PD-sbK" secondAttribute="bottom" constant="5" id="O7R-Wq-nYp"/>
                 <constraint firstItem="5h1-PD-sbK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="W1Q-PW-Czu"/>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dB5-T4-n6z"/>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="jdC-vC-DHK"/>

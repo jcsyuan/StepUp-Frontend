@@ -35,6 +35,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
+        table.isScrollEnabled = false;
     }
     
     // set number of rows in table
