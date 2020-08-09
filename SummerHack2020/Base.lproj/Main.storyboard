@@ -1784,13 +1784,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QTD-Pf-SdJ">
-                                <rect key="frame" x="0.0" y="92" width="414" height="700"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkU-u7-O6q">
+                                <rect key="frame" x="10" y="54" width="80" height="33.5"/>
+                                <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="700" id="aK9-M4-eUX"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="690" id="nZm-bI-gpu"/>
+                                    <constraint firstAttribute="height" constant="33.5" id="Jez-wg-e2M"/>
+                                    <constraint firstAttribute="width" constant="80" id="gs0-T9-sJB"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QTD-Pf-SdJ">
+                                <rect key="frame" x="0.0" y="97.5" width="414" height="694.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PBW-4t-9RZ">
@@ -1863,20 +1870,24 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="bkU-u7-O6q" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="10" id="1eq-q6-n04"/>
+                            <constraint firstItem="bkU-u7-O6q" firstAttribute="leading" secondItem="3AA-6w-hGf" secondAttribute="leading" constant="10" id="429-r7-2Nw"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="bottom" secondItem="PBW-4t-9RZ" secondAttribute="bottom" constant="10" id="Dxv-NY-BSt"/>
                             <constraint firstItem="5S3-3R-YeF" firstAttribute="leading" secondItem="QKV-5i-4y2" secondAttribute="trailing" constant="10" id="Ehz-Mt-Opx"/>
+                            <constraint firstItem="PBW-4t-9RZ" firstAttribute="top" secondItem="QTD-Pf-SdJ" secondAttribute="bottom" id="FyM-MH-Tul"/>
                             <constraint firstItem="5S3-3R-YeF" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="16" id="HVo-Tk-nUV"/>
                             <constraint firstItem="QKV-5i-4y2" firstAttribute="top" secondItem="3AA-6w-hGf" secondAttribute="top" constant="8" id="Odh-h2-ZNE"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="trailing" secondItem="5S3-3R-YeF" secondAttribute="trailing" constant="30" id="Q1c-4R-8JR"/>
-                            <constraint firstItem="3AA-6w-hGf" firstAttribute="bottom" secondItem="QTD-Pf-SdJ" secondAttribute="bottom" constant="70" id="UB7-pb-0ea"/>
                             <constraint firstItem="PBW-4t-9RZ" firstAttribute="centerX" secondItem="d7e-xe-NlX" secondAttribute="centerX" id="Vof-Gw-vmU"/>
                             <constraint firstItem="QTD-Pf-SdJ" firstAttribute="leading" secondItem="3AA-6w-hGf" secondAttribute="leading" id="gT4-T2-8KV"/>
+                            <constraint firstItem="QTD-Pf-SdJ" firstAttribute="top" secondItem="bkU-u7-O6q" secondAttribute="bottom" constant="10" id="qVi-Lq-SSw"/>
                             <constraint firstItem="3AA-6w-hGf" firstAttribute="trailing" secondItem="QTD-Pf-SdJ" secondAttribute="trailing" id="xbk-p9-Rca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3AA-6w-hGf"/>
                     </view>
                     <connections>
                         <outlet property="coins" destination="5S3-3R-YeF" id="9Rb-ER-5iq"/>
+                        <outlet property="shopLabel" destination="bkU-u7-O6q" id="ch1-0U-wo1"/>
                         <outlet property="table" destination="QTD-Pf-SdJ" id="pC9-m8-Sgs"/>
                     </connections>
                 </viewController>
@@ -1984,7 +1995,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eLW-Hv-IXi"/>
+        <segue reference="uby-we-dlV"/>
         <segue reference="FGA-wI-5c7"/>
         <segue reference="qqA-J2-DcA"/>
         <segue reference="NyC-ZF-hkb"/>

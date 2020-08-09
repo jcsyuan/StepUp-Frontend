@@ -22,22 +22,35 @@
                             <constraint firstAttribute="height" constant="200" id="eSK-if-WgR"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-PD-sbK">
-                        <rect key="frame" x="93" y="212.5" width="66.5" height="33.5"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                        <color key="textColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ixN-aS-alf">
+                        <rect key="frame" x="75.5" y="216" width="101.5" height="30"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-cz-chy">
+                                <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZKd-JX-tds"/>
+                                    <constraint firstAttribute="width" constant="30" id="bQw-bH-5Hl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h1-PD-sbK">
+                                <rect key="frame" x="35" y="0.0" width="66.5" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="0.2481271404109589" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.51375478510000006" blue="0.48231053350000003" alpha="0.20272367294520549" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="12N-Se-odK"/>
                 <constraint firstAttribute="trailing" secondItem="jle-oh-gm4" secondAttribute="trailing" constant="10" id="4s3-J0-jzA"/>
-                <constraint firstAttribute="bottom" secondItem="5h1-PD-sbK" secondAttribute="bottom" constant="5" id="O7R-Wq-nYp"/>
-                <constraint firstItem="5h1-PD-sbK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="W1Q-PW-Czu"/>
+                <constraint firstAttribute="bottom" secondItem="ixN-aS-alf" secondAttribute="bottom" constant="5" id="Kfy-Fy-TWD"/>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dB5-T4-n6z"/>
                 <constraint firstItem="jle-oh-gm4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="jdC-vC-DHK"/>
+                <constraint firstItem="ixN-aS-alf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vud-Aj-obg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="252" height="251"/>
@@ -48,4 +61,7 @@
             <point key="canvasLocation" x="-14.492753623188406" y="181.80803571428569"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

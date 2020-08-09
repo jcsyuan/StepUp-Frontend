@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import BLTNBoard
 
 // CHECK COINS TO MAKE SURE ENOUGH
 
-class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol accessShopViewController { }
+
+class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessShopViewController {
+    
    
+    @IBOutlet weak var shopLabel: UILabel!
     @IBOutlet var table: UITableView!
     @IBOutlet weak var coins: UILabel!
     
-    var shirt_models = [Model]()
-    var pant_models = [Model]()
+    var shirt_models = [shopModel]()
+    var pant_models = [shopModel]()
     
     struct CoinData: Codable {
         let totCoins: Int
@@ -25,18 +30,17 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+        shopLabel.layer.masksToBounds = true
+        shopLabel.layer.cornerRadius = 10
         
-        pant_models.append(Model(text: "First", imageName: "blue-pants"))
-        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
-        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
+        shirt_models.append(shopModel(name: "Blue Shirt", category: 1, cost: 10, id: 1))
+        shirt_models.append(shopModel(name: "Purple Shirt", category: 1, cost: 10, id: 2))
+        shirt_models.append(shopModel(name: "Green Shirt", category: 1, cost: 15, id: 3))
+        shirt_models.append(shopModel(name: "Pink Shirt", category: 1, cost: 20, id: 4))
+        
+        pant_models.append(shopModel(name: "Blue Pants", category: 2, cost: 30, id: 5))
+        pant_models.append(shopModel(name: "Tan Pants", category: 2, cost: 35, id: 6))
+        pant_models.append(shopModel(name: "Gray Pants", category: 2, cost: 50, id: 7))
         
         table.register(ShopTableViewCell.nib(), forCellReuseIdentifier: ShopTableViewCell.identifier)
         table.delegate = self
@@ -82,10 +86,27 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cell.configure(with: pant_models)
         }
+        cell.delegate = self
+        cell.selectionStyle = .none;
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300.0
+    }
+}
+
+// struct to store data for each item in the shop
+struct shopModel {
+    let name: String
+    let category: Int
+    let cost: Int
+    let id: Int
+    
+    init(name: String, category: Int, cost: Int, id: Int) {
+        self.name = name
+        self.category = category
+        self.cost = cost
+        self.id = id
     }
 }
