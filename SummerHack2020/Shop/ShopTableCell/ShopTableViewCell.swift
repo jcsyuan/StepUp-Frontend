@@ -32,7 +32,7 @@ class ShopTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         self.models = models
         collectionView.reloadData()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -94,8 +94,15 @@ class board {
     }
     
     func didTapBoardContinue() {
-        boardManager.dismissBulletin()
-        print("continue")
+        // not enough coins
+        if delegate!.userCoins < item.cost {
+            delegate!.purchaseAlert()
+        }
+        else {
+            buyItem()
+            boardManager.dismissBulletin()
+            print("continue")
+        }
     }
     
     func didTapBoardSkip() {
@@ -103,21 +110,47 @@ class board {
         print("skip")
     }
     
-    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        let widthRatio  = targetSize.width  / size.width
-        let heightRatio = targetSize.height / size.height
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+    // buying items
+    private func buyItem() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/buy-item")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "item_id": "\(item.id)"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempShopData = try JSONDecoder().decode([shopModel].self, from: data)
+                for tempItem in tempShopData {
+                    
+                }
+            }
+            DispatchQueue.main.async {
+                self.table.reloadData()
+            }
+            
+        } catch let jsonErr {
+            print(jsonErr)
         }
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!
     }
+    task.resume()
+}
+
+func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+    let size = image.size
+    let widthRatio  = targetSize.width  / size.width
+    let heightRatio = targetSize.height / size.height
+    var newSize: CGSize
+    if(widthRatio > heightRatio) {
+        newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+    } else {
+        newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+    }
+    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+    image.draw(in: rect)
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return newImage!
+}
 }

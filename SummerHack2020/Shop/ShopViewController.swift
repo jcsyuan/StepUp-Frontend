@@ -11,7 +11,10 @@ import BLTNBoard
 
 // CHECK COINS TO MAKE SURE ENOUGH
 
-protocol accessShopViewController { }
+protocol accessShopViewController {
+    var userCoins: Int{ get set}
+    func purchaseAlert()
+}
 
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessShopViewController {
     
@@ -24,6 +27,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     var pant_models = [shopModel]()
     var shoe_models = [shopModel]()
     var hair_models = [shopModel]()
+    var userCoins: Int = 0
     
     struct CoinData: Codable {
         let totCoins: Int
@@ -49,6 +53,16 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.dataSource = self
     }
     
+    func purchaseAlert() {
+        // send alert
+        let message: String = "You do not have enough coins:("
+        let titleText: String = "PURCHASE FAILED"
+        let alertController:UIAlertController = UIAlertController(title: titleText, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // get user data
     private func getUserData() {
         // load user data
@@ -62,6 +76,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let tempHomeData = try JSONDecoder().decode(CoinData.self, from: data)
                 DispatchQueue.main.async {
                     self.coins.text = "\(tempHomeData.totCoins)"
+                    self.userCoins = tempHomeData.totCoins
                 }
             } catch let jsonErr {
                 print(jsonErr)
