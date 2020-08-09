@@ -17,14 +17,14 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return UINib(nibName: "BagCollectionTableViewCell", bundle: nil)
     }
     
-    func configure(with models: [Model]) {
+    func configure(with models: [bagModelStore]) {
         self.models = models
         bagCollectionView.reloadData()
     }
     
     @IBOutlet var bagCollectionView : UICollectionView!
     
-    var models = [Model]()
+    var models = [bagModelStore]()
     
     override func awakeFromNib() {
         super.awakeFromNib()

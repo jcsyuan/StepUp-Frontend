@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,10 +13,6 @@
 		2F14736E24DCF94B0083B566 /* BagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F14736C24DCF94B0083B566 /* BagCollectionViewCell.swift */; };
 		2F14736F24DCF94B0083B566 /* BagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F14736D24DCF94B0083B566 /* BagCollectionViewCell.xib */; };
 		33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9724BF8FDF00B6D94F /* ShopViewController.swift */; };
-		33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */; };
-		33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */; };
-		33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */; };
-		33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */; };
 		33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33173BA724C3ADB100B6D94F /* createAccountViewController.swift */; };
 		33770B3024CFCBD100AF96CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33770B2F24CFCBD100AF96CC /* HealthKit.framework */; };
 		33EB105924D5E0B600D31327 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB105824D5E0B600D31327 /* HomeViewController.swift */; };
@@ -58,10 +54,6 @@
 		2F14736C24DCF94B0083B566 /* BagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F14736D24DCF94B0083B566 /* BagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagCollectionViewCell.xib; sourceTree = "<group>"; };
 		33173B9724BF8FDF00B6D94F /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KelCollectionViewCell.swift; sourceTree = "<group>"; };
-		33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KelCollectionViewCell.xib; sourceTree = "<group>"; };
 		33173BA724C3ADB100B6D94F /* createAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
 		33770B2D24CFCBD100AF96CC /* SummerHack2020.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SummerHack2020.entitlements; sourceTree = "<group>"; };
 		33770B2F24CFCBD100AF96CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -118,7 +110,6 @@
 				EE4E4E9A463E6DDD2C4EEDCB /* Pods-SummerHack2020.debug.xcconfig */,
 				2055BD6C57C967E63ABC2A9A /* Pods-SummerHack2020.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,28 +137,8 @@
 				33173B9724BF8FDF00B6D94F /* ShopViewController.swift */,
 				7D5139DA24DF038800BB42C9 /* ShopTableCell */,
 				7D5139D924DF038100BB42C9 /* ShopCollectionCell */,
-				33173B9A24BF901200B6D94F /* Kel's Table Cell */,
-				33173B9924BF900300B6D94F /* Kel's Collection Cell */,
 			);
 			path = Shop;
-			sourceTree = "<group>";
-		};
-		33173B9924BF900300B6D94F /* Kel's Collection Cell */ = {
-			isa = PBXGroup;
-			children = (
-				33173BA324BF927D00B6D94F /* KelCollectionViewCell.swift */,
-				33173BA424BF927D00B6D94F /* KelCollectionViewCell.xib */,
-			);
-			path = "Kel's Collection Cell";
-			sourceTree = "<group>";
-		};
-		33173B9A24BF901200B6D94F /* Kel's Table Cell */ = {
-			isa = PBXGroup;
-			children = (
-				33173B9B24BF905B00B6D94F /* KelCollectionTableViewCell.swift */,
-				33173B9C24BF905B00B6D94F /* KelCollectionTableViewCell.xib */,
-			);
-			path = "Kel's Table Cell";
 			sourceTree = "<group>";
 		};
 		33770B2E24CFCBD100AF96CC /* Frameworks */ = {
@@ -360,9 +331,7 @@
 				7DD9FC0524BA396C0020F73D /* RequestTableViewCell.xib in Resources */,
 				33EE4BD724986B5C007B684A /* Assets.xcassets in Resources */,
 				2F14736F24DCF94B0083B566 /* BagCollectionViewCell.xib in Resources */,
-				33173B9E24BF905B00B6D94F /* KelCollectionTableViewCell.xib in Resources */,
 				33EE4BD524986B58007B684A /* Main.storyboard in Resources */,
-				33173BA624BF927D00B6D94F /* KelCollectionViewCell.xib in Resources */,
 				7D5139E224DF041900BB42C9 /* ShopCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +388,6 @@
 				7D89699424D51BE50091450F /* SignInViewController.swift in Sources */,
 				2F14736E24DCF94B0083B566 /* BagCollectionViewCell.swift in Sources */,
 				33173BA824C3ADB200B6D94F /* createAccountViewController.swift in Sources */,
-				33173B9D24BF905B00B6D94F /* KelCollectionTableViewCell.swift in Sources */,
 				7DD9FC0124BA37F30020F73D /* RequestsViewController.swift in Sources */,
 				7DD9FBED24A9993E0020F73D /* PrivacyViewController.swift in Sources */,
 				33173B9824BF8FDF00B6D94F /* ShopViewController.swift in Sources */,
@@ -428,7 +396,6 @@
 				7DD9FBEB24A998440020F73D /* HelpAndSupportViewController.swift in Sources */,
 				33EE4BE224988061007B684A /* designableView.swift in Sources */,
 				33EE4BD224986B58007B684A /* ViewController.swift in Sources */,
-				33173BA524BF927D00B6D94F /* KelCollectionViewCell.swift in Sources */,
 				33ED39BE2499AB6A008C6166 /* CanvasView.swift in Sources */,
 				7DDBBFE824BE63EE008221E6 /* MyTableViewCell.swift in Sources */,
 				7D5139DD24DF03F500BB42C9 /* ShopTableViewCell.swift in Sources */,

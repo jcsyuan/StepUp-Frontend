@@ -20,27 +20,12 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-//        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-//        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-//        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-//        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-//        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-//        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-//        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-//
-//        pant_models.append(Model(text: "First", imageName: "blue-pants"))
-//        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
-//        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
-        
-        // Do any additional setup after loading the view.
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
         table.isScrollEnabled = false;
     }
     
-    // set number of rows in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -73,7 +58,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             guard let data = data else { return }
             do {
                 let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
-                for tempItem in tempBagData {
+                for tempItem in tempBagData.results {
                     let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: false)
                     if tempItemTwo.category == 1 {
                         self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
@@ -99,15 +84,15 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 }
 
-struct Model {
-    let text: String
-    let imageName: String
-    
-    init(text: String, imageName: String) {
-        self.text = text
-        self.imageName = imageName
-    }
-}
+//struct Model {
+//    let text: String
+//    let imageName: String
+//
+//    init(text: String, imageName: String) {
+//        self.text = text
+//        self.imageName = imageName
+//    }
+//}
 
 struct bagModelArray: Codable {
     let results: [bagModelDecode]

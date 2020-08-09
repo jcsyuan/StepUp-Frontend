@@ -14,6 +14,7 @@ class ShopTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     @IBOutlet var collectionView: UICollectionView!
     
     var models = [shopModel]()
+    var delegate: accessShopViewController?
     
     static let identifier = "ShopTableViewCell"
     static func nib() -> UINib {
@@ -33,10 +34,6 @@ class ShopTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         collectionView.reloadData()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
@@ -51,14 +48,10 @@ class ShopTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         return CGSize(width: 250, height: 250)
     }
     
-    // press cell
-    var delegate: accessShopViewController?
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tempBoard = board(selectedItem: models[indexPath.row])
         tempBoard.delegate = delegate
         tempBoard.showBoard()
-        print(indexPath.row)
     }
 }
 
@@ -67,90 +60,82 @@ class board {
     var delegate: accessShopViewController?
     var item: shopModel
     
+    // initialize board class
     init(selectedItem: shopModel) {
         item = selectedItem
     }
     
+    // initialize actual board
     private lazy var boardManager: BLTNItemManager = {
         let boardItem = BLTNPageItem(title: item.name)
         boardItem.image = resizeImage(image: UIImage(named: item.name)!, targetSize: CGSize(width: 300.0, height: 300.0))
         boardItem.actionButtonTitle = "BUY for \(item.cost) coins"
         boardItem.alternativeButtonTitle = "cancel"
-        boardItem.actionHandler = { _ in
-            self.didTapBoardContinue()
-        }
-        boardItem.alternativeHandler = { _ in
-            self.didTapBoardSkip()
-        }
         boardItem.appearance.actionButtonColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 1)
         boardItem.appearance.alternativeButtonTitleColor = .gray
         boardItem.appearance.actionButtonFontSize = 22
         boardItem.appearance.alternativeButtonFontSize = 20
+        boardItem.actionHandler = { _ in self.didTapBoardContinue() }
+        boardItem.alternativeHandler = { _ in self.didTapBoardSkip() }
         return BLTNItemManager(rootItem: boardItem)
     }()
     
+    // show board
     func showBoard() {
         boardManager.showBulletin(above: self.delegate as! UIViewController)
     }
     
+    // try to buy item
     func didTapBoardContinue() {
         // not enough coins
         if delegate!.userCoins < item.cost {
-            delegate!.purchaseAlert()
-        }
-        else {
-            buyItem()
             boardManager.dismissBulletin()
-            print("continue")
+            delegate!.purchaseAlert()
+        } else { // enough coins
+            self.buyItem()
+            
         }
     }
     
+    // cancel buying item
     func didTapBoardSkip() {
         boardManager.dismissBulletin()
-        print("skip")
     }
     
-    // buying items
+    // buying item endpoint
     private func buyItem() {
-        // load user data
-        let url = URL(string: "http://127.0.0.1:5000/buy-item")!
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "item_id": "\(item.id)"])
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let tempShopData = try JSONDecoder().decode([shopModel].self, from: data)
-                for tempItem in tempShopData {
-                    
+        DispatchQueue.main.async {
+            let url = URL(string: "http://127.0.0.1:5000/buy-item")!
+            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+            request.httpMethod = "POST"
+            request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "item_id": "\(self.item.id)", "item_cost": "\(self.item.cost)", "category_id":"\(self.item.category)"])
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                DispatchQueue.main.sync {
+                    let vc = self.delegate as! UIViewController
+                    vc.dismiss(animated: true, completion: nil)
+                    self.delegate?.boughtItem()
                 }
             }
-            DispatchQueue.main.async {
-                self.table.reloadData()
-            }
-            
-        } catch let jsonErr {
-            print(jsonErr)
+            task.resume()
         }
     }
-    task.resume()
-}
-
-func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-    let size = image.size
-    let widthRatio  = targetSize.width  / size.width
-    let heightRatio = targetSize.height / size.height
-    var newSize: CGSize
-    if(widthRatio > heightRatio) {
-        newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-    } else {
-        newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+    
+    // make image fit in board
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
     }
-    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-    image.draw(in: rect)
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return newImage!
-}
 }

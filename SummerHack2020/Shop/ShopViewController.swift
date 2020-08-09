@@ -14,6 +14,7 @@ import BLTNBoard
 protocol accessShopViewController {
     var userCoins: Int{ get set}
     func purchaseAlert()
+    func boughtItem()
 }
 
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessShopViewController {
@@ -39,20 +40,20 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         shopLabel.layer.masksToBounds = true
         shopLabel.layer.cornerRadius = 10
         
-        shirt_models.append(shopModel(name: "Blue Shirt", category: 1, cost: 10, id: 1))
-        shirt_models.append(shopModel(name: "Purple Shirt", category: 1, cost: 10, id: 2))
-        shirt_models.append(shopModel(name: "Green Shirt", category: 1, cost: 15, id: 3))
-        shirt_models.append(shopModel(name: "Pink Shirt", category: 1, cost: 20, id: 4))
-        
-        pant_models.append(shopModel(name: "Blue Pants", category: 2, cost: 30, id: 5))
-        pant_models.append(shopModel(name: "Tan Pants", category: 2, cost: 35, id: 6))
-        pant_models.append(shopModel(name: "Gray Pants", category: 2, cost: 50, id: 7))
+        reloadAllData()
         
         table.register(ShopTableViewCell.nib(), forCellReuseIdentifier: ShopTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
     }
     
+    // reload all data on shop
+    func reloadAllData() {
+        getShopData()
+        getCoinData()
+    }
+    
+    // not enough coins alert
     func purchaseAlert() {
         // send alert
         let message: String = "You do not have enough coins:("
@@ -63,10 +64,15 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(alertController, animated: true, completion: nil)
     }
     
-    // get user data
-    private func getUserData() {
+    // segue to bag controller
+    func boughtItem() {
+        performSegue(withIdentifier: "boughtItem", sender: nil)
+    }
+    
+    // get coin data
+    private func getCoinData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
+        let url = URL(string: "http://127.0.0.1:5000/get-coins")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -85,9 +91,39 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     
-    // table functions
+    // get shop data
+    private func getShopData() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/get-shop-data")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempShopData = try JSONDecoder().decode(shopModelArray.self, from: data)
+                for tempItem in tempShopData.results {
+                    if tempItem.category == 1 {
+                        self.shirt_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    } else if tempItem.category == 2 {
+                        self.pant_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    } else if tempItem.category == 3 {
+                        self.shoe_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    } else {
+                        self.hair_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
+    }
     
-    // number of rows
+    // table functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -112,40 +148,12 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 300.0
     }
     
-    // get shop data
-    private func getShopData() {
-        // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-shop-data")!
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        request.httpMethod = "POST"
-        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let tempShopData = try JSONDecoder().decode([shopModel].self, from: data)
-                for tempItem in tempShopData {
-                    if tempItem.category == 1 {
-                        self.shirt_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
-                    }
-                    if tempItem.category == 2 {
-                        self.pant_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
-                    }
-                    if tempItem.category == 3 {
-                        self.shoe_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
-                    }
-                    if tempItem.category == 4 {
-                        self.hair_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
-                    }
-                }
-                DispatchQueue.main.async {
-                    self.table.reloadData()
-                }
-            } catch let jsonErr {
-                print(jsonErr)
-            }
-        }
-        task.resume()
-    }
+    
+}
+
+// to help decode shopModels from json
+struct shopModelArray: Codable {
+    let results: [shopModel]
 }
 
 // struct to store data for each item in the shop
