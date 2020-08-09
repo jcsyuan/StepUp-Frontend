@@ -12,24 +12,26 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var table: UITableView!
     
-    var shirt_models = [Model]()
-    var pant_models = [Model]()
+    var shirt_models = [bagModelStore]()
+    var pant_models = [bagModelStore]()
+    var shoe_models = [bagModelStore]()
+    var hair_models = [bagModelStore]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
-        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
-        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
-        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
-        
-        pant_models.append(Model(text: "First", imageName: "blue-pants"))
-        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
-        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
+//        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+//        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
+//        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+//        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+//        shirt_models.append(Model(text: "First", imageName: "blue-shirt"))
+//        shirt_models.append(Model(text: "Second", imageName: "purple-shirt"))
+//        shirt_models.append(Model(text: "Third", imageName: "green-shirt"))
+//        shirt_models.append(Model(text: "Fourth", imageName: "pink-shirt"))
+//
+//        pant_models.append(Model(text: "First", imageName: "blue-pants"))
+//        pant_models.append(Model(text: "Second", imageName: "tan-pants"))
+//        pant_models.append(Model(text: "Third", imageName: "gray-pants"))
         
         // Do any additional setup after loading the view.
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
@@ -60,6 +62,41 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
+    
+    private func getBagData() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/get-bag-data")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
+                for tempItem in tempBagData {
+                    let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: false)
+                    if tempItemTwo.category == 1 {
+                        self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                    }
+                    if tempItemTwo.category == 2 {
+                        self.pant_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                    }
+                    if tempItemTwo.category == 3 {
+                        self.shoe_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                    }
+                    if tempItemTwo.category == 4 {
+                        self.hair_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
+    }
 }
 
 struct Model {
@@ -69,5 +106,30 @@ struct Model {
     init(text: String, imageName: String) {
         self.text = text
         self.imageName = imageName
+    }
+}
+
+struct bagModelArray: Codable {
+    let results: [bagModelDecode]
+}
+
+struct bagModelDecode: Codable {
+    let name: String
+    let category: Int
+    let id: Int
+}
+// struct to store data for each item in the shop
+struct bagModelStore: Codable {
+    let name: String
+    let category: Int
+    let selected: Bool
+    let id: Int
+    
+    //ask about selected
+    init(name: String, category: Int, id: Int, selected: Bool) {
+        self.name = name
+        self.category = category
+        self.selected = selected
+        self.id = id
     }
 }
