@@ -15,18 +15,20 @@ protocol accessShopViewController { }
 
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessShopViewController {
     
-   
+    
     @IBOutlet weak var shopLabel: UILabel!
     @IBOutlet var table: UITableView!
     @IBOutlet weak var coins: UILabel!
     
     var shirt_models = [shopModel]()
     var pant_models = [shopModel]()
+    var shoe_models = [shopModel]()
+    var hair_models = [shopModel]()
     
     struct CoinData: Codable {
         let totCoins: Int
     }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +48,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.delegate = self
         table.dataSource = self
     }
-  
+    
     // get user data
     private func getUserData() {
         // load user data
@@ -82,9 +84,9 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.row == 1 {
             cell.configure(with: pant_models)
         } else if indexPath.row == 2 {
-            cell.configure(with: shirt_models)
+            cell.configure(with: shoe_models)
         } else {
-            cell.configure(with: pant_models)
+            cell.configure(with: hair_models)
         }
         cell.delegate = self
         cell.selectionStyle = .none;
@@ -94,10 +96,45 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300.0
     }
+    
+    // get shop data
+    private func getShopData() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/get-shop-data")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempShopData = try JSONDecoder().decode([shopModel].self, from: data)
+                for tempItem in tempShopData {
+                    if tempItem.category == 1 {
+                        self.shirt_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    }
+                    if tempItem.category == 2 {
+                        self.pant_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    }
+                    if tempItem.category == 3 {
+                        self.shoe_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    }
+                    if tempItem.category == 4 {
+                        self.hair_models.append(shopModel(name: tempItem.name, category: tempItem.category, cost: tempItem.cost, id: tempItem.id))
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
+    }
 }
 
 // struct to store data for each item in the shop
-struct shopModel {
+struct shopModel: Codable {
     let name: String
     let category: Int
     let cost: Int
@@ -110,3 +147,4 @@ struct shopModel {
         self.id = id
     }
 }
+
