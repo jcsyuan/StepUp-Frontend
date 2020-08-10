@@ -10,7 +10,7 @@ import UIKit
 
 class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-
+    var delegate: accessBagViewController?
     static let identifier = "BagCollectionTableViewCell"
     
     static func nib() -> UINib {
@@ -58,6 +58,18 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     // press cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        var tempItem = models[indexPath.row]
+        var category = tempItem.category
+        tempItem.selected = true
+        if category == 1 {
+            delegate.worn_items[1] = tempItem
+        } else if category == 2 {
+            delegate.worn_items[2] = tempItem
+        } else if category == 3 {
+            delegate?.worn_items[3] = tempItem
+        } else {
+            delegate?.worn_items[4] = tempItem
+        }
     }
     
 }

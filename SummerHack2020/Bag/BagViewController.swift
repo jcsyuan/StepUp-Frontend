@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol accessBagViewController {
+    var worn_items: [bagModelStore] {get set}
+}
+
+class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessBagViewController {
     
     @IBOutlet var table: UITableView!
     
@@ -54,6 +58,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             cell.configure(with: hair_models)
         }
+        cell.delegate = self
         return cell
     }
     
