@@ -16,6 +16,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var pant_models = [bagModelStore]()
     var shoe_models = [bagModelStore]()
     var hair_models = [bagModelStore]()
+    var worn_items: [bagModelStore] = [nil, nil, nil, nil, nil]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,45 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     }
                     if tempItemTwo.category == 4 {
                         self.hair_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+            } catch let jsonErr {
+                print(jsonErr)
+            }
+        }
+        task.resume()
+    }
+    
+    private func getBagData() {
+        // load user data
+        let url = URL(string: "http://127.0.0.1:5000/get-worn-bag-data")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
+                for tempItem in tempBagData.results {
+                    let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: true)
+                    if tempItemTwo.category == 1 {
+                        self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                        self.worn_items[1] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
+                    }
+                    if tempItemTwo.category == 2 {
+                        self.pant_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                        self.worn_items[2] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
+                    }
+                    if tempItemTwo.category == 3 {
+                        self.shoe_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                        self.worn_items[3] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
+                    }
+                    if tempItemTwo.category == 4 {
+                        self.hair_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
+                        self.worn_items[4] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
                     }
                 }
                 DispatchQueue.main.async {
