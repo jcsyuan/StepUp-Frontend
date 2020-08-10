@@ -153,13 +153,13 @@
 		33D6B34624DCC7AF00DAE992 /* Account and Home */ = {
 			isa = PBXGroup;
 			children = (
+				33EB105824D5E0B600D31327 /* HomeViewController.swift */,
+				7D89699324D51BE50091450F /* SignInViewController.swift */,
+				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,
+				7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */,
+				33ED39BD2499AB6A008C6166 /* CanvasView.swift */,
 				33EE4BE324989791007B684A /* UIViewController+Extensions.swift */,
 				33EE4BE124988061007B684A /* designableView.swift */,
-				33173BA724C3ADB100B6D94F /* createAccountViewController.swift */,
-				33ED39BD2499AB6A008C6166 /* CanvasView.swift */,
-				7D89699324D51BE50091450F /* SignInViewController.swift */,
-				33EB105824D5E0B600D31327 /* HomeViewController.swift */,
-				7DD9FBF024AABFDC0020F73D /* PasswordViewController.swift */,
 			);
 			path = "Account and Home";
 			sourceTree = "<group>";

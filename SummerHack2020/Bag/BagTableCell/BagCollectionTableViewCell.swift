@@ -77,5 +77,4 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         // reload table cell
         bagCollectionView.reloadData()
     }
-    
 }

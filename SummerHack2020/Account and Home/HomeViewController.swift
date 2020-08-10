@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var statsLabel: UILabel!
     @IBOutlet weak var icons: UIStackView!
     @IBOutlet weak var statsStack: UIStackView!
+    @IBOutlet weak var avatarShirt: UIImageView!
+    @IBOutlet weak var avatarPants: UIImageView!
     
     struct HomeData: Codable {
         let username: String
@@ -57,6 +59,10 @@ class HomeViewController: UIViewController {
     
     // design edits of home
     private func homeAesthetics() {
+        // avatar
+        avatarShirt.image = UIImage(named: "Blue Shirt")
+        avatarPants.image = UIImage(named: "Blue Pants")
+        
         // round home label
         homeLabel.layer.masksToBounds = true
         homeLabel.layer.cornerRadius = 10
