@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
         let username: String
         let name: String
         let totCoins: Int
+        let shirt: String
+        let pants: String
+        let shoes: String
+        let hair: String
     }
     
     struct jsonTotSteps: Codable {
@@ -59,9 +63,6 @@ class HomeViewController: UIViewController {
     
     // design edits of home
     private func homeAesthetics() {
-        // avatar
-        avatarShirt.image = UIImage(named: "Blue Shirt")
-        avatarPants.image = UIImage(named: "Blue Pants")
         
         // round home label
         homeLabel.layer.masksToBounds = true
@@ -105,9 +106,15 @@ class HomeViewController: UIViewController {
             do {
                 let tempHomeData = try JSONDecoder().decode(HomeData.self, from: data)
                 DispatchQueue.main.async {
+                    // string data
                     self.Name.text = tempHomeData.name
                     self.coins.text = "\(tempHomeData.totCoins)"
                     self.statsLabel.text = "\(tempHomeData.username)'s STATS".uppercased()
+                    // image data
+                    self.avatarShirt.image = UIImage(named: tempHomeData.shirt)
+                    self.avatarPants.image = UIImage(named: tempHomeData.pants)
+//                    self.avatarShoes.image = UIImage(named: tempHomeData.shoes)
+//                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
                 }
             } catch let jsonErr {
                 print(jsonErr)
@@ -250,7 +257,7 @@ class HomeViewController: UIViewController {
         task.resume()
     }
 
-    // update previous aggregate steps
+    // check to see if we need to update previous aggregate steps
     private func updatePreviousAggregate(completion: @escaping () -> ()) {
         let url = URL(string: "http://127.0.0.1:5000/get-start-date")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)

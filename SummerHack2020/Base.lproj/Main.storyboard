@@ -1226,7 +1226,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Tbq-x5-0iA"/>
                                     <constraint firstAttribute="height" constant="40" id="lXN-Ma-nZM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2033,11 +2033,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
-        <segue reference="FGA-wI-5c7"/>
+        <segue reference="JYl-qS-IqO"/>
         <segue reference="LjT-bT-lNM"/>
-        <segue reference="NyC-ZF-hkb"/>
-        <segue reference="heR-VQ-n3K"/>
-        <segue reference="VqE-z1-VNB"/>
+        <segue reference="zCM-dI-PIc"/>
+        <segue reference="fs8-JF-a4D"/>
+        <segue reference="TR6-4e-lE9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
