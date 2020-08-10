@@ -25,7 +25,11 @@ class BagCollectionViewCell: UICollectionViewCell {
     public func configure(with model: bagModelStore) {
         self.myImageView.image = UIImage(named: model.name)
         self.myImageView.contentMode = .scaleAspectFit
-        
+        if model.selected {
+            self.layer.backgroundColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 0.2481271404)
+        } else {
+            self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
     }

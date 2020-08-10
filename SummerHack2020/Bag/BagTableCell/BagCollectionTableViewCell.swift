@@ -47,7 +47,6 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = bagCollectionView.dequeueReusableCell(withReuseIdentifier: BagCollectionViewCell.identifier, for: indexPath) as! BagCollectionViewCell
         cell.configure(with: models[indexPath.row])
-        
         return cell
     }
     
@@ -57,19 +56,31 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     // press cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let cell = bagCollectionView!.cellForItem(at: indexPath)
+        cell?.backgroundColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 0.2481271404)
+        
         var tempItem = models[indexPath.row]
-        var category = tempItem.category
         tempItem.selected = true
+        let category = tempItem.category
         if category == 1 {
-            delegate.worn_items[1] = tempItem
+            delegate!.worn_items[1].selected = false
+            delegate!.worn_items[1] = tempItem
         } else if category == 2 {
-            delegate.worn_items[2] = tempItem
+            delegate!.worn_items[2].selected = false
+            delegate!.worn_items[2] = tempItem
         } else if category == 3 {
-            delegate?.worn_items[3] = tempItem
+            delegate!.worn_items[3].selected = false
+            delegate!.worn_items[3] = tempItem
         } else {
-            delegate?.worn_items[4] = tempItem
+            delegate!.worn_items[4].selected = false
+            delegate!.worn_items[4] = tempItem
         }
+        // success in reloading avatar
+        delegate!.reloadAvatar()
+        // failed to reload collections
+        bagCollectionView.reloadData()
+        delegate!.reloadTable()
+        print(delegate!.worn_items)
     }
     
 }

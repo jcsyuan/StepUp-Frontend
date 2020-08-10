@@ -9,19 +9,23 @@
 import UIKit
 
 protocol accessBagViewController {
-    var worn_items: [bagModelStore] {get set}
+    var worn_items: [bagModelStore] { get set }
+    func reloadTable()
+    func reloadAvatar()
 }
 
 class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessBagViewController {
     
     @IBOutlet var table: UITableView!
+    @IBOutlet weak var avatarShirt: UIImageView!
+    @IBOutlet weak var avatarPants: UIImageView!
     
     var shirt_models = [bagModelStore]()
     var pant_models = [bagModelStore]()
     var shoe_models = [bagModelStore]()
     var hair_models = [bagModelStore]()
     
-    private lazy var worn_items: [bagModelStore] = {
+    internal lazy var worn_items: [bagModelStore] = {
         var temp: [bagModelStore] = []
         temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
         temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
@@ -34,13 +38,22 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getUnwornData()
         getWornData()
+        getUnwornData()
         
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
         table.isScrollEnabled = false;
+    }
+    
+    func reloadTable() {
+        table.reloadData()
+    }
+    
+    func reloadAvatar() {
+        avatarShirt.image = UIImage(named: self.worn_items[1].name)
+        avatarPants.image = UIImage(named: self.worn_items[2].name)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,25 +126,25 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
                 for tempItem in tempBagData.results {
                     let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: true)
+                    print(tempItemTwo.category)
                     if tempItemTwo.category == 1 {
                         self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                         self.worn_items[1] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
-                    }
-                    if tempItemTwo.category == 2 {
+                    } else if tempItemTwo.category == 2 {
                         self.pant_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                         self.worn_items[2] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
-                    }
-                    if tempItemTwo.category == 3 {
+                    } else if tempItemTwo.category == 3 {
                         self.shoe_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                         self.worn_items[3] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
-                    }
-                    if tempItemTwo.category == 4 {
+                    } else {
                         self.hair_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                         self.worn_items[4] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
                     }
                 }
                 DispatchQueue.main.async {
                     self.table.reloadData()
+                    self.avatarShirt.image = UIImage(named: self.worn_items[1].name)
+                    self.avatarPants.image = UIImage(named: self.worn_items[2].name)
                 }
             } catch let jsonErr {
                 print(jsonErr)
@@ -156,7 +169,7 @@ struct bagModelStore: Codable {
     let name: String
     let category: Int
     let id: Int
-    let selected: Bool
+    var selected: Bool
     
     //ask about selected
     init(name: String, category: Int, id: Int, selected: Bool) {
