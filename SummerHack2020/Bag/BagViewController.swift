@@ -75,12 +75,13 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 100.0
     }
     
+    // sending worn items
     @IBAction func exitBag(_ sender: Any) {
         DispatchQueue.main.async {
             let url = URL(string: "http://127.0.0.1:5000/send-changed-worn-items")!
             var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
             request.httpMethod = "POST"
-            request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "shirt_item_id": worn_items[1].id, "pant_item_id": worn_items[2].id, "shoes_item_id": worn_items[3].id, "hair_item_id": worn_items[4].id])
+            request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "shirt_item_id": "\(self.worn_items[1].id)", "pant_item_id": "\(self.worn_items[2].id)", "shoes_item_id": "\(self.worn_items[3].id)", "hair_item_id": "\(self.worn_items[4].id)"])
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             }
             task.resume()
