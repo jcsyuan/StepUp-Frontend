@@ -20,6 +20,8 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getBagData()
+        
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
@@ -37,9 +39,9 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else if indexPath.row == 1 {
             cell.configure(with: pant_models)
         } else if indexPath.row == 2 {
-            cell.configure(with: shirt_models)
+            cell.configure(with: shoe_models)
         } else {
-            cell.configure(with: pant_models)
+            cell.configure(with: hair_models)
         }
         return cell
     }
@@ -50,7 +52,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     private func getBagData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-bag-data")!
+        let url = URL(string: "http://127.0.0.1:5000/get-unworn-bag-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -84,16 +86,6 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 }
 
-//struct Model {
-//    let text: String
-//    let imageName: String
-//
-//    init(text: String, imageName: String) {
-//        self.text = text
-//        self.imageName = imageName
-//    }
-//}
-
 struct bagModelArray: Codable {
     let results: [bagModelDecode]
 }
@@ -103,12 +95,13 @@ struct bagModelDecode: Codable {
     let category: Int
     let id: Int
 }
+
 // struct to store data for each item in the shop
 struct bagModelStore: Codable {
     let name: String
     let category: Int
-    let selected: Bool
     let id: Int
+    let selected: Bool
     
     //ask about selected
     init(name: String, category: Int, id: Int, selected: Bool) {

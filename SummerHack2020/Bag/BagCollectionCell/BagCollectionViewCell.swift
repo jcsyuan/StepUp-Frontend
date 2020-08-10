@@ -10,7 +10,6 @@ import UIKit
 
 class BagCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var myLabel: UILabel!
     @IBOutlet var myImageView: UIImageView!
     
     static let identifier = "BagCollectionViewCell"
@@ -21,13 +20,9 @@ class BagCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
     }
     
     public func configure(with model: bagModelStore) {
-        self.myLabel.text = model.name
-        self.myLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.myImageView.image = UIImage(named: model.name)
         self.myImageView.contentMode = .scaleAspectFit
         

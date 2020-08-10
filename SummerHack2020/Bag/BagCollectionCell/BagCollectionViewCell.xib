@@ -16,37 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="262" height="262"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ex-BE-rbC">
-                        <rect key="frame" x="0.0" y="242" width="262" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="xuD-p5-wgC"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-4d-WiZ">
-                        <rect key="frame" x="101" y="2" width="60" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="YZl-xP-KM0"/>
-                            <constraint firstAttribute="width" constant="60" id="waA-hW-iq3"/>
-                        </constraints>
+                        <rect key="frame" x="3" y="3" width="256" height="256"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="GUx-4d-WiZ" secondAttribute="trailing" constant="3" id="6xE-G1-nqu"/>
                 <constraint firstItem="GUx-4d-WiZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Eku-JX-wmV"/>
-                <constraint firstItem="GUx-4d-WiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="GVf-Ln-r2s"/>
-                <constraint firstAttribute="bottom" secondItem="4Ex-BE-rbC" secondAttribute="bottom" id="i3e-fY-ugJ"/>
-                <constraint firstAttribute="trailing" secondItem="4Ex-BE-rbC" secondAttribute="trailing" id="kM5-V1-Z9O"/>
-                <constraint firstItem="4Ex-BE-rbC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ul2-cD-nCc"/>
+                <constraint firstAttribute="bottom" secondItem="GUx-4d-WiZ" secondAttribute="bottom" constant="3" id="ZN9-jX-CXs"/>
+                <constraint firstItem="GUx-4d-WiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="gNE-Nf-XYu"/>
+                <constraint firstItem="GUx-4d-WiZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="uDj-aX-7lz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="262" height="262"/>
             <connections>
                 <outlet property="myImageView" destination="GUx-4d-WiZ" id="8Lm-c9-hjh"/>
-                <outlet property="myLabel" destination="4Ex-BE-rbC" id="sHc-iD-7Do"/>
             </connections>
             <point key="canvasLocation" x="262.31884057971018" y="81.026785714285708"/>
         </collectionViewCell>

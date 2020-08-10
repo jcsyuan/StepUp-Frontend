@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     let healthStore = HKHealthStore()
     
+    @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var weeklySteps: UILabel!
     @IBOutlet weak var totalSteps: UILabel!
@@ -56,6 +57,10 @@ class HomeViewController: UIViewController {
     
     // design edits of home
     private func homeAesthetics() {
+        // round home label
+        homeLabel.layer.masksToBounds = true
+        homeLabel.layer.cornerRadius = 10
+        
         // round stats buttons
         weeklySteps.layer.masksToBounds = true
         weeklySteps.layer.cornerRadius = 10
