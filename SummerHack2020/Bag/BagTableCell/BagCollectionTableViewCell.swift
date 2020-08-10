@@ -11,7 +11,11 @@ import UIKit
 class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: accessBagViewController?
+    var models = [bagModelStore]()
+    
     static let identifier = "BagCollectionTableViewCell"
+    
+    @IBOutlet var bagCollectionView : UICollectionView!
     
     static func nib() -> UINib {
         return UINib(nibName: "BagCollectionTableViewCell", bundle: nil)
@@ -22,10 +26,6 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         bagCollectionView.reloadData()
     }
     
-    @IBOutlet var bagCollectionView : UICollectionView!
-    
-    var models = [bagModelStore]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,12 +34,8 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         bagCollectionView.dataSource = self
         bagCollectionView.showsHorizontalScrollIndicator = false
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
-    //Bag Collection View
+    // BagCollectionView functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
@@ -54,33 +50,32 @@ class BagCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return CGSize(width: 80, height: 80)
     }
     
-    // press cell
+    // selecting item to wear
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = bagCollectionView!.cellForItem(at: indexPath)
-        cell?.backgroundColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 0.2481271404)
-        
-        var tempItem = models[indexPath.row]
-        tempItem.selected = true
+        // change selected to false for old item
+        for itemIndex in 0...models.count - 1 {
+            if models[itemIndex].selected {
+                models[itemIndex].selected = false
+            }
+        }
+        // change selected to true for new item
+        models[indexPath.row].selected = true
+        // replace worn items array with new item
+        let tempItem = models[indexPath.row]
         let category = tempItem.category
         if category == 1 {
-            delegate!.worn_items[1].selected = false
             delegate!.worn_items[1] = tempItem
         } else if category == 2 {
-            delegate!.worn_items[2].selected = false
             delegate!.worn_items[2] = tempItem
         } else if category == 3 {
-            delegate!.worn_items[3].selected = false
             delegate!.worn_items[3] = tempItem
         } else {
-            delegate!.worn_items[4].selected = false
             delegate!.worn_items[4] = tempItem
         }
-        // success in reloading avatar
+        // reload avatar
         delegate!.reloadAvatar()
-        // failed to reload collections
+        // reload table cell
         bagCollectionView.reloadData()
-        delegate!.reloadTable()
-        print(delegate!.worn_items)
     }
     
 }
