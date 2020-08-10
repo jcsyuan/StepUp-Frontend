@@ -16,12 +16,22 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var pant_models = [bagModelStore]()
     var shoe_models = [bagModelStore]()
     var hair_models = [bagModelStore]()
-    var worn_items: [bagModelStore] = [nil, nil, nil, nil, nil]
+    
+    private lazy var worn_items: [bagModelStore] = {
+        var temp: [bagModelStore] = []
+        temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
+        temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
+        temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
+        temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
+        temp.append(bagModelStore(name: "", category: 0, id: 0, selected: false))
+        return temp
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getBagData()
+
+        getUnwornData()
+        getWornData()
         
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
@@ -51,7 +61,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 100.0
     }
     
-    private func getBagData() {
+    private func getUnwornData() {
         // load user data
         let url = URL(string: "http://127.0.0.1:5000/get-unworn-bag-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
@@ -86,7 +96,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         task.resume()
     }
     
-    private func getBagData() {
+    private func getWornData() {
         // load user data
         let url = URL(string: "http://127.0.0.1:5000/get-worn-bag-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
