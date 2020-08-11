@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
                         let defaults = UserDefaults.standard
                         defaults.set(tempCredentials.user_id, forKey: defaultsKeys.userIdKey)
                         defaults.set(tempCredentials.token, forKey: defaultsKeys.tokenKey)
+                        defaults.set(true, forKey: defaultsKeys.loginKey)
                         self.performSegue(withIdentifier: "presentHome", sender: self)
                     }
                 }
@@ -62,5 +63,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        password.isSecureTextEntry = true
     }
 }

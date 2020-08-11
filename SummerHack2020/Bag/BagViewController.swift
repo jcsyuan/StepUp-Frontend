@@ -97,7 +97,6 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
                 for tempItem in tempBagData.results {
                     let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: true)
-                    print(tempItemTwo.category)
                     if tempItemTwo.category == 1 {
                         self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                         self.worn_items[1] = bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected)
@@ -138,6 +137,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 let tempBagData = try JSONDecoder().decode(bagModelArray.self, from: data)
                 for tempItem in tempBagData.results {
                     let tempItemTwo = bagModelStore(name: tempItem.name, category: tempItem.category, id: tempItem.id, selected: false)
+                    print(tempItemTwo)
                     if tempItemTwo.category == 1 {
                         self.shirt_models.append(bagModelStore(name: tempItemTwo.name, category: tempItemTwo.category, id: tempItemTwo.id, selected: tempItemTwo.selected))
                     }

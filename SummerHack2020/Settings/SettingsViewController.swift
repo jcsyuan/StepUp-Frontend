@@ -46,8 +46,11 @@ class SettingsViewController: UIViewController {
         termsButton.layer.borderColor = UIColor(red: 255/255.0, green: 131/255.0, blue: 123/255.0, alpha: 0.75).cgColor
         
     }
-    
 
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: defaultsKeys.loginKey)
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
     
 
 }

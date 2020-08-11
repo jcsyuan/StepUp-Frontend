@@ -13,6 +13,7 @@ struct defaultsKeys {
     static let tokenKey = "tokenKeyString"
     static let oldCoinsKey = "oldCoinsKeyString"
     static let oldDateKey = "oldDateKeyString"
+    static let loginKey = "isUserLoggedInString"
 }
 
 class createAccountViewController: UIViewController {
@@ -64,6 +65,7 @@ class createAccountViewController: UIViewController {
                         defaults.set(tempCreateValid.token, forKey: defaultsKeys.tokenKey)
                         defaults.set(0, forKey: defaultsKeys.oldCoinsKey)
                         defaults.set(Date().dayNumberOfWeek(), forKey: defaultsKeys.oldDateKey)
+                        defaults.set(true, forKey: defaultsKeys.loginKey)
                         self.performSegue(withIdentifier: "createToHome", sender: self)
                     }
                 }
@@ -78,6 +80,7 @@ class createAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        password.isSecureTextEntry = true
     }
 }
 
