@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var avatarShirt: UIImageView!
     @IBOutlet weak var avatarPants: UIImageView!
     
+    
     struct HomeData: Codable {
         let username: String
         let name: String
@@ -41,6 +42,10 @@ class HomeViewController: UIViewController {
     
     struct jsonDate: Codable {
         let startDate: String
+    }
+    
+    struct getNewCoin: Codable {
+        let newCoins: Int
     }
     
     override func viewDidLoad() {
@@ -108,13 +113,12 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     // string data
                     self.Name.text = tempHomeData.name
-                    self.coins.text = "\(tempHomeData.totCoins)"
                     self.statsLabel.text = "\(tempHomeData.username)'s STATS".uppercased()
                     // image data
                     self.avatarShirt.image = UIImage(named: tempHomeData.shirt)
                     self.avatarPants.image = UIImage(named: tempHomeData.pants)
-//                    self.avatarShoes.image = UIImage(named: tempHomeData.shoes)
-//                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
+                    //                    self.avatarShoes.image = UIImage(named: tempHomeData.shoes)
+                    //                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
                 }
             } catch let jsonErr {
                 print(jsonErr)
@@ -134,6 +138,55 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func updateCoinage(dailySteps: Int) {
+        let oldCoins = UserDefaults.standard.integer(forKey: defaultsKeys.oldCoinsKey)
+        let oldDate = UserDefaults.standard.integer(forKey: defaultsKeys.oldDateKey)
+        
+        if oldDate == Date().dayNumberOfWeek() {
+            let tempCoins = dailySteps - oldCoins
+            let url = URL(string: "http://127.0.0.1:5000/get-new-coin-data")!
+            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+            request.httpMethod = "POST"
+            request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "add_coins": "\(tempCoins)"])
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+                do {
+                    let tempCoinData = try JSONDecoder().decode(getNewCoin.self, from: data)
+                    DispatchQueue.main.async {
+                        // string data
+                        self.coins.text = "\(tempCoinData.newCoins)"
+                    }
+                } catch let jsonErr {
+                    print(jsonErr)
+                }
+            }
+            task.resume()
+            UserDefaults.standard.set(dailySteps, forKey: defaultsKeys.oldCoinsKey)
+            //UserDefaults.standard.set(Date().dayNumberOfWeek(), forKey: defaultsKeys.oldDateKey)
+        } else {
+            let tempCoins = dailySteps
+            let url = URL(string: "http://127.0.0.1:5000/get-new-coin-data")!
+            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+            request.httpMethod = "POST"
+            request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "add_coins": "\(tempCoins)"])
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+                do {
+                    let tempCoinData = try JSONDecoder().decode(getNewCoin.self, from: data)
+                    DispatchQueue.main.async {
+                        // string data
+                        self.coins.text = "\(tempCoinData.newCoins)"
+                    }
+                } catch let jsonErr {
+                    print(jsonErr)
+                }
+            }
+            task.resume()
+            UserDefaults.standard.set(dailySteps, forKey: defaultsKeys.oldCoinsKey)
+            UserDefaults.standard.set(Date().dayNumberOfWeek(), forKey: defaultsKeys.oldDateKey)
+        }
+    }
+    
     // OberservableQuery to track updates in step count
     private func getSteps() {
         let steps: HKObjectType = HKObjectType.quantityType(forIdentifier: .stepCount)!
@@ -150,6 +203,7 @@ class HomeViewController: UIViewController {
                 // get and update all steps
                 self.getDailySteps(completion: { (dailyStepCount) in
                     print("Daily step display to \(dailyStepCount)")
+                    updateCoinage(dailySteps: dailyStepCount)
                     // get newest weekly steps
                     self.getWeeklySteps(completion: { (weeklyStepCount) in
                         print("Weekly step display to \(weeklyStepCount)")
@@ -256,7 +310,7 @@ class HomeViewController: UIViewController {
         }
         task.resume()
     }
-
+    
     // check to see if we need to update previous aggregate steps
     private func updatePreviousAggregate(completion: @escaping () -> ()) {
         let url = URL(string: "http://127.0.0.1:5000/get-start-date")!

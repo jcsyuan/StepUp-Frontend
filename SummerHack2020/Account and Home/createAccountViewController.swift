@@ -11,6 +11,8 @@ import UIKit
 struct defaultsKeys {
     static let userIdKey = "userIdKeyString"
     static let tokenKey = "tokenKeyString"
+    static let oldCoinsKey = "oldCoinsKeyString"
+    static let oldDateKey = "oldDateKeyString"
 }
 
 class createAccountViewController: UIViewController {
@@ -60,6 +62,8 @@ class createAccountViewController: UIViewController {
                         let defaults = UserDefaults.standard
                         defaults.set(tempCreateValid.user_id, forKey: defaultsKeys.userIdKey)
                         defaults.set(tempCreateValid.token, forKey: defaultsKeys.tokenKey)
+                        defaults.set(0, forKey: defaultsKeys.oldCoinsKey)
+                        defaults.set(Date().dayNumberOfWeek(), forKey: defaultsKeys.oldDateKey)
                         self.performSegue(withIdentifier: "createToHome", sender: self)
                     }
                 }
