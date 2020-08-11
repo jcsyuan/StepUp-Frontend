@@ -141,7 +141,6 @@ class HomeViewController: UIViewController {
     private func updateCoinage(dailySteps: Int) {
         let oldCoins = UserDefaults.standard.integer(forKey: defaultsKeys.oldCoinsKey)
         let oldDate = UserDefaults.standard.integer(forKey: defaultsKeys.oldDateKey)
-        
         if oldDate == Date().dayNumberOfWeek() {
             let tempCoins = dailySteps - oldCoins
             let url = URL(string: "http://127.0.0.1:5000/get-new-coin-data")!
@@ -203,7 +202,7 @@ class HomeViewController: UIViewController {
                 // get and update all steps
                 self.getDailySteps(completion: { (dailyStepCount) in
                     print("Daily step display to \(dailyStepCount)")
-                    updateCoinage(dailySteps: dailyStepCount)
+                    self.updateCoinage(dailySteps: dailyStepCount)
                     // get newest weekly steps
                     self.getWeeklySteps(completion: { (weeklyStepCount) in
                         print("Weekly step display to \(weeklyStepCount)")
