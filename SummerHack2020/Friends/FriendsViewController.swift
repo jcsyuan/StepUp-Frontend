@@ -18,6 +18,16 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
     
+    @IBAction func requestsButton(_ sender: Any) {
+        guard let vc = UIStoryboard(name:"RequestsViewController", bundle:nil).instantiateViewControllerWithIdentifier("identifier") as? SecondViewController
+            else {
+            print("Could not instantiate view controller with identifier of type SecondViewController")
+            return
+        }
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated:true)
+    }
+    
     
     var nameArray: [String] = []
     

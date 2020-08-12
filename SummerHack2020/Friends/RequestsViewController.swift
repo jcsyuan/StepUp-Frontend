@@ -12,6 +12,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var table: UITableView!
     var data: [String] = []
+    var delegate: accessFriendsViewController?
     
     struct RequestList: Codable {
         let results: [String]
@@ -87,9 +88,9 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "accept"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
+            delegate?.getFriends()
         }
         task.resume()
-        
         table.reloadData()
     }
     
