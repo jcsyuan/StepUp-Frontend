@@ -9,7 +9,7 @@
 import UIKit
 
 protocol accessFriendsViewController {
-    
+    func getFriends()
 }
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, accessFriendsViewController {
@@ -17,6 +17,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var friendsLabel: UILabel!
+    
     
     var nameArray: [String] = []
     
@@ -37,6 +38,10 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         friendsLabel.layer.cornerRadius = 10
         
         // json stuff
+        func getFriends()
+    }
+    
+    func getFriends() {
         let url = URL(string: "http://127.0.0.1:5000/get-friends")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
