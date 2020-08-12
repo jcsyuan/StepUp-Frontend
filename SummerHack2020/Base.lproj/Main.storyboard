@@ -257,6 +257,20 @@
                                     <constraint firstAttribute="width" constant="250" id="KjP-LH-X3D"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HxM-pO-Ioi">
+                                <rect key="frame" x="215" y="372" width="100" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9W8-SH-bvS"/>
+                                    <constraint firstAttribute="height" constant="43" id="Vwx-tz-IgA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Yf-l5-2QS">
+                                <rect key="frame" x="102" y="377" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GlE-zx-6ve"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ne3-cv-C35"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBU-DM-giX">
                                 <rect key="frame" x="151.5" y="251" width="111" height="138"/>
                                 <constraints>
@@ -271,26 +285,42 @@
                                     <constraint firstAttribute="height" constant="110" id="QVA-4L-YUR"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOd-lo-Zhn">
+                                <rect key="frame" x="152" y="40" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="48C-qc-gW7"/>
+                                    <constraint firstAttribute="width" constant="110" id="hnT-LG-5zm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7aT-sZ-ZlR" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="15" id="7SS-eq-QrQ"/>
                             <constraint firstItem="hrm-A7-Md7" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="9ex-GF-rPB"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="bottom" secondItem="kmh-jO-dFT" secondAttribute="bottom" id="Mw8-l2-jNt"/>
+                            <constraint firstItem="0Yf-l5-2QS" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="-55" id="OoU-XL-PWh"/>
                             <constraint firstItem="2Fr-jb-7tG" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="-30" id="TiI-cO-YXn"/>
+                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="wOd-lo-Zhn" secondAttribute="bottom" id="YIw-7Q-GTg"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="top" secondItem="hrm-A7-Md7" secondAttribute="bottom" constant="-9" id="axu-Tj-wRu"/>
+                            <constraint firstItem="HxM-pO-Ioi" firstAttribute="top" secondItem="vBU-DM-giX" secondAttribute="bottom" constant="-17" id="dED-4r-Ta2"/>
+                            <constraint firstItem="0Yf-l5-2QS" firstAttribute="top" secondItem="vBU-DM-giX" secondAttribute="bottom" constant="-12" id="dHf-8I-XsK"/>
                             <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="106" id="hJ2-U4-VXU"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="izS-Oc-H8o"/>
                             <constraint firstItem="kmh-jO-dFT" firstAttribute="leading" secondItem="Ua1-ZQ-klJ" secondAttribute="leading" id="jjs-P0-OtK"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="kmh-jO-dFT" secondAttribute="trailing" id="qRC-vY-Uhu"/>
                             <constraint firstItem="2Fr-jb-7tG" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="3" id="rrF-PW-M6O"/>
+                            <constraint firstItem="wOd-lo-Zhn" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="swW-V8-T08"/>
+                            <constraint firstItem="HxM-pO-Ioi" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="58" id="xWM-kv-bDP"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="7aT-sZ-ZlR" secondAttribute="trailing" constant="15" id="zMw-s1-ie8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ua1-ZQ-klJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="3tY-CP-gKX"/>
                     <connections>
+                        <outlet property="avatarHair" destination="wOd-lo-Zhn" id="Z25-dc-Xfr"/>
+                        <outlet property="avatarLeftShoe" destination="0Yf-l5-2QS" id="db9-Qq-aDw"/>
                         <outlet property="avatarPants" destination="vBU-DM-giX" id="mvf-2e-pTo"/>
+                        <outlet property="avatarRightShoe" destination="HxM-pO-Ioi" id="EoR-61-wwH"/>
                         <outlet property="avatarShirt" destination="hrm-A7-Md7" id="CGI-4c-IbF"/>
                         <outlet property="table" destination="kmh-jO-dFT" id="g9a-UW-LBx"/>
                     </connections>
