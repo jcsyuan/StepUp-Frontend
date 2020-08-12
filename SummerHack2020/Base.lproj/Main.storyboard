@@ -250,15 +250,22 @@
                                     <segue destination="AqC-Ez-EQX" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="LjT-bT-lNM"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="2Fr-jb-7tG">
+                                <rect key="frame" x="85" y="14" width="250" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="Iem-9T-X75"/>
+                                    <constraint firstAttribute="width" constant="250" id="KjP-LH-X3D"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBU-DM-giX">
-                                <rect key="frame" x="151.5" y="245" width="111" height="138"/>
+                                <rect key="frame" x="151.5" y="251" width="111" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="78s-ju-9fy"/>
                                     <constraint firstAttribute="width" constant="111" id="KGw-WN-ypz"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hrm-A7-Md7">
-                                <rect key="frame" x="132" y="144" width="150" height="110"/>
+                                <rect key="frame" x="132" y="150" width="150" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Jp3-xO-2HY"/>
                                     <constraint firstAttribute="height" constant="110" id="QVA-4L-YUR"/>
@@ -269,12 +276,14 @@
                         <constraints>
                             <constraint firstItem="7aT-sZ-ZlR" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="15" id="7SS-eq-QrQ"/>
                             <constraint firstItem="hrm-A7-Md7" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="9ex-GF-rPB"/>
-                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="100" id="EFL-Kp-AyW"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="bottom" secondItem="kmh-jO-dFT" secondAttribute="bottom" id="Mw8-l2-jNt"/>
+                            <constraint firstItem="2Fr-jb-7tG" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="-30" id="TiI-cO-YXn"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="top" secondItem="hrm-A7-Md7" secondAttribute="bottom" constant="-9" id="axu-Tj-wRu"/>
+                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="106" id="hJ2-U4-VXU"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="izS-Oc-H8o"/>
                             <constraint firstItem="kmh-jO-dFT" firstAttribute="leading" secondItem="Ua1-ZQ-klJ" secondAttribute="leading" id="jjs-P0-OtK"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="kmh-jO-dFT" secondAttribute="trailing" id="qRC-vY-Uhu"/>
+                            <constraint firstItem="2Fr-jb-7tG" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="3" id="rrF-PW-M6O"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="7aT-sZ-ZlR" secondAttribute="trailing" constant="15" id="zMw-s1-ie8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ua1-ZQ-klJ"/>
@@ -2038,12 +2047,13 @@
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
         <segue reference="JYl-qS-IqO"/>
-        <segue reference="VsH-vD-Fkd"/>
+        <segue reference="LjT-bT-lNM"/>
         <segue reference="zCM-dI-PIc"/>
         <segue reference="fs8-JF-a4D"/>
         <segue reference="TR6-4e-lE9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Avatar" width="828" height="1792"/>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
