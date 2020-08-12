@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14N-BZ-tvS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.5797101449277" y="337.5"/>
+            <point key="canvasLocation" x="1887" y="338"/>
         </scene>
         <!--Requests View Controller-->
         <scene sceneID="VsI-hJ-xPh">
@@ -1249,6 +1249,13 @@
                                     <segue destination="MKM-jT-bo8" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="TR6-4e-lE9"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar Shadow" translatesAutoresizingMaskIntoConstraints="NO" id="ZhN-oz-gwt">
+                                <rect key="frame" x="10" y="465.5" width="400" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KXc-vd-h7X"/>
+                                    <constraint firstAttribute="width" constant="400" id="lZo-WL-xuC"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-eW-dEi">
                                 <rect key="frame" x="54" y="14" width="312.5" height="625"/>
                                 <constraints>
@@ -1291,14 +1298,14 @@
                                     <constraint firstAttribute="width" constant="137.5" id="oEe-96-Ivy"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-hF-qUi">
-                                <rect key="frame" x="10" y="97.5" width="115" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-hF-qUi">
+                                <rect key="frame" x="139.5" y="528" width="135" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="hXn-vW-vCu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="hXn-vW-vCu"/>
                                     <constraint firstAttribute="height" constant="40" id="lXN-Ma-nZM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1310,12 +1317,13 @@
                             <constraint firstItem="xr9-eW-dEi" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" constant="3" id="JqL-Oh-b46"/>
                             <constraint firstItem="EPA-5d-ftx" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" constant="-68.75" id="KVe-Yw-MnH"/>
                             <constraint firstItem="APz-SQ-IaC" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="15" id="MGR-TX-ou5"/>
+                            <constraint firstItem="Scy-hF-qUi" firstAttribute="top" secondItem="Iyp-ZC-tWr" secondAttribute="bottom" constant="10" id="MOi-K3-Xou"/>
                             <constraint firstItem="Iyp-ZC-tWr" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" constant="68.75" id="NBT-jL-dfw"/>
                             <constraint firstItem="APz-SQ-IaC" firstAttribute="leading" secondItem="syv-q1-0lW" secondAttribute="trailing" constant="2" id="PYb-sd-SUu"/>
                             <constraint firstItem="3QK-b6-Lqo" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="5" id="REO-LS-1Ht"/>
                             <constraint firstItem="cuP-Sp-x0p" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="RxG-Cb-Kpx"/>
-                            <constraint firstItem="Scy-hF-qUi" firstAttribute="top" secondItem="bgP-Ad-XvT" secondAttribute="bottom" constant="10" id="SIc-I9-S9P"/>
                             <constraint firstItem="AfQ-fy-tY1" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="SV0-fK-eoI"/>
+                            <constraint firstItem="Scy-hF-qUi" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="TcJ-Av-83h"/>
                             <constraint firstItem="bgP-Ad-XvT" firstAttribute="leading" secondItem="grh-Ba-V5r" secondAttribute="leading" constant="10" id="Ti0-T3-GJP"/>
                             <constraint firstItem="grh-Ba-V5r" firstAttribute="trailing" secondItem="qw5-JV-3gg" secondAttribute="trailing" constant="10" id="YX7-fW-Yox"/>
                             <constraint firstItem="Iyp-ZC-tWr" firstAttribute="top" secondItem="1Ut-wC-0fu" secondAttribute="bottom" constant="-21.25" id="ZqT-0b-PLF"/>
@@ -1325,11 +1333,12 @@
                             <constraint firstItem="xr9-eW-dEi" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="-30" id="f2o-sh-4uD"/>
                             <constraint firstItem="qw5-JV-3gg" firstAttribute="top" secondItem="syv-q1-0lW" secondAttribute="bottom" constant="10" id="gMN-Rc-MYl"/>
                             <constraint firstItem="LQx-3Y-H05" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="grh-Ov-kx5"/>
+                            <constraint firstItem="ZhN-oz-gwt" firstAttribute="top" secondItem="EPA-5d-ftx" secondAttribute="bottom" constant="-55" id="hUc-Ix-yjp"/>
                             <constraint firstItem="syv-q1-0lW" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="8" id="lIS-Y8-Wf7"/>
                             <constraint firstItem="bgP-Ad-XvT" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="10" id="nz5-9M-WFD"/>
-                            <constraint firstItem="Scy-hF-qUi" firstAttribute="leading" secondItem="grh-Ba-V5r" secondAttribute="leading" constant="10" id="o9X-TS-xgY"/>
                             <constraint firstItem="LQx-3Y-H05" firstAttribute="top" secondItem="AfQ-fy-tY1" secondAttribute="bottom" constant="10" id="pDS-Sd-GlU"/>
                             <constraint firstItem="1Ut-wC-0fu" firstAttribute="top" secondItem="cuP-Sp-x0p" secondAttribute="bottom" constant="-11.25" id="r84-gP-5lD"/>
+                            <constraint firstItem="ZhN-oz-gwt" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" constant="3" id="ya7-Az-o2M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="grh-Ba-V5r"/>
                     </view>
@@ -2116,13 +2125,14 @@
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
         <segue reference="JYl-qS-IqO"/>
-        <segue reference="LjT-bT-lNM"/>
+        <segue reference="Grf-kN-J8x"/>
         <segue reference="zCM-dI-PIc"/>
         <segue reference="fs8-JF-a4D"/>
         <segue reference="TR6-4e-lE9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Avatar" width="828" height="1792"/>
+        <image name="Avatar Shadow" width="1320" height="500"/>
         <image name="arrow.left.and.right" catalog="system" width="128" height="84"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="89"/>

@@ -65,7 +65,6 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func closeRequests(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
     

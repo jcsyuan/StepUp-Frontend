@@ -8,7 +8,11 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+protocol accessFriendsViewController {
+    
+}
+
+class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, accessFriendsViewController {
     
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
