@@ -24,6 +24,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var statsStack: UIStackView!
     @IBOutlet weak var avatarShirt: UIImageView!
     @IBOutlet weak var avatarPants: UIImageView!
+    @IBOutlet weak var avatarLeftShoe: UIImageView!
+    @IBOutlet weak var avatarRightShoe: UIImageView!
+    @IBOutlet weak var avatarHair: UIImageView!
     
     
     struct HomeData: Codable {
@@ -117,8 +120,9 @@ class HomeViewController: UIViewController {
                     // image data
                     self.avatarShirt.image = UIImage(named: tempHomeData.shirt)
                     self.avatarPants.image = UIImage(named: tempHomeData.pants)
-                    //                    self.avatarShoes.image = UIImage(named: tempHomeData.shoes)
-                    //                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
+                    self.avatarLeftShoe.image = UIImage(named: tempHomeData.shoes)
+                    self.avatarRightShoe.image = UIImage(named: "\(tempHomeData.shoes)1")
+                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
                 }
             } catch let jsonErr {
                 print(jsonErr)
