@@ -19,15 +19,14 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var friendsLabel: UILabel!
     
     @IBAction func requestsButton(_ sender: Any) {
-        guard let vc = UIStoryboard(name:"RequestsViewController", bundle:nil).instantiateViewControllerWithIdentifier("identifier") as? SecondViewController
+        guard let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "RequestsViewControllerId") as? RequestsViewController
             else {
-            print("Could not instantiate view controller with identifier of type SecondViewController")
+            print("failed")
             return
         }
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated:true)
     }
-    
     
     var nameArray: [String] = []
     
@@ -48,7 +47,15 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         friendsLabel.layer.cornerRadius = 10
         
         // json stuff
-        func getFriends()
+        getFriends()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getFriends()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getFriends()
     }
     
     func getFriends() {
@@ -101,8 +108,6 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         searchBar.resignFirstResponder()
         tblView.reloadData()
     }
-    
-
 }
 
 extension URLRequest {

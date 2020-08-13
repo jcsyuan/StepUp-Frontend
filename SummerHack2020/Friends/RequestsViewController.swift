@@ -66,9 +66,10 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func closeRequests(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        self.delegate?.getFriends()
+//        dismiss(animated: true, completion: nil
+        self.performSegue(withIdentifier: "returnFriends", sender: nil)
     }
-    
 }
 
 
@@ -88,7 +89,6 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "accept"])
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
-            delegate?.getFriends()
         }
         task.resume()
         table.reloadData()
