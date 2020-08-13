@@ -20,7 +20,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var avatarPants: UIImageView!
     @IBOutlet weak var avatarLeftShoe: UIImageView!
     @IBOutlet weak var avatarRightShoe: UIImageView!
-    @IBOutlet weak var avatarHair: UIImageView!
+    @IBOutlet weak var avatarBody: UIImageView!
     
     var shirt_models = [bagModelStore]()
     var pant_models = [bagModelStore]()
@@ -55,7 +55,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         avatarPants.image = UIImage(named: self.worn_items[2].name)
         avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
         avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
-        avatarHair.image = UIImage(named: "\(self.worn_items[4].name) Avatar")
+        avatarBody.image = UIImage(named: "\(self.worn_items[4].name)-Avatar")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,7 +123,8 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     self.avatarPants.image = UIImage(named: self.worn_items[2].name)
                     self.avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
                     self.avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
-                    self.avatarHair.image = UIImage(named: "\(self.worn_items[4].name) Avatar")
+                    self.avatarBody.image = UIImage(named: "\(self.worn_items[4].name)-Avatar")
+                    print("\(self.worn_items[4].name)-Avatar")
                 }
             } catch let jsonErr {
                 print(jsonErr)

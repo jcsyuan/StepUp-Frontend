@@ -10,7 +10,7 @@
         <!--Add Friend View Controller-->
         <scene sceneID="2fz-ZT-tny">
             <objects>
-                <viewController id="iIk-rr-YDw" customClass="AddFriendViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iIk-rr-YDw" customClass="AddFriendViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GJN-i6-dkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
         <!--Requests View Controller-->
         <scene sceneID="VsI-hJ-xPh">
             <objects>
-                <viewController storyboardIdentifier="RequestsViewControllerId" id="fql-x8-rPV" customClass="RequestsViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestsViewControllerId" id="fql-x8-rPV" customClass="RequestsViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sIi-ji-tpG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,7 @@
         <!--Bag View Controller-->
         <scene sceneID="VAM-Vw-5mU">
             <objects>
-                <viewController id="MKM-jT-bo8" customClass="BagViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MKM-jT-bo8" customClass="BagViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QFh-CC-0yK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,31 +286,22 @@
                                     <constraint firstAttribute="height" constant="110" id="QVA-4L-YUR"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOd-lo-Zhn">
-                                <rect key="frame" x="152" y="40" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="48C-qc-gW7"/>
-                                    <constraint firstAttribute="width" constant="110" id="hnT-LG-5zm"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7aT-sZ-ZlR" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="15" id="7SS-eq-QrQ"/>
                             <constraint firstItem="hrm-A7-Md7" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="9ex-GF-rPB"/>
+                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="106" id="JbQ-f0-M5x"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="bottom" secondItem="kmh-jO-dFT" secondAttribute="bottom" id="Mw8-l2-jNt"/>
                             <constraint firstItem="0Yf-l5-2QS" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="-55" id="OoU-XL-PWh"/>
                             <constraint firstItem="2Fr-jb-7tG" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="-30" id="TiI-cO-YXn"/>
-                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="wOd-lo-Zhn" secondAttribute="bottom" id="YIw-7Q-GTg"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="top" secondItem="hrm-A7-Md7" secondAttribute="bottom" constant="-9" id="axu-Tj-wRu"/>
                             <constraint firstItem="HxM-pO-Ioi" firstAttribute="top" secondItem="vBU-DM-giX" secondAttribute="bottom" constant="-17" id="dED-4r-Ta2"/>
                             <constraint firstItem="0Yf-l5-2QS" firstAttribute="top" secondItem="vBU-DM-giX" secondAttribute="bottom" constant="-12" id="dHf-8I-XsK"/>
-                            <constraint firstItem="hrm-A7-Md7" firstAttribute="top" secondItem="Ua1-ZQ-klJ" secondAttribute="top" constant="106" id="hJ2-U4-VXU"/>
                             <constraint firstItem="vBU-DM-giX" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="izS-Oc-H8o"/>
                             <constraint firstItem="kmh-jO-dFT" firstAttribute="leading" secondItem="Ua1-ZQ-klJ" secondAttribute="leading" id="jjs-P0-OtK"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="kmh-jO-dFT" secondAttribute="trailing" id="qRC-vY-Uhu"/>
                             <constraint firstItem="2Fr-jb-7tG" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="3" id="rrF-PW-M6O"/>
-                            <constraint firstItem="wOd-lo-Zhn" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" id="swW-V8-T08"/>
                             <constraint firstItem="HxM-pO-Ioi" firstAttribute="centerX" secondItem="QFh-CC-0yK" secondAttribute="centerX" constant="58" id="xWM-kv-bDP"/>
                             <constraint firstItem="Ua1-ZQ-klJ" firstAttribute="trailing" secondItem="7aT-sZ-ZlR" secondAttribute="trailing" constant="15" id="zMw-s1-ie8"/>
                         </constraints>
@@ -318,7 +309,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3tY-CP-gKX"/>
                     <connections>
-                        <outlet property="avatarHair" destination="wOd-lo-Zhn" id="Z25-dc-Xfr"/>
+                        <outlet property="avatarBody" destination="2Fr-jb-7tG" id="Hrw-Q6-xf9"/>
                         <outlet property="avatarLeftShoe" destination="0Yf-l5-2QS" id="db9-Qq-aDw"/>
                         <outlet property="avatarPants" destination="vBU-DM-giX" id="mvf-2e-pTo"/>
                         <outlet property="avatarRightShoe" destination="HxM-pO-Ioi" id="EoR-61-wwH"/>
@@ -333,7 +324,7 @@
         <!--Settings View Controller-->
         <scene sceneID="mEF-CZ-q95">
             <objects>
-                <viewController id="gd8-zg-mce" customClass="SettingsViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gd8-zg-mce" customClass="SettingsViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cPK-UR-Q9O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +589,7 @@
         <!--Help And Support View Controller-->
         <scene sceneID="YMj-SO-HVf">
             <objects>
-                <viewController id="XUY-Uc-ZfB" customClass="HelpAndSupportViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XUY-Uc-ZfB" customClass="HelpAndSupportViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rZl-bY-Z5G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -745,7 +736,7 @@
         <!--Privacy View Controller-->
         <scene sceneID="u03-BO-KuN">
             <objects>
-                <viewController id="HXS-fr-syI" customClass="PrivacyViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HXS-fr-syI" customClass="PrivacyViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qdd-Da-4rC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -820,7 +811,7 @@
         <!--Terms View Controller-->
         <scene sceneID="GF7-4p-9li">
             <objects>
-                <viewController id="may-1O-XQP" customClass="TermsViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="may-1O-XQP" customClass="TermsViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G74-Ru-Ij6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -883,7 +874,7 @@
         <!--Password View Controller-->
         <scene sceneID="8Nb-tR-FAM">
             <objects>
-                <viewController id="jyp-1U-ocQ" customClass="PasswordViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jyp-1U-ocQ" customClass="PasswordViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1f2-D5-FX7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -994,7 +985,7 @@
         <!--Friends-->
         <scene sceneID="mi1-Xd-Pf4">
             <objects>
-                <viewController id="6t4-wL-xou" userLabel="Friends" customClass="FriendsViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6t4-wL-xou" userLabel="Friends" customClass="FriendsViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZh-2g-OlD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1085,7 +1076,7 @@
                                 <rect key="frame" x="0.0" y="153.5" width="414" height="589.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="zRn-ec-6Z1" style="IBUITableViewCellStyleDefault" id="4xn-1R-sL3" customClass="MyTableViewCell" customModule="SummerHack2020" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="zRn-ec-6Z1" style="IBUITableViewCellStyleDefault" id="4xn-1R-sL3" customClass="MyTableViewCell" customModule="StepItUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4xn-1R-sL3" id="mea-VD-yFC">
@@ -1159,7 +1150,7 @@
         <!--Home View Controller-->
         <scene sceneID="MN9-5C-uVe">
             <objects>
-                <viewController storyboardIdentifier="homePage" id="AqC-Ez-EQX" customClass="HomeViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homePage" id="AqC-Ez-EQX" customClass="HomeViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJl-iZ-lA0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1378,13 +1369,6 @@
                                     <constraint firstAttribute="height" constant="137.5" id="PHS-qc-1pr"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-b6-Lqo">
-                                <rect key="frame" x="138.5" y="64" width="137.5" height="115"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="Cpf-jM-W0j"/>
-                                    <constraint firstAttribute="width" constant="137.5" id="oEe-96-Ivy"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-hF-qUi">
                                 <rect key="frame" x="139.5" y="520.5" width="135" height="40"/>
                                 <constraints>
@@ -1406,17 +1390,15 @@
                             <constraint firstItem="APz-SQ-IaC" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="15" id="MGR-TX-ou5"/>
                             <constraint firstItem="Scy-hF-qUi" firstAttribute="top" secondItem="Iyp-ZC-tWr" secondAttribute="bottom" constant="10" id="MOi-K3-Xou"/>
                             <constraint firstItem="Iyp-ZC-tWr" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" constant="68.75" id="NBT-jL-dfw"/>
+                            <constraint firstItem="cuP-Sp-x0p" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="135" id="PIE-2i-J16"/>
                             <constraint firstItem="APz-SQ-IaC" firstAttribute="leading" secondItem="syv-q1-0lW" secondAttribute="trailing" constant="2" id="PYb-sd-SUu"/>
-                            <constraint firstItem="3QK-b6-Lqo" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="20" id="REO-LS-1Ht"/>
                             <constraint firstItem="cuP-Sp-x0p" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="RxG-Cb-Kpx"/>
                             <constraint firstItem="AfQ-fy-tY1" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="SV0-fK-eoI"/>
                             <constraint firstItem="Scy-hF-qUi" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="TcJ-Av-83h"/>
                             <constraint firstItem="bgP-Ad-XvT" firstAttribute="leading" secondItem="grh-Ba-V5r" secondAttribute="leading" constant="10" id="Ti0-T3-GJP"/>
                             <constraint firstItem="grh-Ba-V5r" firstAttribute="trailing" secondItem="qw5-JV-3gg" secondAttribute="trailing" constant="10" id="YX7-fW-Yox"/>
                             <constraint firstItem="Iyp-ZC-tWr" firstAttribute="top" secondItem="1Ut-wC-0fu" secondAttribute="bottom" constant="-21.25" id="ZqT-0b-PLF"/>
-                            <constraint firstItem="cuP-Sp-x0p" firstAttribute="top" secondItem="3QK-b6-Lqo" secondAttribute="bottom" id="b4e-co-KOe"/>
                             <constraint firstItem="grh-Ba-V5r" firstAttribute="trailing" secondItem="APz-SQ-IaC" secondAttribute="trailing" constant="10" id="e4a-MB-0Sf"/>
-                            <constraint firstItem="3QK-b6-Lqo" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="f2d-1J-s5B"/>
                             <constraint firstItem="xr9-eW-dEi" firstAttribute="top" secondItem="grh-Ba-V5r" secondAttribute="top" constant="-30" id="f2o-sh-4uD"/>
                             <constraint firstItem="qw5-JV-3gg" firstAttribute="top" secondItem="syv-q1-0lW" secondAttribute="bottom" constant="10" id="gMN-Rc-MYl"/>
                             <constraint firstItem="LQx-3Y-H05" firstAttribute="centerX" secondItem="dJl-iZ-lA0" secondAttribute="centerX" id="grh-Ov-kx5"/>
@@ -1431,7 +1413,7 @@
                     </view>
                     <connections>
                         <outlet property="Name" destination="Scy-hF-qUi" id="4wo-KU-B3Y"/>
-                        <outlet property="avatarHair" destination="3QK-b6-Lqo" id="Z62-W6-x2C"/>
+                        <outlet property="avatarBody" destination="xr9-eW-dEi" id="BTt-Br-ydf"/>
                         <outlet property="avatarLeftShoe" destination="EPA-5d-ftx" id="HkL-N2-mpT"/>
                         <outlet property="avatarPants" destination="1Ut-wC-0fu" id="zOJ-ep-sy9"/>
                         <outlet property="avatarRightShoe" destination="Iyp-ZC-tWr" id="pBk-M1-ys9"/>
@@ -1453,7 +1435,7 @@
         <!--login-->
         <scene sceneID="BVd-lS-Df5">
             <objects>
-                <viewController storyboardIdentifier="loginPage" id="exz-Ke-NCg" userLabel="login" customClass="SignInViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="exz-Ke-NCg" userLabel="login" customClass="SignInViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8jh-jJ-LZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1487,7 +1469,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fsA-kI-ok2">
                                                 <rect key="frame" x="16" y="86" width="382" height="116"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0Q-Hx-PW5" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0Q-Hx-PW5" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8c7-e4-Hxk" userLabel="username">
@@ -1521,7 +1503,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6v-D9-VAL" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6v-D9-VAL" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="66" width="382" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAH-2I-tsa">
@@ -1640,7 +1622,7 @@
         <!--sign up-->
         <scene sceneID="Wz3-jJ-bI4">
             <objects>
-                <viewController id="Fj6-Ra-Wzj" userLabel="sign up" customClass="createAccountViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fj6-Ra-Wzj" userLabel="sign up" customClass="createAccountViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dqj-b9-4tK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1673,7 +1655,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-Bl-sP7" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-Bl-sP7" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                         <rect key="frame" x="16" y="147.5" width="382" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-YE-ZkM">
@@ -1707,7 +1689,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyv-MC-wgp" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyv-MC-wgp" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                         <rect key="frame" x="16" y="227.5" width="382" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7h-hn-axQ">
@@ -1741,7 +1723,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-s9-Cod" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-s9-Cod" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                         <rect key="frame" x="16" y="307.5" width="382" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdc-xu-8nG">
@@ -1775,7 +1757,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-Os-FcG" customClass="DesignableView" customModule="SummerHack2020" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-Os-FcG" customClass="DesignableView" customModule="StepItUp" customModuleProvider="target">
                                         <rect key="frame" x="16" y="387.5" width="382" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-1Y-U37">
@@ -1861,7 +1843,7 @@
         <!--Leaderboard find Group Scene-->
         <scene sceneID="dHu-pG-Mdl">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="2eo-Vc-SDF" userLabel="Leaderboard find Group Scene" customClass="LeaderBoardViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="2eo-Vc-SDF" userLabel="Leaderboard find Group Scene" customClass="LeaderBoardViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R4j-65-U3B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1994,7 +1976,7 @@
         <!--Shop View Controller-->
         <scene sceneID="tMN-1d-bdv">
             <objects>
-                <viewController id="i2R-I1-w6F" customClass="ShopViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i2R-I1-w6F" customClass="ShopViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d7e-xe-NlX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2113,7 +2095,7 @@
         <!--steps-->
         <scene sceneID="sym-pA-2Dj">
             <objects>
-                <viewController title="steps" id="2tD-jY-vck" customClass="ViewController" customModule="SummerHack2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="steps" id="2tD-jY-vck" customClass="ViewController" customModule="StepItUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ztK-Aj-f1q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2212,7 +2194,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="eLW-Hv-IXi"/>
         <segue reference="JYl-qS-IqO"/>
-        <segue reference="VsH-vD-Fkd"/>
+        <segue reference="LjT-bT-lNM"/>
         <segue reference="zCM-dI-PIc"/>
         <segue reference="fs8-JF-a4D"/>
         <segue reference="TR6-4e-lE9"/>

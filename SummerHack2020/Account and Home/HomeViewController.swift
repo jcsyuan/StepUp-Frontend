@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var avatarPants: UIImageView!
     @IBOutlet weak var avatarLeftShoe: UIImageView!
     @IBOutlet weak var avatarRightShoe: UIImageView!
-    @IBOutlet weak var avatarHair: UIImageView!
+    @IBOutlet weak var avatarBody: UIImageView!
     
     
     struct HomeData: Codable {
@@ -122,7 +122,7 @@ class HomeViewController: UIViewController {
                     self.avatarPants.image = UIImage(named: tempHomeData.pants)
                     self.avatarLeftShoe.image = UIImage(named: tempHomeData.shoes)
                     self.avatarRightShoe.image = UIImage(named: "\(tempHomeData.shoes)1")
-                    self.avatarHair.image = UIImage(named: tempHomeData.hair)
+                    self.avatarBody.image = UIImage(named: "\(tempHomeData.hair)-Avatar")
                 }
             } catch let jsonErr {
                 print(jsonErr)
