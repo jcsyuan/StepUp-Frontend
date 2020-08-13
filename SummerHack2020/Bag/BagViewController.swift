@@ -55,7 +55,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         avatarPants.image = UIImage(named: self.worn_items[2].name)
         avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
         avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
-        avatarHair.image = UIImage(named: self.worn_items[4].name)
+        avatarHair.image = UIImage(named: "\(self.worn_items[4].name) Avatar")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,7 +123,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     self.avatarPants.image = UIImage(named: self.worn_items[2].name)
                     self.avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
                     self.avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
-                    self.avatarHair.image = UIImage(named: self.worn_items[4].name)
+                    self.avatarHair.image = UIImage(named: "\(self.worn_items[4].name) Avatar")
                 }
             } catch let jsonErr {
                 print(jsonErr)

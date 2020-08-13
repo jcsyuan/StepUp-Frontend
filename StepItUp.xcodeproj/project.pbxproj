@@ -59,7 +59,7 @@
 		33770B2F24CFCBD100AF96CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		33EB105824D5E0B600D31327 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33ED39BD2499AB6A008C6166 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		33EE4BCA24986B58007B684A /* SummerHack2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerHack2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EE4BCA24986B58007B684A /* StepItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE4BCD24986B58007B684A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EE4BCF24986B58007B684A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33EE4BD124986B58007B684A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		33EE4BCB24986B58007B684A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33EE4BCA24986B58007B684A /* SummerHack2020.app */,
+				33EE4BCA24986B58007B684A /* StepItUp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,9 +267,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33EE4BC924986B58007B684A /* SummerHack2020 */ = {
+		33EE4BC924986B58007B684A /* StepItUp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33EE4BDE24986B5C007B684A /* Build configuration list for PBXNativeTarget "SummerHack2020" */;
+			buildConfigurationList = 33EE4BDE24986B5C007B684A /* Build configuration list for PBXNativeTarget "StepItUp" */;
 			buildPhases = (
 				0E41F5BECCD8753EA80C8266 /* [CP] Check Pods Manifest.lock */,
 				33EE4BC624986B58007B684A /* Sources */,
@@ -281,9 +281,9 @@
 			);
 			dependencies = (
 			);
-			name = SummerHack2020;
+			name = StepItUp;
 			productName = SummerHack2020;
-			productReference = 33EE4BCA24986B58007B684A /* SummerHack2020.app */;
+			productReference = 33EE4BCA24986B58007B684A /* StepItUp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +301,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33EE4BC524986B58007B684A /* Build configuration list for PBXProject "SummerHack2020" */;
+			buildConfigurationList = 33EE4BC524986B58007B684A /* Build configuration list for PBXProject "StepItUp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -314,7 +314,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33EE4BC924986B58007B684A /* SummerHack2020 */,
+				33EE4BC924986B58007B684A /* StepItUp */,
 			);
 		};
 /* End PBXProject section */
@@ -564,7 +564,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SummerHack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StepItUp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -584,7 +584,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SummerHack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StepItUp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -593,7 +593,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33EE4BC524986B58007B684A /* Build configuration list for PBXProject "SummerHack2020" */ = {
+		33EE4BC524986B58007B684A /* Build configuration list for PBXProject "StepItUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EE4BDC24986B5C007B684A /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33EE4BDE24986B5C007B684A /* Build configuration list for PBXNativeTarget "SummerHack2020" */ = {
+		33EE4BDE24986B5C007B684A /* Build configuration list for PBXNativeTarget "StepItUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EE4BDF24986B5C007B684A /* Debug */,
