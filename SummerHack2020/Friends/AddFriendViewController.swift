@@ -72,6 +72,8 @@ class AddFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
 
         // aesthetics
         addFriendLabel.layer.masksToBounds = true

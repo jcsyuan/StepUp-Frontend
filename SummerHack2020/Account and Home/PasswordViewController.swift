@@ -54,11 +54,16 @@ class PasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         background.layer.masksToBounds = true
         background.layer.cornerRadius = 10
         
         submitPassword.layer.masksToBounds = true
         submitPassword.layer.cornerRadius = 10
+        
+        oldPassword.isSecureTextEntry = true
+        newPassword.isSecureTextEntry = true
     }
     
     @IBAction func closePassword(_ sender: Any) {

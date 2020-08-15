@@ -42,6 +42,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround() 
+        
         // rounding edges of label
         friendsLabel.layer.masksToBounds = true
         friendsLabel.layer.cornerRadius = 10
