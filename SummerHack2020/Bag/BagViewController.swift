@@ -47,7 +47,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         table.register(BagCollectionTableViewCell.nib(), forCellReuseIdentifier: BagCollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
-        table.isScrollEnabled = false;
+//        table.isScrollEnabled = false;
     }
     
     func reloadAvatar() {
