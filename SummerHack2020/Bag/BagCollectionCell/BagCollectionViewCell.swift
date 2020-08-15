@@ -28,7 +28,7 @@ class BagCollectionViewCell: UICollectionViewCell {
         if model.selected {
             self.layer.backgroundColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 0.2481271404)
         } else {
-            self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.layer.backgroundColor = nil
         }
         self.layer.cornerRadius = 7
         self.layer.masksToBounds = true
