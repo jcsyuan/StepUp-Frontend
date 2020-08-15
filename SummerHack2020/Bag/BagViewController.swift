@@ -16,11 +16,20 @@ protocol accessBagViewController {
 class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, accessBagViewController {
     
     @IBOutlet var table: UITableView!
+    
+    // avatar
     @IBOutlet weak var avatarShirt: UIImageView!
     @IBOutlet weak var avatarPants: UIImageView!
     @IBOutlet weak var avatarLeftShoe: UIImageView!
     @IBOutlet weak var avatarRightShoe: UIImageView!
     @IBOutlet weak var avatarBody: UIImageView!
+    
+    // outfit bubbles
+    @IBOutlet weak var hairBubble: UIImageView!
+    @IBOutlet weak var shirtBubble: UIImageView!
+    @IBOutlet weak var pantsBubble: UIImageView!
+    @IBOutlet weak var shoesBubble: UIImageView!
+    
     
     var shirt_models = [bagModelStore]()
     var pant_models = [bagModelStore]()
@@ -40,6 +49,12 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // circle the bubbles
+        hairBubble.makeRounded()
+        shirtBubble.makeRounded()
+        pantsBubble.makeRounded()
+        shoesBubble.makeRounded()
+        
         getWornData {
             self.getUnwornData()
         }
@@ -56,6 +71,11 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
         avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
         avatarBody.image = UIImage(named: "\(self.worn_items[4].name)-Avatar")
+        
+        shirtBubble.image = UIImage(named: self.worn_items[1].name)
+        pantsBubble.image = UIImage(named: self.worn_items[2].name)
+        shoesBubble.image = UIImage(named: self.worn_items[3].name)
+        hairBubble.image = UIImage(named: "\(self.worn_items[4].name)")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,7 +144,11 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     self.avatarLeftShoe.image = UIImage(named: self.worn_items[3].name)
                     self.avatarRightShoe.image = UIImage(named: "\(self.worn_items[3].name)1")
                     self.avatarBody.image = UIImage(named: "\(self.worn_items[4].name)-Avatar")
-                    print("\(self.worn_items[4].name)-Avatar")
+                    
+                    self.shirtBubble.image = UIImage(named: self.worn_items[1].name)
+                    self.pantsBubble.image = UIImage(named: self.worn_items[2].name)
+                    self.shoesBubble.image = UIImage(named: self.worn_items[3].name)
+                    self.hairBubble.image = UIImage(named: "\(self.worn_items[4].name)")
                 }
             } catch let jsonErr {
                 print(jsonErr)
@@ -195,5 +219,17 @@ struct bagModelStore: Codable {
         self.category = category
         self.selected = selected
         self.id = id
+    }
+}
+
+// bubbles design function
+extension UIImageView {
+
+    func makeRounded() {
+        self.layer.borderWidth = 3
+        self.layer.masksToBounds = false
+        self.layer.borderColor = #colorLiteral(red: 1, green: 0.5137547851, blue: 0.4823105335, alpha: 1)
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
     }
 }
