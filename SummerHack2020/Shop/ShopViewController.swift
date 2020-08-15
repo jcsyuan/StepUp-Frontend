@@ -72,7 +72,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     // get coin data
     private func getCoinData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-coins")!
+        let url = URL(string: "http://3.14.11.198:5000/get-coins")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
