@@ -83,7 +83,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // sending worn items
     @IBAction func exitBag(_ sender: Any) {
-        let url = URL(string: "http://127.0.0.1:5000/send-changed-worn-items")!
+        let url = URL(string: "http://3.14.11.198:5000/send-changed-worn-items")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "shirt_item_id": "\(self.worn_items[1].id)", "pant_item_id": "\(self.worn_items[2].id)", "shoes_item_id": "\(self.worn_items[3].id)", "hair_item_id": "\(self.worn_items[4].id)"])
@@ -93,7 +93,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     private func getWornData(completion: @escaping () -> ()) {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-worn-bag-data")!
+        let url = URL(string: "http://3.14.11.198:5000/get-worn-bag-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -137,7 +137,7 @@ class BagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     private func getUnwornData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-unworn-bag-data")!
+        let url = URL(string: "http://3.14.11.198:5000/get-unworn-bag-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])

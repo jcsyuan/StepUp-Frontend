@@ -105,7 +105,7 @@ class HomeViewController: UIViewController {
     // get user data
     private func getUserData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-home-data")!
+        let url = URL(string: "http://3.14.11.198:5000/get-home-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -147,7 +147,7 @@ class HomeViewController: UIViewController {
         let oldDate = UserDefaults.standard.integer(forKey: defaultsKeys.oldDateKey)
         if oldDate == Date().dayNumberOfWeek() {
             let tempCoins = dailySteps - oldCoins
-            let url = URL(string: "http://127.0.0.1:5000/get-new-coin-data")!
+            let url = URL(string: "http://3.14.11.198:5000/get-new-coin-data")!
             var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
             request.httpMethod = "POST"
             request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "add_coins": "\(tempCoins)"])
@@ -168,7 +168,7 @@ class HomeViewController: UIViewController {
             //UserDefaults.standard.set(Date().dayNumberOfWeek(), forKey: defaultsKeys.oldDateKey)
         } else {
             let tempCoins = dailySteps
-            let url = URL(string: "http://127.0.0.1:5000/get-new-coin-data")!
+            let url = URL(string: "http://3.14.11.198:5000/get-new-coin-data")!
             var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
             request.httpMethod = "POST"
             request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "add_coins": "\(tempCoins)"])
@@ -282,7 +282,7 @@ class HomeViewController: UIViewController {
     // URLSession to get previous total steps
     private func getTotalSteps(weeklySteps: Int, completion: @escaping (Int) -> ()) {
         var total: Int = 0
-        let url = URL(string: "http://127.0.0.1:5000/get-previous-aggregate-steps")!
+        let url = URL(string: "http://3.14.11.198:5000/get-previous-aggregate-steps")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -304,7 +304,7 @@ class HomeViewController: UIViewController {
     
     // update steps table in db
     private func updateSteps(dailySteps: Int, weeklySteps: Int, totalSteps: Int, completion: @escaping () -> ()) {
-        let url = URL(string: "http://127.0.0.1:5000/update-steps")!
+        let url = URL(string: "http://3.14.11.198:5000/update-steps")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "daily_steps": "\(dailySteps)", "weekly_steps": "\(weeklySteps)", "aggregate_steps": "\(totalSteps)"])
@@ -316,7 +316,7 @@ class HomeViewController: UIViewController {
     
     // check to see if we need to update previous aggregate steps
     private func updatePreviousAggregate(completion: @escaping () -> ()) {
-        let url = URL(string: "http://127.0.0.1:5000/get-start-date")!
+        let url = URL(string: "http://3.14.11.198:5000/get-start-date")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -386,7 +386,7 @@ class HomeViewController: UIViewController {
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT") as TimeZone?
         let createdDate = dateFormatter.string(from: newDate)
         // web request to update
-        let url = URL(string: "http://127.0.0.1:5000/update-aggregate")!
+        let url = URL(string: "http://3.14.11.198:5000/update-aggregate")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "previous_aggregate_steps": "\(newAggregate)", "aggregate_update": createdDate])

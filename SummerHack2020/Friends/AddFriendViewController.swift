@@ -24,7 +24,7 @@ class AddFriendViewController: UIViewController {
     
     @IBAction func requestFriend(_ sender: Any) {
         
-        let url = URL(string: "http://127.0.0.1:5000/send-friend-request")!
+        let url = URL(string: "http://3.14.11.198:5000/send-friend-request")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": self.entryUsername.text!])

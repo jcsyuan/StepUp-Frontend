@@ -59,7 +59,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func getFriends() {
-        let url = URL(string: "http://127.0.0.1:5000/get-friends")!
+        let url = URL(string: "http://3.14.11.198:5000/get-friends")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])

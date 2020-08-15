@@ -38,7 +38,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         leaderboardTitle.layer.cornerRadius = 10
         
         let user_id = UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey)
-        let url = URL(string: "http://127.0.0.1:5000/leaderboard-data")!
+        let url = URL(string: "http://3.14.11.198:5000/leaderboard-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(user_id)"])
@@ -61,7 +61,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         //        print(nameArray)
         task.resume()
         
-        let urlTwo = URL(string: "http://127.0.0.1:5000/get-user-data")!
+        let urlTwo = URL(string: "http://3.14.11.198:5000/get-user-data")!
         var requestTwo = URLRequest(url: urlTwo, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         requestTwo.httpMethod = "POST"
         requestTwo.multipartFormData(parameters: ["user_id": "\(user_id)"])

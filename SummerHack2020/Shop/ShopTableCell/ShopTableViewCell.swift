@@ -105,7 +105,7 @@ class board {
     // buying item endpoint
     private func buyItem() {
         DispatchQueue.main.async {
-            let url = URL(string: "http://127.0.0.1:5000/buy-item")!
+            let url = URL(string: "http://3.14.11.198:5000/buy-item")!
             var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
             request.httpMethod = "POST"
             request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "item_id": "\(self.item.id)", "item_cost": "\(self.item.cost)", "category_id":"\(self.item.category)"])

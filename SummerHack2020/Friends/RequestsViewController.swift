@@ -28,7 +28,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource {
         table.dataSource = self
         
         // json stuff
-        let url = URL(string: "http://127.0.0.1:5000/get-friend-requests")!
+        let url = URL(string: "http://3.14.11.198:5000/get-friend-requests")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
@@ -83,7 +83,7 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         }
         
         //json stuff - dealing with request
-        let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
+        let url = URL(string: "http://3.14.11.198:5000/accept-decline-request")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "accept"])
@@ -101,7 +101,7 @@ extension RequestsViewController: RequestTableViewCellDelegate {
         }
         
         //json stuff - dealing with request
-        let url = URL(string: "http://127.0.0.1:5000/accept-decline-request")!
+        let url = URL(string: "http://3.14.11.198:5000/accept-decline-request")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "friend_username": username, "response": "decline"])

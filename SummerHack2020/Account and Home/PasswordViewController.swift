@@ -16,7 +16,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var newPassword: UITextField!
     
     @IBAction func submitPassword(_ sender: Any) {
-        let url = URL(string: "http://127.0.0.1:5000/change-password")!
+        let url = URL(string: "http://3.14.11.198:5000/change-password")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))", "old_password": self.oldPassword.text!, "new_password": self.newPassword.text!])

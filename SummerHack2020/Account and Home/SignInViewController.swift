@@ -26,7 +26,7 @@ class SignInViewController: UIViewController {
         self.usernameText = self.username.text!
         self.passwordText = self.password.text!
         
-        let url = URL(string: "http://127.0.0.1:5000/login")!
+        let url = URL(string: "http://3.14.11.198:5000/login")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["username": self.usernameText, "password": self.passwordText])

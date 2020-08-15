@@ -94,7 +94,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     // get shop data
     private func getShopData() {
         // load user data
-        let url = URL(string: "http://127.0.0.1:5000/get-shop-data")!
+        let url = URL(string: "http://3.14.11.198:5000/get-shop-data")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         request.multipartFormData(parameters: ["user_id": "\(UserDefaults.standard.integer(forKey: defaultsKeys.userIdKey))"])
