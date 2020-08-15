@@ -288,7 +288,7 @@
                                             <constraint firstAttribute="width" constant="120" id="ROc-xI-jv9"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GlO-Yw-too">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GlO-Yw-too">
                                         <rect key="frame" x="334" y="60" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="AOq-ri-3XT"/>
